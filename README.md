@@ -7,11 +7,11 @@ Sure, there are services like Google, Discuss and whatnot that can do it for me.
 
 So, here my task list:
 
-[] Add Bookmark
-  - [] Date I added the bookmark
-  - [] [maybe] A short description
-[] Add Labels
-[] Search Bookmarks
+- [] Add Bookmark
+- [] Date I added the bookmark
+- [] [maybe] A short description
+- [] Add Labels
+- [] Search Bookmarks
 
 I will use Rails as my back-end, and I'll use this opportunity to get familiarized with AngularJS for the front-end.
 
@@ -26,7 +26,7 @@ Back End
 Functionality
 - Elastic Search for Searching
 - Devise for Authentication
--
+
 Front End
 - HTML5
 - CSS3
