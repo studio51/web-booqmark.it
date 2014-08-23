@@ -8,7 +8,7 @@ pid "/home/ubuntu/deploy/shared/tmp/pids/unicorn.pid"
 stderr_path "/home/ubuntu/deploy/shared/log/unicorn.log"
 stdout_path "/home/ubuntu/deploy/shared/log/unicorn.log"
 
-listen "/tmp/unicorn.smartie.sock"
+listen "/tmp/unicorn.bookmarkit.sock"
 
 worker_processes Integer(ENV["WEB_CONCURRENCY"] || 2)
 
