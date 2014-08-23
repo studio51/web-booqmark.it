@@ -4,3 +4,4 @@ hosts
 Vagrantfile
 .vagrant
 config/secrets.yml
+log/*

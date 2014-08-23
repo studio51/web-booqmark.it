@@ -7,7 +7,7 @@ pid "/vagrant/tmp/pids/unicorn.pid"
 stderr_path "/vagrant/log/unicorn.log"
 stdout_path "/vagrant/log/unicorn.log"
 
-listen "/tmp/unicorn.smartie.sock"
+listen "/tmp/unicorn.bookmarkit.sock"
 
 worker_processes Integer(ENV["WEB_CONCURRENCY"] || 2)
 preload_app false
