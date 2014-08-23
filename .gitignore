@@ -1,0 +1,6 @@
+playbooks/*
+provisioner/*
+hosts
+Vagrantfile
+.vagrant
+config/secrets.yml
