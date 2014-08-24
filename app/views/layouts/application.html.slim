@@ -31,12 +31,22 @@ html lang="en"
         #bs-example-navbar-collapse-1.collapse.navbar-collapse
           ul.nav.navbar-nav
             li
+              = link_to "Collections", collections_path
+            li
               = link_to "Bookmarks", bookmarks_path
 
           ul.nav.navbar-nav.navbar-right
             li
               = link_to "New", new_bookmark_path
             li
+
+            - if user_signed_in?
+              li
+                = link_to('Logout', destroy_user_session_path, :method => :delete)
+            - else
+              li
+                = link_to('Login', new_user_session_path)
+
             form.navbar-form.navbar-right role="search"
               .form-group
                 input.form-control placeholder="Search" type="text"

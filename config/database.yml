@@ -15,11 +15,3 @@ development:
 test:
   <<: *default
   database: app_db_test
-
-production:
-  adapter: postgresql
-  encoding: unicode
-  database: app_db
-  username: root
-  password: password
-  pool: 5

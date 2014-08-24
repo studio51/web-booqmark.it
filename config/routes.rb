@@ -4,5 +4,7 @@ Rails.application.routes.draw do
   devise_for :users
 
   resources :bookmarks
+  resources :collections
+
   get 'bookmarks/:tag', to: 'bookmarks#index', as: :tag
 end
