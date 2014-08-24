@@ -1,4 +1,3 @@
-
 h1 Your Bookmarks
 
 table.table.table-striped
@@ -16,6 +15,8 @@ table.table.table-striped
           = b.name
         td
           = link_to b.url, b.url
+        td
+          = b.tag_list
         td.text-right
           .btn-group
             = link_to 'Show', b, class: "btn btn-sm btn-primary"

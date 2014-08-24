@@ -1,14 +1,15 @@
 source 'https://rubygems.org'
 
-gem 'rails', '4.2.0.beta1'
+gem 'rails', '4.1.5'
 
 gem 'unicorn'
 gem 'mysql2'
 
 gem 'devise'
 
+gem 'acts-as-taggable-on'
+
 gem 'jquery-rails', github: 'rails/jquery-rails', branch: 'rails-4-only'
-gem 'angularjs-rails'
 gem 'sass-rails', '~> 5.0.0.beta1'
 
 gem 'sprockets'
@@ -25,10 +26,10 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 gem 'execjs'
 
-# gem 'will_paginate', '~> 3.0'
+gem 'will_paginate', '~> 3.0'
 
 # bundle exec rake doc:rails generates the API under doc/api.
-gem 'sdoc', '~> 0.4.0', group: :doc
+# gem 'sdoc', '~> 0.4.0', group: :doc
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
@@ -42,9 +43,9 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 group :development, :test do
   # gem 'factory_girl_rails', '4.4.1'
   # gem 'rspec-rails', '3.0.1'
-  gem 'byebug'
-  gem 'web-console', '~> 2.0.0.beta2'
-  gem 'spring'
+  # gem 'byebug'
+  # gem 'web-console', '~> 2.0.0.beta2'
+  # gem 'spring'
 end
 
 group :test do
@@ -60,4 +61,3 @@ group :development do
   gem 'better_errors'
   # gem 'capistrano-rails'
 end
-
