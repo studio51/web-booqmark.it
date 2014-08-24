@@ -4,7 +4,8 @@ table.table.table-striped
   thead
     tr
       th Name
-      th colspan="2" URL
+      th URL
+      th colspan="2" Tags
 
   tbody
 
@@ -16,7 +17,7 @@ table.table.table-striped
         td
           = link_to b.url, b.url
         td
-          = b.tag_list
+          = b.tag_list.map { |t| link_to t, tag_path(t) }.join(', ').html_safe if b.tags.any?
         td.text-right
           .btn-group
             = link_to 'Show', b, class: "btn btn-sm btn-primary"
