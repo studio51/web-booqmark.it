@@ -3,11 +3,11 @@ ruby '2.1.2'
 
 gem 'rails', '4.1.5'
 
-# gem 'pg'
+gem 'pg'
 gem 'rails_12factor', group: :production
-
 gem 'unicorn'
-gem 'mysql2', group: :development
+
+# gem 'mysql2', group: :development
 
 gem 'devise'
 

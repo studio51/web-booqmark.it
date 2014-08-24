@@ -19,7 +19,7 @@ test:
 production:
   adapter: postgresql
   encoding: unicode
-  pool: 5
   database: app_db
   username: root
   password: password
+  pool: 5

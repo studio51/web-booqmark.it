@@ -1,21 +1,30 @@
 # Vagrant related files
 
-.vagrant/
-Vagrantfile
-hosts
+/.vagrant/
+/Vagrantfile
+/hosts
 
 # Provisioner
 
-playbooks/*
-provisioner/*
-config/unicorn-development.rb
+/playbooks/*
+/provisioner/*
+/config/unicorn-development.rb
 
 # Temp files/folders
 
-tmp/cache/*
-tmp/miniprofiler/*
-tmp/pids/*
+/tmp/cache/*
+/tmp/miniprofiler/*
+/tmp/pids/*
 
 # Logs
 
-log/*
+/log/*.log
+
+# Bundler config
+
+/.bundle
+
+# Databases
+
+/db/*.sqlite3
+/db/*.sqlite3-journal
