@@ -12,5 +12,10 @@ config/unicorn-development.rb
 
 # Temp files/folders
 
+tmp/cache/*
 tmp/miniprofiler/*
+tmp/pids/*
 
+# Logs
+
+log/*
