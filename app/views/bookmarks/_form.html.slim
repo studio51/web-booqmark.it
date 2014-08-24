@@ -1,0 +1,32 @@
+.row
+  .col-sm-12
+    = simple_form_for @bookmark, html: { class: "form-horizontal" } do |f|
+
+      - if @bookmark.errors.any?
+        #error_explanation
+          h2 = "#{pluralize(@bookmark.errors.count, "error")} prohibited this bookmark from being saved:"
+          ul
+            - @bookmark.errors.full_messages.each do |message|
+              li = message
+
+      .row
+        .col-sm-6
+          .col-sm-12
+            = f.input :name
+
+      .row
+        .col-sm-6
+          .col-sm-12
+            = f.input :url
+
+      .row
+        .col-sm-6
+          .col-sm-12
+            = f.input :description
+
+      .row
+        .col-sm-6
+          .col-sm-12
+            = f.input :tag_list
+
+      .actions = f.submit 'Save', class: "btn btn-primary btn-md"

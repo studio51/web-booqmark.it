@@ -1,0 +1,29 @@
+h1 Your Bookmarks
+
+table.table.table-striped
+  thead
+    tr
+      th Name
+      th URL
+      th colspan="2" Tags
+
+  tbody
+
+    - @bookmarks.each do |b|
+
+      tr
+        td
+          = b.name
+        td
+          = link_to b.url, b.url
+        td
+          = b.tag_list.map { |t| link_to t, tag_path(t) }.join(', ').html_safe if b.tags.any?
+        td.text-right
+          .btn-group
+            = link_to 'Show', b, class: "btn btn-sm btn-primary"
+            = link_to 'Edit', edit_bookmark_path(b), class: "btn btn-sm btn-success"
+            = link_to 'Destroy', b, data: {:confirm => 'Are you sure?'}, :method => :delete, class: "btn btn-sm btn-danger"
+
+      tr
+        td colspan="3"
+          = b.description
