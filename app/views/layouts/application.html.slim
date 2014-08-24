@@ -18,6 +18,30 @@ html lang="en"
 
   body data-grid-color="green" data-grid-framework="b3" data-grid-gutterwidth="30px" data-grid-nbcols="12" data-grid-opacity="0.1" data-grid-zindex="1"
 
+    nav.navbar.navbar-default role="navigation"
+      .container
+        .navbar-header
+          button.navbar-toggle data-target="#bs-example-navbar-collapse-1" data-toggle="collapse" type="button"
+            span.sr-only Toggle navigation
+            span.icon-bar
+            span.icon-bar
+            span.icon-bar
+          a.navbar-brand href="#"  Bookmark.it
+
+        #bs-example-navbar-collapse-1.collapse.navbar-collapse
+          ul.nav.navbar-nav
+            li
+              = link_to "Bookmarks", bookmarks_path
+
+          ul.nav.navbar-nav.navbar-right
+            li
+              = link_to "New", new_bookmark_path
+            li
+            form.navbar-form.navbar-right role="search"
+              .form-group
+                input.form-control placeholder="Search" type="text"
+              button.btn.btn-default type="submit"  Submit
+
     .content
       .container
         .row

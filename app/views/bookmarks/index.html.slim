@@ -1,6 +1,5 @@
 
-h1
-  = "Listing Bookmarks"
+h1 Your Bookmarks
 
 table.table.table-striped
   thead
@@ -16,7 +15,7 @@ table.table.table-striped
         td
           = b.name
         td
-          = b.url
+          = link_to b.url, b.url
         td.text-right
           .btn-group
             = link_to 'Show', b, class: "btn btn-sm btn-primary"
@@ -26,5 +25,3 @@ table.table.table-striped
       tr
         td colspan="3"
           = b.description
-
-= link_to 'New Bookmark', new_bookmark_path
