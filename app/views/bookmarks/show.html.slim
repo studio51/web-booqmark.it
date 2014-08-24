@@ -1,9 +1,6 @@
 p#notice = notice
 
 p
-  strong Title:
-  = @bookmark.title
-p
   strong Url:
   = @bookmark.url
 p
@@ -12,9 +9,6 @@ p
 p
   strong Description:
   = @bookmark.description
-p
-  strong Thumbnail:
-  = @bookmark.thumbnail
 
 = link_to 'Edit', edit_bookmark_path(@bookmark)
 '|

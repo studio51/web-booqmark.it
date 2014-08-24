@@ -1,29 +1,30 @@
-h1 Listing bookmarks
 
-table
+h1
+  = "Listing Bookmarks"
+
+table.table.table-striped
   thead
     tr
-      th Title
-      th Url
       th Name
-      th Description
-      th Thumbnail
-      th
-      th
-      th
+      th colspan="2" URL
 
   tbody
-    - @bookmarks.each do |bookmark|
-      tr
-        td = bookmark.title
-        td = bookmark.url
-        td = bookmark.name
-        td = bookmark.description
-        td = bookmark.thumbnail
-        td = link_to 'Show', bookmark
-        td = link_to 'Edit', edit_bookmark_path(bookmark)
-        td = link_to 'Destroy', bookmark, data: {:confirm => 'Are you sure?'}, :method => :delete
 
-br
+    - @bookmarks.each do |b|
+
+      tr
+        td
+          = b.name
+        td
+          = b.url
+        td.text-right
+          .btn-group
+            = link_to 'Show', b, class: "btn btn-sm btn-primary"
+            = link_to 'Edit', edit_bookmark_path(b), class: "btn btn-sm btn-success"
+            = link_to 'Destroy', b, data: {:confirm => 'Are you sure?'}, :method => :delete, class: "btn btn-sm btn-danger"
+
+      tr
+        td colspan="3"
+          = b.description
 
 = link_to 'New Bookmark', new_bookmark_path
