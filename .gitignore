@@ -1,5 +1,16 @@
+# Vagrant related files
+
+.vagrant/
+Vagrantfile
+hosts
+
+# Provisioner
+
 playbooks/*
 provisioner/*
-hosts
-Vagrantfile
-.vagrant
+config/unicorn-development.rb
+
+# Temp files/folders
+
+tmp/miniprofiler/*
+
