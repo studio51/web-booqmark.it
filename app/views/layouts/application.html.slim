@@ -5,73 +5,46 @@ html lang="en"
     meta charset="utf-8"
     meta content="IE=edge" http-equiv="X-UA-Compatible"
 
-    meta name="author" content="Vlad Radulescu @ Studio51"
-    meta name="description" content="A bookmark service"
+    meta name="author" content = t("author")
+    meta name="description" content = t("description")
 
     meta name="viewport" content="width=device-width, initial-scale=1"
 
     title
-      = "Bookmark.it | Yet another Bookmark Service"
+      = t("app.name")
 
     = stylesheet_link_tag "application", media: "all"
     = csrf_meta_tags
 
-  body data-grid-color="green" data-grid-framework="b3" data-grid-gutterwidth="30px" data-grid-nbcols="12" data-grid-opacity="0.1" data-grid-zindex="1"
+  body
 
-    nav.navbar.navbar-default role="navigation"
-      .container
-        .navbar-header
-          button.navbar-toggle data-target="#bs-example-navbar-collapse-1" data-toggle="collapse" type="button"
-            span.sr-only Toggle navigation
-            span.icon-bar
-            span.icon-bar
-            span.icon-bar
-          a.navbar-brand href="#"  Bookmark.it
-
-        #bs-example-navbar-collapse-1.collapse.navbar-collapse
-          ul.nav.navbar-nav
-            li
-              = link_to "Collections", collections_path
-            li
-              = link_to "Bookmarks", bookmarks_path
-
-          ul.nav.navbar-nav.navbar-right
-            li
-              = link_to "New", new_bookmark_path
-            li
-
-            - if user_signed_in?
-              li
-                = link_to('Logout', destroy_user_session_path, :method => :delete)
-            - else
-              li
-                = link_to('Login', new_user_session_path)
-
-            form.navbar-form.navbar-right role="search"
-              .form-group
-                input.form-control placeholder="Search" type="text"
-              button.btn.btn-default type="submit"  Submit
-
-    .content
+    header
       .container
         .row
-          .col-sm-12
+          .col-sm-3
+            = link_to t("app.name"), root_path, class: "brand"
 
-            - flash.each do |name, msg|
-              - if msg.is_a?(String)
-                div class=("alert alert-#{name.to_s == 'notice' ? 'success' : 'danger'}")
-                  p
-                   = msg
+          .col-sm-7
+          .col-sm-3
 
-        .row
-          .col-xs-12
-            = yield
+    .container
+      .row
+        .col-sm-6
+          = breadcrumb_presenter
+
+        .col-sm-6
+          .btn-group.btn-group-md
+            = link_to fa_icon("sign-out", text: t("auth.out")), destroy_user_session_path, method: :delete,
+              title: t("auth.out"),
+              class: "btn btn-sm btn-danger"
+      .row
+        .col-sm-12
+          = yield
 
     footer
       .container
         .row
-          .col-sm-6
-            p.text-left
-              = "Studio51"
+          .col-sm-12
+            = link_to t("author.company"), t("author.url")
 
     = javascript_include_tag "application"

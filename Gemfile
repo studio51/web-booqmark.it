@@ -1,5 +1,4 @@
 source 'https://rubygems.org'
-ruby '2.1.2'
 
 gem 'rails', '4.1.5'
 
@@ -8,7 +7,22 @@ gem 'unicorn'
 
 gem 'devise'
 
+gem 'meta-tags'
+###############
+#
+# Search Engine Optimization (SEO) plugin for Ruby on Rails applications.
+#
+# https://github.com/kpumuk/meta-tags
+
 gem 'acts-as-taggable-on'
+#########################
+#
+# This plugin was originally based on Acts as Taggable on Steroids
+# by Jonathan Viney. It has evolved substantially since that point, but all
+# credit goes to him for the initial tagging functionality that so many people
+# have used.
+#
+# https://github.com/mbleigh/acts-as-taggable-on
 
 gem 'jquery-rails', github: 'rails/jquery-rails', branch: 'rails-4-only'
 gem 'sass-rails', '~> 5.0.0.beta1'
@@ -34,8 +48,6 @@ gem 'will_paginate', '~> 3.0'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
-
-# Use Rails Html Sanitizer for HTML sanitization
 
 
 # Use Capistrano for deployment

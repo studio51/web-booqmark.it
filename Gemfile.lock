@@ -83,6 +83,8 @@ GEM
     mail (2.5.4)
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
+    meta-tags (2.0.0)
+      actionpack (>= 3.0.0)
     mime-types (1.25.1)
     minitest (5.4.0)
     multi_json (1.10.1)
@@ -167,6 +169,7 @@ DEPENDENCIES
   font-awesome-rails
   jbuilder (~> 2.0)
   jquery-rails!
+  meta-tags
   mysql2
   rails (= 4.1.5)
   sass-rails (~> 5.0.0.beta1)

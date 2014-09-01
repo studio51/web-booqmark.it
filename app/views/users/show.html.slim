@@ -1,0 +1,49 @@
+.row
+  .col-sm-5
+    .panel.panel-default
+      .panel-heading
+        h5
+          = fa_icon t("models.user.icon"), text: @user.name
+
+      .panel-body
+        table.table.table-striped
+          tbody
+            tr
+              td.tiny-column
+                = fa_icon t("models.user.elements.icons.group")
+              td.large-column
+                strong
+                  = t("models.user.elements.group")
+              td
+                = "Administrators"
+
+            tr
+              td.tiny-column
+                = fa_icon t("models.user.elements.icons.email")
+              td.large-column
+                strong
+                  = t("models.user.elements.email")
+              td
+                = @user.email
+
+      .panel-footer
+        .btn-group.btn-group-sm.btn-group-justified
+          = link_to fa_icon(t("index.elements.edit"), text: t("actions.edit")), edit_user_path,
+            title: t("actions._edit", model: @user.name),
+            class: "btn btn-success"
+
+          = link_to fa_icon(t("index.elements.delete"), text: t("actions.delete")), @user,
+            title: t("actions._delete", model: @user.name),
+            method: :delete,
+            data: { confirm: t("messages.info.confirm")},
+            class: "btn btn-danger"
+
+
+  .col-sm-7
+    .row
+      .col-sm-12
+        = @collections
+
+    .row
+      .col-sm-12
+        = @bookmarks

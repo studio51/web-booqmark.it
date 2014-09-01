@@ -1,29 +1,38 @@
-h1 Your Bookmarks
+.row
+  .col-sm-2
+    = link_to "New", new_bookmark_path
 
-table.table.table-striped
-  thead
-    tr
-      th Name
-      th URL
-      th colspan="2" Tags
-
-  tbody
+  .col-sm-10.bookmarks-list
 
     - @bookmarks.each do |b|
 
-      tr
-        td
-          = b.name
-        td
-          = link_to b.url, b.url
-        td
-          = b.tag_list.map { |t| link_to t, tag_path(t) }.join(', ').html_safe if b.tags.any?
-        td.text-right
-          .btn-group
-            = link_to 'Show', b, class: "btn btn-sm btn-primary"
-            = link_to 'Edit', edit_bookmark_path(b), class: "btn btn-sm btn-success"
-            = link_to 'Destroy', b, data: {:confirm => 'Are you sure?'}, :method => :delete, class: "btn btn-sm btn-danger"
+      .row
+        .col-sm-12
+          .row.reset
+            .col-sm-2
+              = image_tag "http://placehold.it/350x150", class: "img-responsive"
 
-      tr
-        td colspan="3"
-          = b.description
+            .col-sm-7
+              = content_tag :a, href: b.url, class: "anchor-container" do
+
+                .row
+                  .col-sm-12
+                    h3.bookmark-title
+                      = b.name
+
+                - if b.description?
+
+                  .row
+                    .col-sm-12
+                      p.bookmark-description
+                        = b.description
+
+            .col-sm-3
+              .btn-group.btn-sm.btn-outline.btn-round
+                = link_to fa_icon(t("methods.read.icon"), class: "text-primary"), b, class: "btn btn-primary"
+                = link_to fa_icon(t("methods.update.icon"), class: "text-success"), edit_bookmark_path(b), class: "btn btn-success"
+                = link_to fa_icon(t("methods.delete.icon"), class: "text-danger"), b, class: "btn btn-danger",
+                  data: { confirm: t("messages.info.confirm") }, method: :delete
+
+        .col-sm-offset-2.col-sm-10
+          = tags_presenter b.tag_list

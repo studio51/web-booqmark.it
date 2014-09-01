@@ -1,8 +1,15 @@
 class BookmarksController < ApplicationController
-  before_action :set_bookmark, only: [:show, :edit, :update, :destroy]
+  respond_to :html, :json
 
   def index
-    @bookmarks = Bookmark.for_user(current_user)
+    if params[:id]
+      bookmarks = Bookmark.tags(params[:id])
+    else
+      bookmarks = Bookmark
+    end
+
+    @bookmarks = paginate bookmarks.for_user(current_user).order(created_at: :desc)
+    respond_with @bookmarks
   end
 
   def new
@@ -12,40 +19,28 @@ class BookmarksController < ApplicationController
   def create
     @bookmark = Bookmark.new(bookmark_params.merge(user: current_user))
 
-    respond_to do |format|
-      if @bookmark.save
-        format.html { redirect_to @bookmark, notice: 'Bookmark was successfully created.' }
-        format.json { render :show, status: :created, location: @bookmark }
-      else
-        format.html { render :new }
-        format.json { render json: @bookmark.errors, status: :unprocessable_entity }
-      end
-    end
+    @bookmark.save
+  end
+
+  def show
+    respond_with set_bookmark
+  end
+
+  def edit
+    respond_with set_bookmark
   end
 
   def update
-    respond_to do |format|
-      if @bookmark.update(bookmark_params)
-        format.html { redirect_to @bookmark, notice: 'Bookmark was successfully updated.' }
-        format.json { render :show, status: :ok, location: @bookmark }
-      else
-        format.html { render :edit }
-        format.json { render json: @bookmark.errors, status: :unprocessable_entity }
-      end
-    end
+    respond_with set_bookmark.update(bookmark_params)
   end
 
   def destroy
-    @bookmark.destroy
-    respond_to do |format|
-      format.html { redirect_to bookmarks_url, notice: 'Bookmark was successfully destroyed.' }
-      format.json { head :no_content }
-    end
+    respond_with set_bookmark.destroy
   end
 
   private
     def set_bookmark
-      @bookmark = Bookmark.for_user(current_user).find_by_id(params[:id]) rescue "No access"
+      @bookmark = Bookmark.for_user(current_user).find_by_id(params[:id])
     end
 
     def bookmark_params
@@ -55,7 +50,7 @@ class BookmarksController < ApplicationController
         :description,
         :tag_list,
         :user,
-        :collections
+        collections: []
       )
     end
 end

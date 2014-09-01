@@ -1,23 +1,50 @@
-# Files in the config/locales directory are used for internationalization
-# and are automatically loaded by Rails. If you want to use locales other
-# than English, add the necessary files in this directory.
-#
-# To use the locales, use `I18n.t`:
-#
-#     I18n.t 'hello'
-#
-# In views, this is aliased to just `t`:
-#
-#     <%= t('hello') %>
-#
-# To use a different locale, set it with `I18n.locale`:
-#
-#     I18n.locale = :es
-#
-# This would use the information in config/locales/es.yml.
-#
-# To learn more, please read the Rails Internationalization guide
-# available at http://guides.rubyonrails.org/i18n.html.
-
 en:
-  hello: "Hello world"
+  author:
+    name: "Vlad Radulescu"
+    url: "http://www.creative-studio51.co.uk/"
+    company: "Studio51 © 2014"
+  description: "A simple Bookmarking service by Studio51©"
+
+  app:
+    logo: ""
+    name: "bookmark.it"
+    description: "Have your Bookmarks anywhere"
+
+  messages:
+    error:
+      updated: "There was a problem while updating the %{obj}"
+      created: "There was a problem while creating the %{obj}"
+      deleted: "There was a problem while deleting the %{obj}"
+    success:
+      updated: "%{obj} has been successfully updated"
+      created: "%{obj} has been successfully created"
+      deleted: "%{obj} has been successfully deleted"
+    info:
+      confirm: "This action cannot be undone, are you sure?"
+
+  models:
+    dashboard:
+      name: "Dashboard"
+    collection:
+      icon: "folder"
+      name: "Collection"
+    bookmark:
+      icon: "bookmark"
+      name: "Bookmark"
+    user:
+      icon: "user"
+      name: "User"
+
+  methods:
+    create:
+      icon: "plus"
+      name: "New"
+    read:
+      icon: "eye"
+      name: "View"
+    update:
+      icon: "pencil"
+      name: "Edit"
+    delete:
+      icon: "trash-o"
+      name: "Delete"

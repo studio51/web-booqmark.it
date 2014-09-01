@@ -12,12 +12,26 @@
       .row
         .col-sm-6
           .col-sm-12
-            = f.input :name
+
+            - if @bookmark.new_record?
+
+              = f.input :name, input_html: { value: params[:name] }
+
+            - else
+
+              = f.input :name
 
       .row
         .col-sm-6
           .col-sm-12
-            = f.input :url
+
+            - if @bookmark.new_record?
+
+              = f.input :url, input_html: { value: params[:url] }
+
+            - else
+
+              = f.input :url
 
       .row
         .col-sm-6
