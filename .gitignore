@@ -28,3 +28,11 @@
 
 /db/*.sqlite3
 /db/*.sqlite3-journal
+
+# External
+
+config.codekit
+
+# Assets
+
+app/assets/stylesheets/.sass*
