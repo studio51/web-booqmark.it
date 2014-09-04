@@ -1,23 +1,26 @@
 - @bookmarks.each do |b|
 
   .row.bmk-container data-id="#{b.id}"
-    .col-sm-10.bmk-block
-      div id="bmk-#{b.id}" class="row bmk"
-        .col-sm-2
-          = image_tag "http://placehold.it/350x150", class: "img-responsive"
+    .col-sm-10
+      div id="bmk-#{b.id}" class="row"
+        .col-sm-2.bmk-snapshot
+          = image_tag b.snapshot.url(:md), class: "img-responsive"
+          = link_to fa_icon("refresh"), bookmark_regenerate_path(b), class: "bmk-snapshot-action"
 
-        .col-sm-10
-          = content_tag :a, href: b.url, class: "bmk-anchor" do
+        .col-sm-10.bmk-content
+          .row
+            .col-xs-12
+              = content_tag :a, href: b.url, class: "bmk-anchor" do
 
-            h3.bmk-title
-              = b.name
+                h3
+                  = b.name
 
-            p.bmk-description
-              = b.description if b.description?
+                p
+                  = b.description
 
-      .row.bmk-tags
-        .col-sm-offset-2.col-sm-10
-          = tags_presenter b.tag_list
+          .row
+            .col-xs-12.bmk-tags
+              = tags_presenter b.tag_list
 
     .col-sm-2.bmk-block
       div id="bmk-actions-#{b.id}" class="bmk-actions hidden"

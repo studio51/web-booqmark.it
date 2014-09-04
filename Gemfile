@@ -1,11 +1,11 @@
 source 'https://rubygems.org'
 
-gem 'rails', '4.1.5'
+gem 'rails', '4.2.0.beta1'
 
 gem 'mysql2'
 gem 'unicorn'
 
-gem 'devise'
+gem 'devise', github: 'plataformatec/devise', branch: 'lm-rails-4-2'
 
 gem 'meta-tags'
 ###############
@@ -43,11 +43,11 @@ gem 'execjs'
 
 gem 'will_paginate', '~> 3.0'
 
-
-
 gem 'imgkit'
+gem 'paperclip', '~> 4.2'
+gem 'aws-sdk'
 
-
+gem 'responders', '~> 2.0'
 
 # bundle exec rake doc:rails generates the API under doc/api.
 # gem 'sdoc', '~> 0.4.0', group: :doc

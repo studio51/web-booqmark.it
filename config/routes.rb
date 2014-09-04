@@ -7,6 +7,9 @@ Rails.application.routes.draw do
   resources :users
 
   resources :collections
-  resources :bookmarks
+  resources :bookmarks, shallow: true do
+    get :snapshot, controller: :bookmarks, action: :regenerate_snapshot, as: :regenerate
+  end
+
   resources :tags, only: [:show], controller: :bookmarks, action: :index
 end
