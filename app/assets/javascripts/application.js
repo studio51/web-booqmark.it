@@ -12,3 +12,13 @@
 //
 //= require jquery
 //= require jquery_ujs
+
+$(".bmk-container").hover( function() {
+  var parent, id;
+
+  parent = $(this);
+  id = parent.data("id");
+  console.log(id);
+
+  $("#bmk-actions-" + id).toggleClass("hidden");
+});

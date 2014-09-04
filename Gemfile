@@ -43,6 +43,12 @@ gem 'execjs'
 
 gem 'will_paginate', '~> 3.0'
 
+
+
+gem 'imgkit'
+
+
+
 # bundle exec rake doc:rails generates the API under doc/api.
 # gem 'sdoc', '~> 0.4.0', group: :doc
 

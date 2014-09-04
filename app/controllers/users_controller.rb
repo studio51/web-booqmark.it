@@ -1,6 +1,4 @@
 class UsersController < ApplicationController
-  before_action :set_user, only: [:show, :edit, :update, :destroy]
-
   def index
     @users = paginate User.all
   end
@@ -9,7 +7,10 @@ class UsersController < ApplicationController
     set_user
 
     @collections = User.all
-    @bookmarks = Bookmark.all.name
+  end
+
+  def edit
+    set_user
   end
 
   def new

@@ -24,19 +24,31 @@ html lang="en"
           .col-sm-3
             = link_to t("app.name"), root_path, class: "brand"
 
-          .col-sm-7
+          .col-sm-6
+            nav
+              ul
+                li
+                  = link_to "Collections", collections_path,
+                    title: "View all your Collections",
+                    class: "btn btn-sm btn-primary"
+                li
+                  = link_to "Bookmarks", bookmarks_path,
+                    title: "View all your Bookmarks",
+                    class: "btn btn-sm btn-primary"
+
           .col-sm-3
+            ul
+              li
+                = link_to "New", new_bookmark_path,
+                  title: "Add new Bookmark",
+                  class: "btn btn-sm btn-primary"
+
+              li
+                = link_to fa_icon("sign-out", text: t("auth.out")), destroy_user_session_path, method: :delete,
+                  title: t("auth.out"),
+                  class: "btn btn-sm btn-danger"
 
     .container
-      .row
-        .col-sm-6
-          = breadcrumb_presenter
-
-        .col-sm-6
-          .btn-group.btn-group-md
-            = link_to fa_icon("sign-out", text: t("auth.out")), destroy_user_session_path, method: :delete,
-              title: t("auth.out"),
-              class: "btn btn-sm btn-danger"
       .row
         .col-sm-12
           = yield

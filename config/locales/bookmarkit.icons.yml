@@ -1,0 +1,28 @@
+en:
+  messages:
+    error:
+      icon: "error"
+    success:
+      icon: "success"
+    info:
+      icon: "info"
+
+  models:
+    dashboard:
+      icon: "dashboard"
+    collection:
+      icon: "folder"
+    bookmark:
+      icon: "bookmark"
+    user:
+      icon: "user"
+
+  methods:
+    create:
+      icon: "plus"
+    read:
+      icon: "eye"
+    update:
+      icon: "pencil"
+    delete:
+      icon: "trash-o"
