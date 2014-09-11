@@ -1,0 +1,15 @@
+.btn {
+  &-outline & {
+    border-width: 2px;
+    border-style: solid;
+    background-color: transparent;
+
+    &:hover {
+      background-color: transparent;
+    }
+  }
+
+  &-round & {
+    border-radius: 250px !important;
+  }
+}

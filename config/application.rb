@@ -12,15 +12,15 @@ module Bookmarkit
       g.test_framework :rspec,
         controller_specs: true,
         model_specs: true,
-        helper_specs: true,
+        helper_specs: false,
         mailer_specs: false,
         feature_specs: true,
         view_specs: false,
         factories_specs: true,
-        routing_specs: true,
-        request_specs: true
+        routing_specs: false,
+        request_specs: false
 
-      g.fixture_replacement :factory_girl, dir: "spec/factories"
+      g.fixture_replacement :factory_girl, dir: 'spec/factories'
     end
 
     # Settings in config/environments/* take precedence over those specified here.
@@ -36,7 +36,7 @@ module Bookmarkit
     config.i18n.default_locale = :en
 
     # For not swallow errors in after_commit/after_rollback callbacks.
-    # config.active_record.raise_in_transactional_callbacks = false
+    # config.active_record.raise_in_transactional_callbacks = true
 
     # Autoload custom libraries and stuff
     config.autoload_paths = %W(#{config.root}/lib/validators)

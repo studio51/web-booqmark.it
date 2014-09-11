@@ -1,0 +1,7 @@
+@mixin grid-col ( $calc ) {
+    max-width: $calc;
+
+  -ms-flex-preferred-size: $calc;
+       -webkit-flex-basis: $calc;
+               flex-basis: $calc;
+}

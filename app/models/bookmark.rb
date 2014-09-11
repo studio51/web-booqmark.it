@@ -1,6 +1,16 @@
 class Bookmark < ActiveRecord::Base
   acts_as_taggable
 
+  has_attached_file :snapshot,
+                    storage: :s3,
+                    s3_credentials: "#{Rails.root}/config/aws_s3.yml",
+                    styles: {
+                      xs: ['32x32#', :png],
+                      sm: ['64x64#', :png],
+                      md: ['128x128#', :png],
+                      lg: ['130x130#', :png]
+                    }
+
   # Associations
 
   belongs_to :user
@@ -17,6 +27,8 @@ class Bookmark < ActiveRecord::Base
     { minimum: 3, too_short: '' }
   validates :description, length:
     { maximum: 255, too_long: '' }
+
+  do_not_validate_attachment_file_type :snapshot
 
   # Methods
 

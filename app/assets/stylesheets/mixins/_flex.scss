@@ -1,0 +1,26 @@
+@mixin flex(
+  $display: flex,
+  $sizing: border-box;
+  $direction: row;
+  $wrap: wrap;
+) {
+
+  display: $display;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+
+  -webkit-box-direction: normal;
+  -webkit-box-orient: horizontal;
+
+  -webkit-flex-direction: $direction;
+      -ms-flex-direction: $direction;
+          flex-direction: $direction;
+
+  -webkit-flex-wrap: $wrap;
+      -ms-flex-wrap: $wrap;
+          flex-wrap: $wrap;
+
+   -moz-box-sizing: $sizing;
+        box-sizing: $sizing;
+}

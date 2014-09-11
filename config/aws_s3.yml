@@ -1,0 +1,14 @@
+defaults: &defaults
+  bucket: 'bookmark.it',
+  access_key_id: 'AKIAJZBED22MAVJPRNAA',
+  secret_access_key: '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',
+  s3_host_name: 's3-eu-west-1.amazonaws.com'
+
+development:
+  <<: *defaults
+
+staging:
+  <<: *defaults
+
+production:
+  <<: *defaults

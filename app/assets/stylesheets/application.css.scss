@@ -14,134 +14,115 @@
  *= require font-awesome
 */
 
-.bmk {
-  &-container {
-    display: table;
-    width: 100%;
-  }
 
-  &-block {
-    display: table-cell;
-    vertical-align: middle;
-    float: none !important;
-  }
+$bmk-primary-white: #ffffff;
+$bmk-primary-grey: #efefef;
+$bmk-secondary-gray: #999999;
 
-  &-actions {
+$brand-primary: blue;
+
+body {
+  background: $bmk-primary-grey;
+}
+
+.content {
+  background: $bmk-primary-white;
+
+  &-head {
+    padding: 30px 0;
+
+    &-title {
+      padding-top: 4px;
+      padding-bottom: 5px;
+
+      h4 {
+        display: inline-block;
+        margin: 0 !important;
+        vertical-align: middle;
+        font-weight: bold;
+      }
+
+      a {
+        border-width: 2px;
+        border-radius: 250px;
+        // padding: 2px 5px 1px;
+        // display: inline-block;
+        // font-size: 10px;
+        // vertical-align: middle;
+        margin-left: 15px;
+      }
+    }
+
+    &-actions {
+
+      .btn {
+        background: $bmk-primary-grey;
+        color: $bmk-primary-grey + 010100;
+      }
+    }
+  }
+}
+
+.user {
+  border-bottom: 1px solid $bmk-primary-grey;
+  padding: 21.5px 0;
+
+  &-initals {
+    border: 1px solid red;
+    border-radius: 250px;
+    padding: 12px 13px;
     display: inline-block;
-    // position: absolute;
-    // top: 2em;
-    // right: 5.5em;
-
-    .btn {
-    }
+    margin-right: 10px;
+    font-weight: bold;
+    font-size: 16px;
   }
 
-
-
-  &-title {
-    // border: 1px solid red;
-  }
-
-  &-description {
-    // border: 1px solid red;
-
-  }
-
-  &-expand {
-    text-align: right;
-    padding: 1.1em 0 1.1em 2em;
-    float: right;
-
-    i {
-      font-size: 2em;
-      padding: 0;
-    }
+  &-identity {
+    display: inline-block;
   }
 }
 
-.bookmark {
-  &-description {
-    height: auto;
-    max-height: 20px;
-    overflow-y: hidden;
-    word-wrap: break-word;
-  }
-}
+// .info .user {
+//   padding: 15px 0;
+//   border-bottom: 1px solid red;
+//   margin-bottom: 10px;
+// }
 
-.anchor-container {
+// [class*="actions"] {
+//   padding: 0 !important;
+//   margin: 0;
+//   vertical-align: middle;
+// }
 
-  color: #000;
-  display: inline-block;
-  padding: 10px 0 0 15px;
-  height: auto;
-  width: 100%;
-}
+// .user-actions .btn {
+//   border: 1px solid red;
+// }
 
+// .stats {
+//   text-align: left;
+// }
 
-.btn {
-  &-outline & {
-    border-width: 2px;
-    border-style: solid;
-    background-color: transparent;
+// .stats span {
+//   font-weight: bold;
+//   font-size: 18px;
+// }
 
-    &:hover {
-      background-color: transparent;
-    }
-  }
+// .stats p {
+//   font-size: 11px;
+// }
 
-  &-round & {
-    border-radius: 250px !important;
-  }
-}
-
-h1, h2, h3, h4, h5, h6 {
-  line-height: .7em !important;
-  margin: 0 0 15px 0 !important;
-}
+// h3 {
+//   margin: 0 !important;
+// }
 
 @import "mixins/mixins";
 
 @import "partials/bootstrap_override";
-@import "bootstrap";
+@import "partials/bookmarkit";
+@import "bootstrap/bootstrap.css";
 
-.breadcrumb {
-  > .active {
-    background-color: blue;
-    border: 1px solid blue;
-  }
+.btn-bmk-empty {
+  border: none;
+  padding: 5px 0;
 }
 
-.brand {
-  font-family: sans-serif;
-  text-transform: lowercase;
-}
-
-[class$="-list"] {
-  > .row {
-    margin-bottom: 15px;
-
-    i {
-
-      &[class*="tags"] {
-        border: 2px solid blue;
-        border-radius: 250px;
-        margin-left: -19px;
-        margin-right: 15px;
-        margin-top: -5px;
-        padding: 10px;
-      }
-    }
-
-    .btn {
-      &-group &:nth-child(even) {
-        margin-left: 10px;
-        margin-right: 10px;
-      }
-    }
-  }
-}
-
-.reset {
-  [class^="col"] {
-  }
-}

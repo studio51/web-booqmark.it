@@ -1,4 +1,12 @@
 en:
+  auth:
+    in:
+      icon: "sign-in"
+    out:
+      icon: "sign-out"
+    new:
+      icon: "plus"
+
   messages:
     error:
       icon: "error"
@@ -10,10 +18,17 @@ en:
   models:
     dashboard:
       icon: "dashboard"
+    settings:
+      icon: "cogs"
     collection:
       icon: "folder"
     bookmark:
       icon: "bookmark"
+      elements:
+        icons:
+          url: "link"
+    tag:
+      icon: "tags"
     user:
       icon: "user"
 
