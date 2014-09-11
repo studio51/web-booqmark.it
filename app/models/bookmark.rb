@@ -3,12 +3,12 @@ class Bookmark < ActiveRecord::Base
 
   has_attached_file :snapshot,
                     storage: :s3,
-                    s3_credentials: proc { |a| a.instance.s3_credentials },
+                    s3_credentials: "#{Rails.root}/config/aws_s3.yml",
                     styles: {
                       xs: ['32x32#', :png],
                       sm: ['64x64#', :png],
                       md: ['128x128#', :png],
-                      lg: ['300x300#', :png]
+                      lg: ['130x130#', :png]
                     }
 
   # Associations
@@ -35,31 +35,6 @@ class Bookmark < ActiveRecord::Base
   def to_param
     "#{id} #{name}".parameterize
   end
-
-  def s3_credentials
-    {
-      bucket: 'bookmark.it',
-      access_key_id: 'AKIAJZBED22MAVJPRNAA',
-      secret_access_key: '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',
-      s3_host_name: 's3-eu-west-1.amazonaws.com'
-    }
-  end
-
-  # def self.snapsnap
-  #   kit = IMGKit.new(self.url).to_img(:jpg)
-  #   file = Tempfile.new(
-  #     ["template_#{id}", '.png'],
-  #     'tmp/pictures',
-  #     encoding: 'ascii-8bit'
-  #   )
-
-  #   file.write(kit)
-  #   file.flush
-
-  #   self.snapshot = file
-
-  #   file.unlink
-  # end
 
   def self.for_user(user)
     user.bookmarks

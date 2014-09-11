@@ -15,6 +15,6 @@ class User < ActiveRecord::Base
   end
 
   def initials
-
+    "#{profile.first_name.first}#{profile.last_name.first}"
   end
 end

@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'rails', '4.2.0.beta1'
+gem 'rails', '4.1.5'
 
 gem 'mysql2'
 gem 'unicorn'
@@ -24,12 +24,15 @@ gem 'acts-as-taggable-on'
 #
 # https://github.com/mbleigh/acts-as-taggable-on
 
-gem 'jquery-rails', github: 'rails/jquery-rails', branch: 'rails-4-only'
-gem 'sass-rails', '~> 5.0.0.beta1'
+gem 'jquery-rails', github: 'rails/jquery-rails', branch: '3-1-stable'
+gem 'sass-rails'
 
 gem 'sprockets'
 gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.0.0'
+
+gem 'ember-rails'
+gem 'ember-source', '1.5.0' # or the version you need
 
 gem 'bootstrap-sass', '~> 3.1.1'
 gem 'font-awesome-rails'
@@ -47,7 +50,7 @@ gem 'imgkit'
 gem 'paperclip', '~> 4.2'
 gem 'aws-sdk'
 
-gem 'responders', '~> 2.0'
+# gem 'responders', '~> 2.0'
 
 # bundle exec rake doc:rails generates the API under doc/api.
 # gem 'sdoc', '~> 0.4.0', group: :doc

@@ -1,76 +1,108 @@
 
-@media(min-width: $screen-sm-min) {
+// @media(min-width: 768px) {
 
-  .bmk {
-    &-container {
-      background-color: #fff;
-      border-bottom: 1px solid #efefef;
-      display: table;
-      margin: 0;
+.bmk {
+  &-container {
+    border: 1px solid red;
+    display: table;
+
+    > .col-sm-10 {
       width: 100%;
     }
+  }
 
-      &-snapshot {
-        padding: 0;
-        position: relative;
+  &-snapshot {
+    border: 1px solid red;
+    padding: 0;
 
-        & &-action {
-          width: 100%;
-          height: 20%;
-          overflow: auto;
-          margin: auto;
-          position: absolute;
-          top: 0; left: 0; bottom: 0; right: 0;
-          text-align: center;
-          i {
-            font-size: 2em;
-          }
-        }
+    @include size( 120px, 120px );
+
+    &:hover {
+      .bmk-snapshot-action {
+        display: block;
       }
-
-
-    &-block {
-      display: table-cell;
-      float: none;
-      padding: 0;
-      vertical-align: middle;
     }
 
-    &-actions {
+    &-action {
+      display: none;
+      height: 100%;
+      text-align: center;
+      position: relative;
+
+      & i {
+        font-size: 2em;
+        overflow: auto;
+        height: 23%;
+        margin: auto;
+
+        @include position( absolute, 0 0 0 0 );
+      }
+    }
+  }
+
+  &-block {
+    border: 1px solid red;
+      display: table-cell !important;
+      float: none !important;
+      padding: 0 !important;
+      vertical-align: middle !important;
+  }
+
+  &-actions {
+    padding: 0;
+    border: 1px solid red;
       display: inline-block;
 
-      .btn {
+    .btn {
         padding: 0;
         font-size: 1.1em;
         border-radius: 0;
-
-        i {
+      i {
           padding: 10px 15px;
-        }
       }
     }
+  }
 
-    &-expand {
+  &-expand {
       display: inline-block;
       float: right;
-
-      i {
+    i {
         font-size: 1.2em;
         margin: 0;
         padding: 11px 0;
         width: 50px;
         text-align: center;
-      }
     }
   }
 }
 
-// .anchor-container {
+// h1, h2, h3, h4, h5, h6 {
+//   margin: 0 0 10px 0 !important;
+//   font-family: "Tahoma" !important;
+//   // font-weight: bold !important;
+//   // text-transform: lowercase;
+// }
 
-//   color: #000;
-//   display: inline-block;
-//   padding: 10px 0 0 15px;
-//   height: auto;
-//   width: 100%;
+// p {
+//   margin: 0 !important;
+//   font-family: "Tahoma" !important;
+// }
+
+// .bmk-anchor {
+//    color: #999;
+//    display: block;
+//    padding: 0;
+//   padding: 10px 0;
+
+// }
+
+// .bmk-anchor:hover {
+//   text-decoration: none;
+// }
+
+// .bmk-tags {
+//   border: 1px solid red;
+//   display: table-cell !important;;
+//   vertical-align: bottom !important;;
 // }
 

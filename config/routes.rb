@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  root controller: :bookmarks, action: :index
+  root controller: :dashboard, action: :index
 
   devise_for :users
 
@@ -11,5 +11,5 @@ Rails.application.routes.draw do
     get :snapshot, controller: :bookmarks, action: :regenerate_snapshot, as: :regenerate
   end
 
-  resources :tags, only: [:show], controller: :bookmarks, action: :index
+  resources :tags, only: [:index, :show, :edit], controller: :bookmarks, action: :index
 end

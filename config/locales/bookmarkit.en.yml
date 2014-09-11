@@ -25,10 +25,16 @@ en:
   models:
     dashboard:
       name: "Dashboard"
+    settings:
+      name: "Settings"
     collection:
       name: "Collection"
     bookmark:
       name: "Bookmark"
+      elements:
+        url: "URL"
+    tag:
+      name: "Tag"
     user:
       name: "User"
 

@@ -1,0 +1,66 @@
+.row
+
+  - if user_signed_in?
+
+    .col-sm-3.info
+      .row.user
+        .col-sm-8.user-info
+
+          - if !current_user.email.empty?
+
+            span.user-initals
+              = current_user.initials
+
+          - else
+
+            span.user-avatar
+              = current_user.email
+
+          p.user-identity
+            = current_user.name
+
+        .col-sm-4.user-actions
+          .btn-group.btn-group-justified.btn-md
+            = link_to fa_icon(t("models.settings.icon")), "/", class: "btn btn-default btn-bmk-empty"
+            = link_to fa_icon(t("auth.out.icon")), "/", class: "btn btn-default btn-bmk-empty"
+
+      .row.stats
+        .col-sm-4.stats-collections
+          span
+            = @collections.count
+          p
+            = t("models.collection.name").pluralize
+
+        .col-sm-4.stats-bookmarks
+          span
+            = @bookmarks.count
+          p
+            = t("models.bookmark.name").pluralize
+
+        .col-sm-4.stats-tags
+          span
+            = @tags.count
+          p
+            = t("models.tag.name").pluralize
+
+  .col-sm-9.content
+    .row.content-head
+      .col-sm-9.col-lg-10.content-head-title
+        h4.data-receiver
+          = t("models.bookmark.name").pluralize
+
+        = link_to fa_icon(t("methods.create.icon")), new_bookmark_path, class: "btn btn-xs btn-round btn-primary"
+
+      .col-sm-3.col-lg-2.content-head-actions
+        .btn-group.btn-group-justified.btn-md
+          = link_to fa_icon(t("models.collection.icon")), "", class: "btn btn-default btn-bmk-empty", data: { url: collections_path, target: t("models.collection.name") }
+
+          = link_to fa_icon(t("models.bookmark.icon")), "", class: "btn btn-default btn-bmk-empty", data: { url: bookmarks_path, target: t("models.bookmark.name") }
+
+          = link_to fa_icon(t("models.tag.icon")), "", class: "btn btn-default btn-bmk-empty", data: { url: tags_path, target: t("models.tag.name") }
+
+    .row.content-form
+      .col-sm-12
+
+    .row.content-data
+      .col-xs-12

@@ -22,3 +22,17 @@ $(".bmk-container").hover( function() {
 
   $("#bmk-actions-" + id).toggleClass("hidden");
 });
+
+$(".content-head-actions a").click( function(event) {
+  event.preventDefault();
+
+  $.ajax({
+    url: $(this).data("url") + ".json",
+    type: "GET",
+    success: function(data) {
+      $(".content-data").html(data);
+    }
+  });
+
+  return false;
+});

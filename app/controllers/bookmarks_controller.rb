@@ -10,12 +10,10 @@ class BookmarksController < ApplicationController
 
     @bookmarks = paginate bookmarks
 
-    respond_with @bookmarks
-  end
+    @collections = Collection.all
+    @tags = Bookmark.all
 
-  # GET /bookmarks/:id
-  def show
-    respond_with bookmark
+    respond_with @bookmarks
   end
 
   # GET /bookmarks/new
@@ -28,25 +26,24 @@ class BookmarksController < ApplicationController
     new_params = bookmark_params.merge(user: current_user)
 
     @bookmark = Bookmark.new(new_params)
-   # IMGKit.new(@bookmark.url).to_file('./tmp/pictures/temp-pic.png', size: 100, quality: 100)x
 
-    url = @bookmark.url
-    kit = IMGKit.new(url, height: 700)
-    img = kit.to_img(:png)
-    file = Tempfile.new(["template_#{@bookmark.id}", '.png'], 'tmp/pictures', encoding: "ascii-8bit")
+    # url = @bookmark.url
+    # kit = IMGKit.new(url, height: 700)
+    # img = kit.to_img(:png)
+    # file = Tempfile.new(["template_#{@bookmark.id}", '.png'], 'tmp/pictures', encoding: "ascii-8bit")
 
-    file.write(img)
-    file.flush
-    @bookmark.snapshot = file
+    # file.write(img)
+    # file.flush
+    # @bookmark.snapshot = file
 
     if @bookmark.save
       flash[:notice] = 'Success!'
-      respond_with @bookmark
+      redirect_to bookmarks_path
     else
       respond_with @bookmark, action: :new
     end
 
-    file.unlink
+    # file.unlink
   end
 
   # GET /bookmarks/:id/edit
@@ -56,7 +53,13 @@ class BookmarksController < ApplicationController
 
   # PATCH/PUT /bookmarks/:id
   def update
-    respond_with bookmark.update(bookmark_params)
+    if bookmark.update(bookmark_params)
+      flash[:notice] = 'Error'
+      respond_with bookmark
+    else
+      flash[:notice] = 'Success'
+      respond_with bookmark, action: :new
+    end
   end
 
   # DELETE /bookmarks/:id
@@ -73,30 +76,24 @@ class BookmarksController < ApplicationController
   # Additional Methods
 
   def regenerate_snapshot
-    @bookmark = Bookmark.find(params[:bookmark_id])
-    url = @bookmark.url
+    url = "http://philipwalton.github.io/solved-by-flexbox/"
     kit = IMGKit.new(url, height: 700)
     img = kit.to_img(:png)
-    file = Tempfile.new(["#{@bookmark.id}", '.png'], 'tmp/pictures', encoding: "ascii-8bit")
+    file = Tempfile.new(["#{bookmark.id}", '.png'], 'tmp/pictures', encoding: "ascii-8bit")
 
     file.write(img)
     file.flush
-    @bookmark.snapshot = file
+
+    bookmark.snapshot = file
     file.unlink
 
-
-    if @bookmark.update(bookmark_params)
-      flash[:notice] = "success"
-      respond_with @bookmark, location: @bookmark
-    else
-      respond_with @bookmark, action: :edit
-    end
+    redirect_to bookmarks_path
   end
 
   private
 
     def bookmark
-      @bookmark = Bookmark.for_user(current_user).find_by_id(params[:id])
+      @bookmark = Bookmark.for_user(current_user).find_by_id(78)
     end
 
     def bookmark_params

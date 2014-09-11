@@ -1,46 +1,24 @@
 .row
-  .col-sm-12
-    = simple_form_for @bookmark, html: { class: "form-horizontal" } do |f|
 
-      - if @bookmark.errors.any?
-        #error_explanation
-          h2 = "#{pluralize(@bookmark.errors.count, "error")} prohibited this bookmark from being saved:"
-          ul
-            - @bookmark.errors.full_messages.each do |message|
-              li = message
+  = simple_form_for @bookmark, html: { class: "" } do |f|
 
+    .col-sm-12
+      = f.input :name, label: false, input_html: { value: params[:name] }
+
+    .col-sm-12
+      = f.input :description, input_html: { value: params[:description] }
+
+    .col-sm-12
       .row
-        .col-sm-6
-          .col-sm-12
+        .col-sm-1
+          .btn-group.btn-group-justified
+            = link_to fa_icon(t("models.tag.icon")), "", data: { target: t("models.tag.name").downcase }
+            = link_to fa_icon(t("models.bookmark.elements.icons.url")), "", data: { target: t("models.bookmark.elements.url").downcase }
 
-            - if @bookmark.new_record?
+        .col-sm-11
+          div class=".#{t("models.tag.name").downcase}"
+            = f.input :tag_list, placeholder: t("models.tag.name").pluralize, label: false
 
-              = f.input :name, input_html: { value: params[:name] }
+          div class=".#{t("models.tag.name").downcase}"
 
-            - else
-
-              = f.input :name
-
-      .row
-        .col-sm-6
-          .col-sm-12
-
-            - if @bookmark.new_record?
-
-              = f.input :url, input_html: { value: params[:url] }
-
-            - else
-
-              = f.input :url
-
-      .row
-        .col-sm-6
-          .col-sm-12
-            = f.input :description
-
-      .row
-        .col-sm-6
-          .col-sm-12
-            = f.input :tag_list
-
-      .actions = f.submit 'Save', class: "btn btn-primary btn-md"
+    .actions = f.submit 'Save', class: "btn btn-primary btn-md"
