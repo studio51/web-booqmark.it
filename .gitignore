@@ -36,3 +36,4 @@ config.codekit
 # Assets
 
 app/assets/stylesheets/.sass*
+config.codekit
