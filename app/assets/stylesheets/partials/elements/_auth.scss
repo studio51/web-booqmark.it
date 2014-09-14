@@ -1,0 +1,82 @@
+/* line 4, /vagrant/app/assets/stylesheets/partials/elements/_auth.scss */
+.auth-splash {
+  border-bottom: 1px solid #efefef;
+}
+
+/* line 8, /vagrant/app/assets/stylesheets/partials/elements/_auth.scss */
+.auth-splash .auth-logo {
+  padding: 100px;
+}
+
+/* line 6, /vagrant/app/assets/stylesheets/partials/elements/_auth.scss */
+/* line 14, /vagrant/app/assets/stylesheets/partials/elements/_auth.scss */
+.auth-form .panel {
+  border: none;
+  box-shadow: none !important;
+}
+
+/* line 18, /vagrant/app/assets/stylesheets/partials/elements/_auth.scss */
+.auth-form .panel-body .form-group {
+  margin: 0;
+  margin-top: 5px;
+}
+
+/* line 22, /vagrant/app/assets/stylesheets/partials/elements/_auth.scss */
+.auth-form .panel-body .form-group:nth-child(even) {
+  /*   margin-top: 5px; */
+}
+
+/* line 25, /vagrant/app/assets/stylesheets/partials/elements/_auth.scss */
+.auth-form .panel-body .form-control {
+  border-color: #efefef;
+  box-shadow: none;
+  border-radius: 2px;
+  margin: 0 !important;
+  padding: 10px 15px !important;
+  height: 40px;
+    font-family: light;
+}
+
+/* line 10, /vagrant/app/assets/stylesheets/partials/elements/_auth.scss */
+/* line 35, /vagrant/app/assets/stylesheets/partials/elements/_auth.scss */
+.auth-form .panel-body {
+  padding: 0;
+}
+
+/* line 39, /vagrant/app/assets/stylesheets/partials/elements/_auth.scss */
+.auth-form .panel-footer {
+  background: transparent;
+  padding: 15px 0;
+  border: none !important;
+  border-radius: none !important;
+}
+
+.auth-form .panel-footer .btn {
+  border-radius: 2px;
+  border: none;
+  font-family: light;
+}
+
+/* line 14, /vagrant/app/assets/stylesheets/partials/elements/_auth.scss */
+/* line 48, /vagrant/app/assets/stylesheets/partials/elements/_auth.scss */
+.auth-form .panel-header {
+  border: 1px solid #efefef;
+  border-top-left-radius: 2px;
+  border-top-right-radius: 2px;
+  padding: 15px;
+  margin-top: -51px;
+}
+
+@media(min-width: 768px) {
+  .auth-form .panel-header {
+    margin-top: -52px;
+  }
+}
+
+/* line 21, /vagrant/app/assets/stylesheets/partials/elements/_auth.scss */
+/* line 57, /vagrant/app/assets/stylesheets/partials/elements/_auth.scss */
+.auth-form .panel-header h2 {
+  margin: 0;
+  font-family: light;
+  font-size: 18px;
+}

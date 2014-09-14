@@ -1,0 +1,76 @@
+
+/* line 1, /vagrant/app/assets/stylesheets/partials/elements/_head.scss */
+nav {
+  padding: 15px 0;
+  border-bottom: 1px solid #efefef;
+}
+
+/* line 6, /vagrant/app/assets/stylesheets/partials/elements/_head.scss */
+.navbar-brand {
+  display: inline-block;
+  padding: 0 !important;
+}
+
+/* line 11, /vagrant/app/assets/stylesheets/partials/elements/_head.scss */
+.navbar-brand img {
+  width: 230px;
+  color: #efefef;
+}
+.navbar-user {
+}
+
+/* line 18, /vagrant/app/assets/stylesheets/partials/elements/_head.scss */
+.navbar-user .user-identity p {
+  margin: 0;
+  font-family: "light";
+}
+
+/* line 22, /vagrant/app/assets/stylesheets/partials/elements/_head.scss */
+.navbar-user .user-identity {
+  vertical-align: middle !important;
+  display: inline-block !important;
+  font-size: 12px;
+  padding: 17px 0 0;
+}
+
+/* line 30, /vagrant/app/assets/stylesheets/partials/elements/_head.scss */
+.navbar-user .user-initals-email {
+  margin: 0 10px;
+}
+
+/* line 33, /vagrant/app/assets/stylesheets/partials/elements/_head.scss */
+.navbar-user .user-initals-email span {
+  border: 2px solid #428bca;
+  padding: 13px 10px 8px;
+  border-radius: 250px;
+  display: inline-block;
+  font-size: 18px;
+}
+
+/* line 42, /vagrant/app/assets/stylesheets/partials/elements/_head.scss */
+.navbar-user .user-initals-email .btn {
+  border-radius: 250px;
+  vertical-align: bottom !important;
+  margin-left: -15px !important;
+  border: 2px solid #fff;
+  margin: 0;
+
+}
+
+/* line 50, /vagrant/app/assets/stylesheets/partials/elements/_head.scss */
+.navbar-user .btn {
+  border: none;
+  padding: 2px 3px 0px 4px !important;
+  display: inline-block;
+  text-align: center;
+  border-radius: 2px;
+  margin: 14px 0;
+}
+
+/* line 59, /vagrant/app/assets/stylesheets/partials/elements/_head.scss */
+.navbar-user .btn i {
+  font-size: 10px;
+  width: 15px;
+  height: 12px;
+  vertical-align: middle;
+}

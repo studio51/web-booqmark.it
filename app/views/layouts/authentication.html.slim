@@ -18,19 +18,15 @@ html lang="en"
 
   body
 
-    - if user_signed_in?
-
-      = render "shared/header"
-
-      .container
-
-        = render "shared/sub_header"
-
     .container
-      .row
-        .col-sm-4
+      .row.auth-splash
+        .col-sm-12
+          .row.auth-logo
+            .col-sm-6.col-sm-offset-3
+              = image_tag "logo-bold.svg", class: "img-responsive"
 
-        .col-sm-8
+      .row.auth-form
+        .col-sm-6.col-sm-offset-3
 
           = yield
 

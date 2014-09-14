@@ -1,11 +1,12 @@
 source 'https://rubygems.org'
+source 'https://rails-assets.org'
 
-gem 'rails', '4.1.5'
+gem 'rails', '4.1.6'
 
 gem 'mysql2'
 gem 'unicorn'
 
-gem 'devise', github: 'plataformatec/devise', branch: 'lm-rails-4-2'
+gem 'devise'
 
 gem 'meta-tags'
 ###############
@@ -31,11 +32,12 @@ gem 'sprockets'
 gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.0.0'
 
-gem 'ember-rails'
-gem 'ember-source', '1.5.0' # or the version you need
-
-gem 'bootstrap-sass', '~> 3.1.1'
+gem 'bootstrap-sass', '~> 3.2.0'
 gem 'font-awesome-rails'
+
+
+gem 'bh', '~> 1.0'
+# gem 'autoprefixer-rails'
 
 gem 'slim-rails'
 gem 'simple_form', github: 'plataformatec/simple_form', branch: 'master'

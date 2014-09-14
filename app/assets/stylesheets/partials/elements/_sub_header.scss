@@ -1,0 +1,51 @@
+/* line 2, /vagrant/app/assets/stylesheets/partials/elements/_sub_header.scss */
+.sub-header {
+  border-bottom: 1px solid #efefef;
+  padding: 15px 0;
+}
+
+/* line 7, /vagrant/app/assets/stylesheets/partials/elements/_sub_header.scss */
+.sub-header h3 {
+  margin: 0;
+  display: inline-block;
+  padding: 5px 0 3px;
+}
+
+
+
+/* line 14, /vagrant/app/assets/stylesheets/partials/elements/_sub_header.scss */
+.sub-header .btn {
+  border: none;
+  display: inline-block;
+  vertical-align: middle;
+  margin: -5px 0 0 10px;
+  padding: 3px 6px 0px !important;
+  border-radius: 2px;
+  position: relative;
+}
+
+.sub-header .btn:before {
+  content: '';
+  position: absolute;
+  left: -10px;
+  top: 5px;
+  border-left: 5px solid transparent;
+  border-top: 5px solid transparent;
+  border-right: 5px solid $brand-primary;
+  border-bottom: 5px solid transparent;
+}
+
+/* line 23, /vagrant/app/assets/stylesheets/partials/elements/_sub_header.scss */
+.sub-header .btn i {
+  height: 12px;
+}
+
+/* line 27, /vagrant/app/assets/stylesheets/partials/elements/_sub_header.scss */
+.sub-header .stats {
+}
+
+/* line 31, /vagrant/app/assets/stylesheets/partials/elements/_sub_header.scss */
+.sub-header .stats p {
+  margin: 0;
+  font-size: 10px;
+}

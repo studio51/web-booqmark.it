@@ -32,3 +32,11 @@ en:
 
     too_short: "requires at least %{count} characters"
     too_long: "%{count} characters is the maximum allowed"
+
+    placeholder:
+      email: "Email address"
+      password: "Password"
+      user:
+        email: "Email address"
+        password: "Password"
+        password_confirmation: "Password confirmation"

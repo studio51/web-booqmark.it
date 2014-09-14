@@ -1,0 +1,34 @@
+nav role="navigation"
+  .container
+    .navbar-header
+      = link_to image_tag("logo-bold.svg",
+          title: t("app.description"),
+          alt: t("app.name"),
+          class: "img-responsive"), root_path, class: "navbar-brand"
+
+    ul.nav.navbar-nav.navbar-right.navbar-user
+      li.user-identity
+        p.text-light
+          = current_user.name
+
+      li.user-initals-email
+
+        - if !current_user.email.empty?
+
+          span
+            = current_user.initials
+
+        - else
+
+          span
+            = current_user.email
+
+        = link_to fa_icon(t("models.settings.icon")), "/",
+            title: t("models.settings.name"),
+            class: "btn btn-xs btn-primary btn-round"
+
+      li
+        = link_to fa_icon(t("auth.out.icon")), destroy_user_session_path,
+            method: :delete,
+            title: t("auth.out.name"),
+            class: "btn btn-xs btn-danger"

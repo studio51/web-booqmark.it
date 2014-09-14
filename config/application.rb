@@ -7,6 +7,12 @@ Bundler.require(*Rails.groups)
 
 module Bookmarkit
   class Application < Rails::Application
+    config.sass do |s|
+      preferred_syntax = :scss
+      line_comments = false
+      cache = false
+    end
+
     config.generators do |g|
       g.template_engine :slim
       g.test_framework :rspec,

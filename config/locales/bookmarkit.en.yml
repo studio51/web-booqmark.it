@@ -7,8 +7,16 @@ en:
 
   app:
     logo: ""
-    name: "bookmark.it"
+    name: "booqmark.it"
     description: "Have your Bookmarks anywhere"
+
+  auth:
+    in:
+      name: "Sign in"
+    out:
+      name: "Sign out"
+    new:
+      name: "Register"
 
   messages:
     error:
