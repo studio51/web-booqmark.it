@@ -1,5 +1,4 @@
 source 'https://rubygems.org'
-source 'https://rails-assets.org'
 
 gem 'rails', '4.1.6'
 
@@ -25,7 +24,7 @@ gem 'acts-as-taggable-on'
 #
 # https://github.com/mbleigh/acts-as-taggable-on
 
-gem 'jquery-rails', github: 'rails/jquery-rails', branch: '3-1-stable'
+gem 'jquery-rails'
 gem 'sass-rails'
 
 gem 'sprockets'
@@ -35,12 +34,17 @@ gem 'coffee-rails', '~> 4.0.0'
 gem 'bootstrap-sass', '~> 3.2.0'
 gem 'font-awesome-rails'
 
-
 gem 'bh', '~> 1.0'
-# gem 'autoprefixer-rails'
+gem 'autoprefixer-rails'
 
+# group :assets do
+#    gem 'compass-rails'
+
+#  end
+
+gem 'ledermann-rails-settings'
 gem 'slim-rails'
-gem 'simple_form', github: 'plataformatec/simple_form', branch: 'master'
+gem 'simple_form', github: "plataformatec/simple_form", branch: "rails-4-2"
 
 gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
