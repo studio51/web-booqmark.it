@@ -14,9 +14,55 @@
  *= require font-awesome
 */
 
+/* Globals */
+
+$border-default-color: #dcdcdc;
+$border-radius-base: 2px;
+
+$global-padding: 15px;
+
+  /* Bootstrap */
+
+    /* Classes */
+
+    $header-class: header;
+    $navbar-class: navbar;
+    $panel-class: panel;
+    $form-class: form;
+    $alert-class: alert;
+    $button-class: btn;
+
+    /* Variables */
+
+    $brand-default: #F1F5F8;
+    $brand-info: #AC86E8;
+    $brand-primary: #66B5F3;
+    $brand-success: #6BC868;
+    $brand-purple: #AC86E8;
+    $brand-warning: rgba( 241, 196, 15, 1 );
+    $brand-danger: #EF7955;
+
+    $bootstrap-classes:
+      default $brand-default,
+      primary $brand-primary,
+      success $brand-success,
+      info $brand-info,
+      warning $brand-warning,
+      danger $brand-danger,
+      purple $brand-purple;
+
+  /* Booqmark.it */
+
+    /* Classes */
+
+    $auth-class: auth;
+
 @import "mixins/mixins";
 
-// @import "partials/bootstrap_override";
+@import "partials/elements/reset";
+@import "partials/elements/typography";
+
+@import "partials/bootstrap_override";
 @import "bootstrap";
 
 @import "partials/booqmarkit";

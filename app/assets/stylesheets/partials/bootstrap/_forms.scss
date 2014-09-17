@@ -1,0 +1,27 @@
+$input-border: $border-default-color;
+$input-border-radius: $border-radius-base;
+
+.#{$form-class}-control {
+  box-shadow: none !important;
+  font-family: 'light' !important;
+  font-size: 12px !important;
+  height: 40px !important;
+  padding: $global-padding;
+
+  &:focus {
+    box-shadow: none !important;
+  }
+
+  .chrome & {
+    padding: $global-padding $global-padding ($global-padding - 2) !important;
+  }
+}
+
+.#{$form-class}-group {
+  margin-bottom: 0 !important;
+  margin-top: 5px;
+}
+
+::placeholder {
+  color: $border-default-color;
+}

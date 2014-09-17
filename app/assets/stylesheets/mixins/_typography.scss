@@ -1,12 +1,3 @@
-// @each $font-face in font-1, font-2, ... {
-// @font-face {
-// font-family: $font-face; font-style: normal; font-weight: normal;
-// src: url('/path/to/font/#{$font-face}.eot');
-// src: url('/path/to/font/#{$font-face}.eot?') format('eot'),
-// url('/path/to/font/#{$font-face}.woff') format('woff'),
-// url('/path/to/font/#{$font-face}.ttf') format('truetype');
-// }
-// }
 
 @font-face {
     font-family: 'bold';
@@ -20,3 +11,4 @@
     font-weight: normal;
     font-style: normal;
 }
+

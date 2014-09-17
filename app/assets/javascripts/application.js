@@ -12,6 +12,7 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require vendor
 
 $(".bmk-container").hover( function() {
   var parent, id;

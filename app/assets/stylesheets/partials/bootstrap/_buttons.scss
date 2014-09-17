@@ -1,15 +1,42 @@
-.btn {
-  &-outline & {
-    border-width: 2px;
-    border-style: solid;
-    background-color: transparent;
+$border-radius-large: 2px;
+$border-radius-small: 2px;
+
+.#{$button-class} {
+  border: none !important;
+  font-family: 'light';
+}
+
+.#{$button-class}-round {
+  border-radius: 250px !important;
+}
+
+.#{$button-class}-outline {
+  background-color: transparent;
+  border-style: solid;
+  border-width: 2px;
+}
+
+@each $class in $bootstrap-classes {
+  $name: nth($class, 1);
+  $color: nth($class, 2);
+
+  .#{$button-class}-#{$name} {
+    background-color: $color;
+    color: #fff;
 
     &:hover {
-      background-color: transparent;
+      background-color: darken($color, 10);
     }
-  }
 
-  &-round & {
-    border-radius: 250px !important;
+    &.#{$button-class}-outline {
+      border-color: $color;
+      color: $color;
+
+      &:hover {
+        color: #fff;
+        background-color: $color;
+        border-color: transparent;
+      }
+    }
   }
 }

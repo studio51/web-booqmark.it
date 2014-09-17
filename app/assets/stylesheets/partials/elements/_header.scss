@@ -1,76 +1,73 @@
+$navbar-default-border: $border-default-color;
+$navbar-padding-horizontal: 0;
 
-/* line 1, /vagrant/app/assets/stylesheets/partials/elements/_head.scss */
-nav {
-  padding: 15px 0;
-  border-bottom: 1px solid #efefef;
+.#{$navbar-class} {
+  background-color: transparent;
+  border-color: $navbar-default-border;
+  margin-bottom: 0;
+  padding-top: $global-padding;
+  padding-bottom: $global-padding;
 }
 
-/* line 6, /vagrant/app/assets/stylesheets/partials/elements/_head.scss */
-.navbar-brand {
+.#{$navbar-class}-brand {
   display: inline-block;
-  padding: 0 !important;
+  padding-top: $navbar-padding-horizontal;
+  padding-bottom: $navbar-padding-horizontal;
+
+  img {
+    width: 230px;
+    color: $border-default-color;
+  }
 }
 
-/* line 11, /vagrant/app/assets/stylesheets/partials/elements/_head.scss */
-.navbar-brand img {
-  width: 230px;
-  color: #efefef;
-}
-.navbar-user {
-}
+.#{$navbar-class}-user {
+  padding-right: $global-padding;
 
-/* line 18, /vagrant/app/assets/stylesheets/partials/elements/_head.scss */
-.navbar-user .user-identity p {
-  margin: 0;
-  font-family: "light";
-}
+  .user-identity {
+    display: inline-block;
+    font-size: 12px;
+    padding-top: 17px;
+    vertical-align: middle;
 
-/* line 22, /vagrant/app/assets/stylesheets/partials/elements/_head.scss */
-.navbar-user .user-identity {
-  vertical-align: middle !important;
-  display: inline-block !important;
-  font-size: 12px;
-  padding: 17px 0 0;
-}
+    p {
+      margin: 0;
+      font-family: 'light';
+    }
+  }
 
-/* line 30, /vagrant/app/assets/stylesheets/partials/elements/_head.scss */
-.navbar-user .user-initals-email {
-  margin: 0 10px;
-}
+  .user-initals-email {
+    margin-left: 10px;
+    margin-right: 10px;
 
-/* line 33, /vagrant/app/assets/stylesheets/partials/elements/_head.scss */
-.navbar-user .user-initals-email span {
-  border: 2px solid #428bca;
-  padding: 13px 10px 8px;
-  border-radius: 250px;
-  display: inline-block;
-  font-size: 18px;
-}
+    span {
+      border: 2px solid $brand-primary;
+      border-radius: 250px;
+      display: inline-block;
+      font-size: 18px;
+      padding: 13px 10px 8px;
+    }
 
-/* line 42, /vagrant/app/assets/stylesheets/partials/elements/_head.scss */
-.navbar-user .user-initals-email .btn {
-  border-radius: 250px;
-  vertical-align: bottom !important;
-  margin-left: -15px !important;
-  border: 2px solid #fff;
-  margin: 0;
+    .btn {
+      border: 2px solid #fff;
+      margin-left: -15px !important;
+      padding-left: 3px;
+      padding-right: 4px;
+      vertical-align: bottom !important;
+    }
+  }
 
-}
+  .btn {
+    display: inline-block;
+    margin-top: 14px;
+    margin-bottom: 14px;
+    padding: 2px 3px 0 4px;
+    text-align: center;
 
-/* line 50, /vagrant/app/assets/stylesheets/partials/elements/_head.scss */
-.navbar-user .btn {
-  border: none;
-  padding: 2px 3px 0px 4px !important;
-  display: inline-block;
-  text-align: center;
-  border-radius: 2px;
-  margin: 14px 0;
-}
-
-/* line 59, /vagrant/app/assets/stylesheets/partials/elements/_head.scss */
-.navbar-user .btn i {
-  font-size: 10px;
-  width: 15px;
-  height: 12px;
-  vertical-align: middle;
+    i {
+      font-size: 10px;
+      height: 12px;
+      vertical-align: middle;
+      width: 15px;
+    }
+  }
 }
