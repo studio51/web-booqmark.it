@@ -1,31 +1,32 @@
 .row.sub-header
-  .col-sm-8
-    h3.text-light
-       = "Bookmarks"
+  .col-xs-12
+    .container
+      .row
+        .col-sm-8
+          h3.text-light
+             = "Bookmarks"
 
-    = link_to fa_icon(t("methods.create.icon")), new_bookmark_path,
-        title: "Add new Bookmark",
-        class: "btn btn-primary btn-xs"
+          = link_to fa_icon(t("methods.create.icon")), new_bookmark_path, title: t("methods.create._new", model: t("models.bookmark.name")), class: "btn btn-primary btn-xs"
 
-  .col-sm-4
-    .row.stats
-      .col-sm-4.stats-collections
-        span
-          = @collections.count
+        .col-sm-4
+          .row.stats
+            .col-sm-4.stats-collections
+              span
+                = 23
 
-        p.text-light
-          = t("models.collection.name").pluralize
+              p.text-light
+                = t("models.collection.name").pluralize
 
-      .col-sm-4.stats-bookmarks
-        span
-          = @bookmarks.count
+            .col-sm-4.stats-bookmarks
+              span
+                = 321
 
-        p.text-light
-          = t("models.bookmark.name").pluralize
+              p.text-light
+                = t("models.bookmark.name").pluralize
 
-      .col-sm-4.stats-tags
-        span
-          = @tags.count
+            .col-sm-4.stats-tags
+              span
+                = 1054
 
-        p.text-light
-          = t("models.tag.name").pluralize
+              p.text-light
+                = t("models.tag.name").pluralize

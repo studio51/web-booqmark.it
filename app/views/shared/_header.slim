@@ -1,4 +1,4 @@
-nav role="navigation"
+nav.navbar.navbar-default role="navigation"
   .container
     .navbar-header
       = link_to image_tag("logo-bold.svg",
@@ -7,7 +7,7 @@ nav role="navigation"
           class: "img-responsive"), root_path, class: "navbar-brand"
 
     ul.nav.navbar-nav.navbar-right.navbar-user
-      li.user-identity
+      li.user-identity.hidden-xs
         p.text-light
           = current_user.name
 
@@ -23,7 +23,7 @@ nav role="navigation"
           span
             = current_user.email
 
-        = link_to fa_icon(t("models.settings.icon")), "/",
+        = link_to fa_icon(t("models.settings.icon")), settings_path,
             title: t("models.settings.name"),
             class: "btn btn-xs btn-primary btn-round"
 
@@ -32,3 +32,4 @@ nav role="navigation"
             method: :delete,
             title: t("auth.out.name"),
             class: "btn btn-xs btn-danger"
+
