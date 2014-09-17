@@ -10,6 +10,16 @@ class User < ActiveRecord::Base
   has_many :bookmarks
   has_many :tags, through: :bookmarks
 
+  has_settings do |s|
+    s.key :authentication, defaults: {
+      login: 'email'
+    }
+
+    s.key :application, defaults: {
+      theme: 'default'
+    }
+  end
+
   def name
     "#{profile.first_name} #{profile.last_name}"
   end
