@@ -1,9 +1,9 @@
 .panel.panel-default
-  .panel-header
-    h2
-      = "Sign up"
+  .panel-heading
+    h4
+      = t("auth.new.name")
 
-  = simple_form_for resource, as: :resource_name, url: registration_path(resource_name) do |f|
+  = simple_form_for resource, as: resource_name, url: registration_path(resource_name) do |f|
 
     .panel-body
 
@@ -12,9 +12,8 @@
       = f.input :password_confirmation, required: true, label: false
 
     .panel-footer
-
       .row
         .col-sm-3.col-sm-offset-9
-          = f.button :submit, "Sign up", class: "btn btn-block btn-primary"
+          = f.button :submit, t("auth.new.name"), class: "btn btn-block btn-primary"
 
 = render "devise/shared/links"

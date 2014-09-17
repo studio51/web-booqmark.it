@@ -1,18 +1,17 @@
 .panel.panel-default
-  .panel-header
-    h2
-      = "Forgot your password?"
+  .panel-heading
+    h4
+      = t("auth.recover.name")
 
-  = simple_form_for resource, as: :resource_name, url: password_path(resource_name), html: { method: :post } do |f|
+  = simple_form_for resource, as: resource_name, url: password_path(resource_name), html: { method: :post } do |f|
 
     .panel-body
 
       = f.input :email, required: true, autofocus: true, label: false
 
     .panel-footer
-
       .row
-        .col-sm-6.col-sm-offset-6
-          = f.button :submit, "Send me reset password instructions", class: "btn btn-block btn-primary"
+        .col-xs-12.col-sm-6.col-sm-offset-6
+          = f.button :submit, t("auth.recover.name"), class: "btn btn-block btn-primary"
 
 = render "devise/shared/links"

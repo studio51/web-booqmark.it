@@ -1,22 +1,31 @@
 .panel.panel-default
-  .panel-header
-    h2
-      = "Sign in"
+  .panel-heading
+    h4
+      = t("auth.in.name")
 
-  = simple_form_for resource, as: :resource_name, url: session_path(resource_name) do |f|
+  = simple_form_for resource, as: resource_name, url: session_path(resource_name) do |f|
 
     .panel-body
+      = devise_error_messages!
+
+      - flash.each do |type, message|
+        - if message.is_a?(String)
+          = alert_box context: type.to_s, dismissible: true do
+            = fa_icon(t("messages.#{type.to_s}.icon"), text: message)
 
       = f.input :email, autofocus: true, label: false
       = f.input :password, label: false
 
     .panel-footer
-
       .row
-        .col-sm-3
-          = f.input :remember_me, as: :boolean
+        .col-xs-7.col-sm-9
+          label.switch for="user_remember_me"
+            = f.input_field :remember_me, as: :boolean, label: false,
+              boolean_style: :inline,
+              checked: true
+            span
 
-        .col-sm-3.col-sm-offset-6
-          = f.button :submit, "Sign In", class: "btn btn-block btn-primary"
+        .col-xs-5.col-sm-3
+          = f.button :submit, t("auth.in.name"), class: "btn btn-block btn-primary"
 
 = render "devise/shared/links"

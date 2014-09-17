@@ -17,6 +17,8 @@ en:
       name: "Sign out"
     new:
       name: "Register"
+    recover:
+      name: "Recover Password"
 
   messages:
     error:
@@ -50,9 +52,11 @@ en:
     create:
       name: "Create"
       new: "New"
+      _new: "Add new %{model}"
     read:
       name: "Read"
       view: "View"
+      _view: "View %{model}"
     update:
       name: "Update"
     destroy:

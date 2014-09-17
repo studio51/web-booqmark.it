@@ -9,11 +9,13 @@ en:
 
   messages:
     error:
-      icon: "error"
+      icon: "frown-o"
     success:
-      icon: "success"
+      icon: "smile-o"
     info:
-      icon: "info"
+      icon: "lightbulb-o"
+    danger:
+      icon: "frown-o"
 
   models:
     dashboard:

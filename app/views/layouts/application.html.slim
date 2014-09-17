@@ -16,23 +16,11 @@ html lang="en"
     = stylesheet_link_tag "application", media: "all"
     = csrf_meta_tags
 
-  body
+  body data-grid-color="green" data-grid-framework="b3" data-grid-gutterwidth="30px" data-grid-nbcols="12" data-grid-opacity="0.1" data-grid-zindex="1"
 
-    - if user_signed_in?
+    = render "shared/header"
 
-      = render "shared/header"
-
-      .container
-
-        = render "shared/sub_header"
-
-    .container
-      .row
-        .col-sm-4
-
-        .col-sm-8
-
-          = yield
+    = yield
 
     = render "shared/footer"
 
