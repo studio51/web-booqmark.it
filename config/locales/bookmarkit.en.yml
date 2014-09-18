@@ -39,6 +39,10 @@ en:
       name: "Settings"
     collection:
       name: "Collection"
+      elements:
+        status:
+          private: "This Collection is private"
+          public: "This Collection is public"
     bookmark:
       name: "Bookmark"
       elements:

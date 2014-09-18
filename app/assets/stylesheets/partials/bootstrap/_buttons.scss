@@ -11,9 +11,9 @@ $border-radius-small: 2px;
 }
 
 .#{$button-class}-outline {
-  background-color: transparent;
-  border-style: solid;
-  border-width: 2px;
+  background-color: transparent !important;
+  border-style: solid !important;
+  border-width: 2px !important;
 }
 
 @each $class in $bootstrap-classes {
@@ -25,7 +25,7 @@ $border-radius-small: 2px;
     color: #fff;
 
     &:hover {
-      background-color: darken($color, 10);
+      background-color: darken($color, 10) !important;
     }
 
     &.#{$button-class}-outline {
@@ -33,9 +33,9 @@ $border-radius-small: 2px;
       color: $color;
 
       &:hover {
-        color: #fff;
-        background-color: $color;
-        border-color: transparent;
+        color: #fff !important;
+        background-color: $color !important;
+        border-color: transparent !important;
       }
     }
   }

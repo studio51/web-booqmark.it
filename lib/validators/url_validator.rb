@@ -11,7 +11,7 @@ module ActiveModel
       end
 
       def check_validity!
-        raise ArgumentError, "At least one URI protocol is required" if protocols.empty?
+        raise ArgumentError, 'At least one URI protocol is required' if protocols.empty?
       end
 
       def protocols

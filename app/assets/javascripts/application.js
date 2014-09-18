@@ -12,28 +12,5 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require bootstrap
 //= require vendor
-
-$(".bmk-container").hover( function() {
-  var parent, id;
-
-  parent = $(this);
-  id = parent.data("id");
-  console.log(id);
-
-  $("#bmk-actions-" + id).toggleClass("hidden");
-});
-
-$(".content-head-actions a").click( function(event) {
-  event.preventDefault();
-
-  $.ajax({
-    url: $(this).data("url") + ".json",
-    type: "GET",
-    success: function(data) {
-      $(".content-data").html(data);
-    }
-  });
-
-  return false;
-});

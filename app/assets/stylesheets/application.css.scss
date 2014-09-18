@@ -25,12 +25,12 @@ $global-padding: 15px;
 
     /* Classes */
 
-    $header-class: header;
-    $navbar-class: navbar;
-    $panel-class: panel;
-    $form-class: form;
-    $alert-class: alert;
-    $button-class: btn;
+    $header-class:  "header";
+    $navbar-class:  "navbar";
+    $panel-class:   "panel";
+    $form-class:    "form";
+    $alert-class:   "alert";
+    $button-class:  "btn";
 
     /* Variables */
 
@@ -55,7 +55,8 @@ $global-padding: 15px;
 
     /* Classes */
 
-    $auth-class: auth;
+    $auth-class:      "auth";
+    $bookmark-class:  "bmk";
 
 @import "mixins/mixins";
 

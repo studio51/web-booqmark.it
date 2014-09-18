@@ -3,7 +3,9 @@ $navbar-padding-horizontal: 0;
 
 .#{$navbar-class} {
   background-color: transparent;
-  border-color: $navbar-default-border;
+  border: none;
+  border-bottom: 1px solid $navbar-default-border;
+  border-radius: 0;
   margin-bottom: 0;
   padding-top: $global-padding;
   padding-bottom: $global-padding;
@@ -21,45 +23,40 @@ $navbar-padding-horizontal: 0;
 }
 
 .#{$navbar-class}-user {
-  padding-right: $global-padding;
 
   .user-identity {
-    display: inline-block;
-    font-size: 12px;
-    padding-top: 17px;
-    vertical-align: middle;
+    margin-right: 10px;
 
     p {
-      margin: 0;
-      font-family: 'light';
+      font-size: 11px;
+      display: inline-block;
+      padding-top: 11px;
     }
-  }
-
-  .user-initals-email {
-    margin-left: 10px;
-    margin-right: 10px;
 
     span {
       border: 2px solid $brand-primary;
       border-radius: 250px;
       display: inline-block;
       font-size: 18px;
+      margin-left: 10px;
       padding: 13px 10px 8px;
+      vertical-align: middle;
     }
 
     .btn {
-      border: 2px solid #fff;
-      margin-left: -15px !important;
-      padding-left: 3px;
-      padding-right: 4px;
-      vertical-align: bottom !important;
+      border: 2px solid #fff !important;
+      margin-bottom: -2px;
+      margin-left: -13px;
+      padding: 3px 5px 0 3px;
+      vertical-align: bottom;
     }
   }
 
+
   .btn {
+    color: #fff !important;
     display: inline-block;
-    margin-top: 14px;
-    margin-bottom: 14px;
+    margin-top: $global-padding;
     padding: 2px 3px 0 4px;
     text-align: center;
 

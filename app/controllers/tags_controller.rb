@@ -3,12 +3,10 @@ class CollectionsController < ApplicationController
 
   # GET /collections
   def index
-    tag_id ||= params[:id]
-
-    @collections = paginate Collection.for_user(current_user).order(created_at: :desc)
+    @tags = Tag.all
 
     respond_to do |format|
-      format.html { render partial: "collections" }
+      format.html { render partial: "tags" }
     end
   end
 
@@ -27,7 +25,7 @@ class CollectionsController < ApplicationController
 
   # POST /collections
   def create
-    @collection = Collection.new(collection_params.merge(users: [current_user]))
+    @collection = Collection.new(collection_params)
 
     respond_to do |format|
       if @collection.save
@@ -71,7 +69,6 @@ class CollectionsController < ApplicationController
     def collection_params
       params.require(:collection).permit(
         :name,
-        users: [],
         bookmarks: []
       )
     end

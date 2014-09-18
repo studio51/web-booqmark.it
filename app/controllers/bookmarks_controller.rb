@@ -1,7 +1,7 @@
 class BookmarksController < ApplicationController
   respond_to :html, :json
 
-  # GET /collections
+  # GET /bookmarks
   def index
     tag_id ||= params[:id]
 
@@ -10,10 +10,9 @@ class BookmarksController < ApplicationController
 
     @bookmarks = paginate bookmarks
 
-    @collections = Collection.all
-    @tags = Bookmark.all
-
-    respond_with @bookmarks
+    respond_to do |format|
+      format.html { render partial: "bookmarks" }
+    end
   end
 
   # GET /bookmarks/new
@@ -21,7 +20,7 @@ class BookmarksController < ApplicationController
     @bookmark = Bookmark.new
   end
 
-  # POST /collections
+  # POST /bookmarks
   def create
     new_params = bookmark_params.merge(user: current_user)
 

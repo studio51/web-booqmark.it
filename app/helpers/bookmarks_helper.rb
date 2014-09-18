@@ -1,18 +1,22 @@
 module BookmarksHelper
 
-  def tags_presenter tags
-    if tags.any?
-      if tags.length > 5
-        remaining = tags.length - 5
+  def tags_presenter(tags)
+    max_tags = 4
 
-        @tags = "#{tags.first(5).map { |t| link_to t, tag_path(t.parameterize)}.join(', ')} .. + #{remaining} more".html_safe
+    if tags.any?
+      if tags.length > max_tags
+        remaining = tags.length - max_tags
+
+        @tags = "#{tags.first(max_tags).map { |t| link_to t, tag_path(t.parameterize), class: 'tag'}.join} #{link_to remaining, '', class: 'last'}".html_safe
       else
-        @tags = "#{tags.map { |t| link_to t, tag_path(t.parameterize)}.join(', ')}".html_safe
+        @tags = "#{tags.map { |t| link_to t, tag_path(t.parameterize), class: 'tag'}.join}".html_safe
       end
     else
-      @tags = fa_icon "", title: "This bookmark has no tags"
+      @tags = ""
     end
 
-    return fa_icon("tags") + @tags
+    content_tag :div, class: "bmk-tags" do
+      fa_icon("tags") + @tags
+    end
   end
 end

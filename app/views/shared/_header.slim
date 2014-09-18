@@ -1,35 +1,38 @@
 nav.navbar.navbar-default role="navigation"
   .container
     .navbar-header
+      = link_to fa_icon("user"), "#",
+          data: { target: "#navbar-collapse", toggle: "collapse" },
+          class: "navbar-toggle"
+
       = link_to image_tag("logo-bold.svg",
           title: t("app.description"),
           alt: t("app.name"),
           class: "img-responsive"), root_path, class: "navbar-brand"
 
-    ul.nav.navbar-nav.navbar-right.navbar-user
-      li.user-identity.hidden-xs
-        p.text-light
-          = current_user.name
+    #navbar-collapse.navbar-collapse.collapse
+      ul.nav.navbar-nav.navbar-right.navbar-user
+        li.user-identity
+          p.text-light
+            = current_user.name
 
-      li.user-initals-email
+          - if !current_user.email.empty?
 
-        - if !current_user.email.empty?
+            span.user-identity-initals
+              = current_user.initials
 
-          span
-            = current_user.initials
+          - else
 
-        - else
+            span.user-identity-email
+              = current_user.email
 
-          span
-            = current_user.email
+          = link_to fa_icon(t("models.settings.icon")), settings_path,
+              title: t("models.settings.name"),
+              class: "btn btn-xs btn-primary btn-round"
 
-        = link_to fa_icon(t("models.settings.icon")), settings_path,
-            title: t("models.settings.name"),
-            class: "btn btn-xs btn-primary btn-round"
-
-      li
-        = link_to fa_icon(t("auth.out.icon")), destroy_user_session_path,
-            method: :delete,
-            title: t("auth.out.name"),
-            class: "btn btn-xs btn-danger"
+        li
+          = link_to fa_icon(t("auth.out.icon")), destroy_user_session_path,
+              method: :delete,
+              title: t("auth.out.name"),
+              class: "btn btn-xs btn-danger"
 

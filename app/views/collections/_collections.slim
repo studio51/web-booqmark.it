@@ -1,0 +1,18 @@
+- @collections.each do |c|
+
+  .col-sm-3.collections
+    span class="#{c.status}"
+      title="#{c.status == 0 ? t('models.collection.elements.status.private') : t('models.collection.elements.status.public')}"
+
+    .row
+      .col-sm-12
+
+    .row
+      .col-sm-12
+        h4
+          = c.name
+
+    .row
+      .col-sm-12
+        p
+          = c.description
