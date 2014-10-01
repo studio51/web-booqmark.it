@@ -41,5 +41,5 @@ Rails.application.configure do
   config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
 
   config.reload_classes_only_on_change = false
-  config.serve_static_assets = false
+  config.serve_static_assets = true
 end

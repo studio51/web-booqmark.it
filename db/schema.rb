@@ -15,13 +15,13 @@ ActiveRecord::Schema.define(version: 20140917120657) do
 
   create_table "bookmarks", force: true do |t|
     t.integer  "user_id"
+    t.string   "name"
+    t.string   "url"
+    t.text     "description"
     t.string   "snapshot_file_name"
     t.string   "snapshot_content_type"
     t.integer  "snapshot_file_size"
     t.datetime "snapshot_updated_at"
-    t.string   "name"
-    t.string   "url"
-    t.text     "description"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
