@@ -2,7 +2,7 @@ $navbar-default-border: $border-default-color;
 $navbar-padding-horizontal: 0;
 
 .#{$navbar-class} {
-  background-color: transparent;
+  background-color: #fff;
   border: none;
   border-bottom: 1px solid $navbar-default-border;
   border-radius: 0;

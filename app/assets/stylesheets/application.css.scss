@@ -33,8 +33,8 @@ $global-padding: 15px;
     $button-class:  "btn";
 
     /* Variables */
-
-    $brand-default: #F1F5F8;
+    /* #F1F5F8 */
+    $brand-default: #EFF2F3;
     $brand-info: #AC86E8;
     $brand-primary: #66B5F3;
     $brand-success: #6BC868;
@@ -46,10 +46,10 @@ $global-padding: 15px;
       default $brand-default,
       primary $brand-primary,
       success $brand-success,
-      info $brand-info,
+      info    $brand-info,
       warning $brand-warning,
-      danger $brand-danger,
-      purple $brand-purple;
+      danger  $brand-danger,
+      purple  $brand-purple;
 
   /* Booqmark.it */
 

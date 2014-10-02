@@ -19,16 +19,14 @@ html lang="en"
   body data-grid-color="green" data-grid-framework="b3" data-grid-gutterwidth="30px" data-grid-nbcols="12" data-grid-opacity="0.1" data-grid-zindex="1"
 
     .container-fluid
-
       .row.auth-splash
         .col-sm-6.col-sm-offset-3
           = image_tag "logo-bold.svg", class: "img-responsive"
 
       .row.auth-form
         .col-sm-6.col-sm-offset-3
-
           = yield
 
-    = render "shared/footer"
+      = render partial: "shared/footer"
 
   = javascript_include_tag "application"
