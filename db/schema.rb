@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140917120657) do
+ActiveRecord::Schema.define(version: 20141007163415) do
 
   create_table "bookmarks", force: true do |t|
     t.integer  "user_id"
@@ -24,6 +24,7 @@ ActiveRecord::Schema.define(version: 20140917120657) do
     t.datetime "snapshot_updated_at"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean  "public",                default: false
   end
 
   create_table "bookmarks_collections", id: false, force: true do |t|
@@ -36,8 +37,12 @@ ActiveRecord::Schema.define(version: 20140917120657) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.text     "description"
-    t.boolean  "status",      default: false
     t.integer  "owner_id"
+    t.boolean  "public",            default: false
+    t.string   "icon_file_name"
+    t.string   "icon_content_type"
+    t.integer  "icon_file_size"
+    t.datetime "icon_updated_at"
   end
 
   create_table "collections_users", id: false, force: true do |t|

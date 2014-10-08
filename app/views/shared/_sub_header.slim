@@ -2,13 +2,13 @@
   .col-xs-12
     .container
       .row
-        .col-xs-12.col-sm-9.hidden-xs
+        .col-xs-12.col-sm-8
           h3.text-light
              = t("models.bookmark.name").pluralize
 
           = link_to fa_icon(t("methods.create.icon")), new_bookmark_path, title: t("methods.create._new", model: t("models.bookmark.name")), class: "btn btn-primary btn-xs"
 
-        .col-xs-12.col-sm-3
+        .col-xs-12.col-sm-4
           ul.nav.nav-justified.stats role="tablist"
             li.stats-collections
               = link_to "##{t("models.collection.name").downcase.pluralize}", data: { "tab-url" => collections_path, toggle: "tab", role: "tab" }, class: 'btn' do

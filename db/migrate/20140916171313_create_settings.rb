@@ -10,7 +10,8 @@ class CreateSettings < ActiveRecord::Migration
     add_index :settings, [
       :target_type,
       :target_id,
-      :var], unique: true
+      :var
+    ], unique: true
   end
 
   def self.down

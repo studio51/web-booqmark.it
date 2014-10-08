@@ -3,15 +3,10 @@ class BookmarksController < ApplicationController
 
   # GET /bookmarks
   def index
-    tag_id ||= params[:id]
-
-    bookmarks = Bookmark.for_user(current_user).order(created_at: :desc)
-    bookmarks = bookmarks.tags(tag_id) if tag_id
-
-    @bookmarks = paginate bookmarks
+    bookmarks = paginate current_user.bookmarks.order(created_at: :desc)
 
     respond_to do |format|
-      format.html { render partial: "bookmarks" }
+      format.html { render partial: "bookmarks", locals: { bookmarks: bookmarks }}
     end
   end
 
@@ -97,12 +92,12 @@ class BookmarksController < ApplicationController
 
     def bookmark_params
       params.require(:bookmark).permit(
-        :snapshot,
-        :name,
-        :url,
-        :description,
-        :tag_list,
         :user,
+        :name,
+        :description,
+        :url,
+        :tag_list,
+        :snapshot,
         collections: []
       )
     end

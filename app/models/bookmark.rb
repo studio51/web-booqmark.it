@@ -33,9 +33,14 @@ class Bookmark < ActiveRecord::Base
   # Methods
 
   def to_param
-    "#{id} #{name}".parameterize
+    [id, name].join(' ').parameterize
   end
 
+  #########
+  # Gets all the Bookmarks created/copied by the User
+  #
+  # @param: user_id
+  #
   def self.for_user(user)
     user.bookmarks
   end

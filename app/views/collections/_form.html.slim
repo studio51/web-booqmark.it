@@ -1,7 +1,8 @@
-= simple_form_for(@collection) do |f|
+= simple_form_for @collection, html: { multipart: true } do |f|
   = f.error_notification
 
   .form-inputs
+    = f.file_field :icon
     = f.input :name
 
   .form-actions

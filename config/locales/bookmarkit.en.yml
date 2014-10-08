@@ -40,29 +40,40 @@ en:
     collection:
       name: "Collection"
       elements:
-        status:
-          private: "This Collection is private"
-          public: "This Collection is public"
+        public:
+          false: "This Collection is private"
+          true: "This Collection is public, anyone can see it!"
     bookmark:
       name: "Bookmark"
       elements:
         url: "URL"
+        public:
+          false: "This Bookmark is private"
+          true: "This Bookmark is public, anyone can see it!"
     tag:
       name: "Tag"
     user:
       name: "User"
 
+
+
   methods:
+    show:
+      name: "Read"
+      alt: "View"
+      model: "View %{model}"
+
     create:
       name: "Create"
-      new: "New"
-      _new: "Add new %{model}"
-    read:
-      name: "Read"
-      view: "View"
-      _view: "View %{model}"
+      alt: "New"
+      model: "Add new %{model}"
+
     update:
       name: "Update"
+      alt: ""
+      model: "Update %{model}"
+
     destroy:
       name: "Destroy"
-      delete: "Delete"
+      alt: "Delete"
+      model: "Delete %{model}"

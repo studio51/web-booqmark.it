@@ -67,3 +67,66 @@ $global-padding: 15px;
 @import "bootstrap";
 
 @import "partials/booqmarkit";
+
+
+/* line 72, /vagrant/app/assets/stylesheets/application.css.scss */
+.table-object {
+  margin: 0;
+  padding: 15px 0;
+  border: 1px solid red;
+
+}
+
+/* line 76, /vagrant/app/assets/stylesheets/application.css.scss */
+.table-row {
+  border: 1px solid red;
+  background-color: #fff;
+  margin-bottom: 5px;
+  box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.3);
+  position: relative;
+  padding: 15px;
+}
+
+.table-row:last-child {
+  margin-bottom: 0;
+}
+
+
+.bmk-actions-container {
+  border: 1px solid red;
+  padding: 0;
+  display: table;
+
+
+}
+
+.bmk-actions-crud {
+  float: left;
+  border: 1px solid red;
+}
+
+/* line 108, /vagrant/app/assets/stylesheets/application.css.scss */
+.bmk-actions-expand {
+  border: 1px solid red;
+  float: right;
+  vertical-align: middle;
+  padding: 11px 0px 5px 10px;
+}
+
+
+[class*="bmk-public"] {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  top: 10px;
+  right: 10px;
+  border-radius: 250px;
+}
+
+.bmk-public-false {
+  background: $brand-success;
+}
+
+.bmk-public-true {
+  background: $brand-danger;
+}

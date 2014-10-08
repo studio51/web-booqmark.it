@@ -1,13 +1,16 @@
 class CreateBookmarks < ActiveRecord::Migration
   def self.up
     create_table :bookmarks do |b|
-      b.belongs_to :user
+      b.integer :user_id
 
       b.string :name
       b.string :url
-      b.text :description
+      b.text   :description
+
+      b.boolean :public, default: 0
 
       b.attachment :snapshot
+
       b.timestamps
     end
   end

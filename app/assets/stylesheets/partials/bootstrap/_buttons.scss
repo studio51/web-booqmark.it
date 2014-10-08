@@ -10,7 +10,7 @@ $border-radius-small: 2px;
   border-radius: 250px !important;
 }
 
-.#{$button-class}-outline {
+[class*="#{$button-class}-outline"] {
   background-color: transparent !important;
   border-style: solid !important;
   border-width: 2px !important;
@@ -28,7 +28,7 @@ $border-radius-small: 2px;
       background-color: darken($color, 10) !important;
     }
 
-    &.#{$button-class}-outline {
+    &[class*="#{$button-class}-outline"] {
       border-color: $color;
       color: $color;
 

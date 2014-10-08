@@ -1,0 +1,27 @@
+en:
+  author:
+    name: "Vlad Radulescu"
+    url: "http://www.creative-studio51.co.uk/"
+    company: "Studio51 © 2014"
+
+  description: "A simple Bookmarking service by Studio51©"
+
+  app:
+    logo: ""
+    name: "booqmark.it"
+    description: "Have your Bookmarks anywhere"
+
+  auth:
+    in:
+      name: "Sign in"
+
+    out:
+      name: "Sign out"
+
+    new:
+      name: "Register"
+
+    recover:
+      name: "Recover Password"
+
+

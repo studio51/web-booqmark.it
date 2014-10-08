@@ -1,18 +1,13 @@
-- @collections.each do |c|
+- collections.each do |c|
 
-  .col-sm-3.collections
-    span class="#{c.status}"
-      title="#{c.status == 0 ? t('models.collection.elements.status.private') : t('models.collection.elements.status.public')}"
+  .row
+    .col-sm-3
+      = image_tag c.icon.url(:thumb)
 
-    .row
-      .col-sm-12
+    .col-sm-6
+      h3 = c.name
 
-    .row
-      .col-sm-12
-        h4
-          = c.name
+    .col-sm-3
+      p = c.description
 
-    .row
-      .col-sm-12
-        p
-          = c.description
+    span class="#{c.public}" title="#{t('models.collection.elements.public.#{c.public}')}"

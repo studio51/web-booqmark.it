@@ -1,19 +1,17 @@
 class CollectionsController < ApplicationController
-  before_action :set_collection, only: [:show, :edit, :update, :destroy]
 
   # GET /collections
   def index
-    tag_id ||= params[:id]
-
-    @collections = paginate Collection.for_user(current_user).order(created_at: :desc)
+    collections = paginate current_user.collections
 
     respond_to do |format|
-      format.html { render partial: "collections" }
+      format.html { render partial: "collections", locals: { collections: collections }}
     end
   end
 
   # GET /collections/:id
   def show
+    collection
   end
 
   # GET /collections/new
@@ -23,11 +21,12 @@ class CollectionsController < ApplicationController
 
   # GET /collections/:id/edit
   def edit
+    collection
   end
 
   # POST /collections
   def create
-    @collection = Collection.new(collection_params.merge(users: [current_user]))
+    @collection = Collection.new(collection_params.merge(owner_id: current_user.id))
 
     respond_to do |format|
       if @collection.save
@@ -43,7 +42,7 @@ class CollectionsController < ApplicationController
   # PATCH/PUT /collections/:id
   def update
     respond_to do |format|
-      if @collection.update(collection_params)
+      if collection.update(collection_params)
         format.html { redirect_to @collection, notice: 'Collection was successfully updated.' }
         format.json { render :show, status: :ok, location: @collection }
       else
@@ -55,7 +54,8 @@ class CollectionsController < ApplicationController
 
   # DELETE /collections/:id
   def destroy
-    @collection.destroy
+    collection.destroy
+
     respond_to do |format|
       format.html { redirect_to collections_url, notice: 'Collection was successfully destroyed.' }
       format.json { head :no_content }
@@ -64,13 +64,16 @@ class CollectionsController < ApplicationController
 
   private
 
-    def set_collection
+    def collection
       @collection = Collection.find(params[:id])
     end
 
     def collection_params
       params.require(:collection).permit(
+        :owner_id,
         :name,
+        :public,
+        :icon,
         users: [],
         bookmarks: []
       )

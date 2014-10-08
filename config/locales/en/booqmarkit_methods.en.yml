@@ -1,0 +1,22 @@
+en:
+
+  methods:
+    show:
+      name: "Read"
+      alt: "View"
+      model: "View %{model}"
+
+    create:
+      name: "Create"
+      alt: "New"
+      model: "Add new %{model}"
+
+    update:
+      name: "Update"
+      alt: ""
+      model: "Update %{model}"
+
+    destroy:
+      name: "Destroy"
+      alt: "Delete"
+      model: "Delete %{model}"

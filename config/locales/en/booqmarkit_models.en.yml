@@ -1,0 +1,29 @@
+en:
+
+  models:
+    dashboard:
+      name: "Dashboard"
+
+    settings:
+      name: "Settings"
+
+    collection:
+      name: "Collection"
+      elements:
+        public:
+          false: "This Collection is private"
+          true: "This Collection is public, anyone can see it!"
+
+    bookmark:
+      name: "Bookmark"
+      elements:
+        url: "URL"
+        public:
+          false: "This Bookmark is private"
+          true: "This Bookmark is public, anyone can see it!"
+
+    tag:
+      name: "Tag"
+
+    user:
+      name: "User"

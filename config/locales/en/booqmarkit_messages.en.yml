@@ -1,0 +1,15 @@
+en:
+
+  messages:
+    error:
+      update: "There was a problem while updating the %{obj}"
+      create: "There was a problem while creating the %{obj}"
+      destroy: "There was a problem while deleting the %{obj}"
+
+    success:
+      update: "%{obj} has been successfully updated"
+      create: "%{obj} has been successfully created"
+      destroy: "%{obj} has been successfully deleted"
+
+    info:
+      confirm: "This action cannot be undone, are you sure?"

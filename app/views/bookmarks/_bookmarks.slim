@@ -1,24 +1,28 @@
 .row.table-object
   .col-sm-12
 
-    - @bookmarks.each do |b|
+    - bookmarks.each do |b|
 
       .row.table-row data-id="#{b.id}"
-        .table-cell
-          .col-xs-12.col-sm-10
-            div id="bmk-#{b.id}" class="row table-row"
-              .col-xs-12.col-sm-2
+        span class="bmk-public-#{b.public}" title="t('models.bookmark.elements.public.#{b.public}')"
 
-              .col-xs-12.col-sm-10
-                h4
-                  = link_to b.name, b.url
+        .col-xs-12.col-sm-10.table-cell
+          div id="bmk-#{b.id}" class="row"
+            .col-xs-12.col-sm-2
 
-                = tags_presenter b.tag_list
+            .col-xs-12.col-sm-10
+              h4
+                = link_to b.name, b.url
 
-          .col-xs-12.col-sm-2
-            div id="bmk-actions-#{b.id}" class=""
-              = link_to fa_icon(t("methods.update.icon"), class: "text-success"), edit_bookmark_path(b), class: "btn btn-md btn-success btn-outline btn-round"
-              = link_to fa_icon(t("methods.delete.icon"), class: "text-danger"), b, class: "btn btn-md btn-danger btn-outline btn-round",
-                data: { confirm: t("messages.info.confirm") }, method: :delete
+              = tags_presenter b.tag_list
 
-            = link_to fa_icon("ellipsis-v"), "test/", class: ""
+        .col-xs-12.col-sm-2.bmk-actions-container
+          div id="bmk-actions-#{b.id}" class="bmk-actions-crud"
+            = link_to fa_icon(t("methods.update.icon"), class: "text-success"), edit_bookmark_path(b), class: "btn btn-md btn-success btn-outline-hover btn-round"
+            = link_to fa_icon(t("methods.delete.icon"), class: "text-danger"), b, class: "btn btn-md btn-danger btn-outline-hover btn-round",
+              data: { confirm: t("messages.info.confirm") }, method: :delete
+
+          = link_to fa_icon("ellipsis-h"), "test/", class: "bmk-actions-expand"
+
+
+/ method_link_presenter(update, edit_bookmark_path(b), {})

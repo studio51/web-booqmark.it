@@ -1,16 +1,16 @@
 class UsersController < ApplicationController
+
   def index
     @users = paginate User.all
   end
 
   def show
-    set_user
-
-    @collections = User.all
+    @collections = user.collections
+    @bookmarks = user.bookmarks
   end
 
   def edit
-    set_user
+    user
   end
 
   def new
@@ -59,7 +59,7 @@ class UsersController < ApplicationController
 
   private
 
-    def set_user
+    def user
       @user = User.find_by_id(params[:id])
     end
 
