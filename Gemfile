@@ -51,7 +51,7 @@ gem 'autoprefixer-rails'
 gem 'font-awesome-rails'
 
 # Booqmark.it Image Capture
-gem "eventmachine", github: "eventmachine/eventmachine", branch: "master"
+# gem "eventmachine", github: "eventmachine/eventmachine", branch: "master"
 # gem "webshot"
 gem "mini_magick"
 
