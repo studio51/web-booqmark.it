@@ -130,3 +130,72 @@ $global-padding: 15px;
 .bmk-public-true {
   background: $brand-danger;
 }
+/* line 135, /vagrant/app/assets/stylesheets/application.css.scss */
+.panel-group {
+  border: 1px solid red;
+}
+
+/* line 140, /vagrant/app/assets/stylesheets/application.css.scss */
+.panel-group .panel {
+  border: 1px solid red;
+}
+
+/* line 144, /vagrant/app/assets/stylesheets/application.css.scss */
+.panel-group .panel.panel-default {
+  background-color: #fff;
+  border: 1px solid red !important;
+}
+
+/* line 150, /vagrant/app/assets/stylesheets/application.css.scss */
+.panel-group .panel.panel-default .panel-heading {
+  padding: 15px;
+  border: none;
+}
+
+.panel-heading {
+  position: relative;
+}
+
+.panel-group .panel.panel-default .panel-body {
+  border-top: 1px solid red !important;
+  padding: 15px;
+}
+
+
+.bmk-description {
+  font-family: 'light';
+  font-size: 14px;
+}
+
+.bmk-url-info {
+  font-family: 'light';
+  font-size: 12px;
+}
+
+.bmk-date {
+  font-family: 'light';
+  font-size: 12px;
+}
+
+.bmk-date-title {
+  font-family: 'bold';
+  font-size: 12px;
+}
+
+
+[class*="bmk"], [class*="bmk"] {
+  border: 1px solid red;
+}
+
+.bmk-name {
+  font-size: 24px;
+}
+
+.bmk-actions .bmk-crud {
+  border: 1px solid red;
+  float: left;
+}
+
+.bmk-actions > .btn {
+  border: 1px solid red !important;
+}

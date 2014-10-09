@@ -1,28 +1,35 @@
-.row.table-object
-  .col-sm-12
+.panel-group
 
-    - bookmarks.each do |b|
+  - bookmarks.each do |b|
 
-      .row.table-row data-id="#{b.id}"
-        span class="bmk-public-#{b.public}" title="t('models.bookmark.elements.public.#{b.public}')"
+    .bmk-container
 
-        .col-xs-12.col-sm-10.table-cell
-          div id="bmk-#{b.id}" class="row"
-            .col-xs-12.col-sm-2
+      .panel.panel-default
+        .panel-heading
 
-            .col-xs-12.col-sm-10
-              h4
+          .row
+            span class="bmk-public-#{b.public}" title=t("models.bookmark.elements.public.#{b.public}") data-toggle: "toggle"
+
+            .col-sm-2
+
+            .col-sm-6
+              h4.bmk-name
                 = link_to b.name, b.url
 
               = tags_presenter b.tag_list
 
-        .col-xs-12.col-sm-2.bmk-actions-container
-          div id="bmk-actions-#{b.id}" class="bmk-actions-crud"
-            = link_to fa_icon(t("methods.update.icon"), class: "text-success"), edit_bookmark_path(b), class: "btn btn-md btn-success btn-outline-hover btn-round"
-            = link_to fa_icon(t("methods.delete.icon"), class: "text-danger"), b, class: "btn btn-md btn-danger btn-outline-hover btn-round",
-              data: { confirm: t("messages.info.confirm") }, method: :delete
+            .col-sm-2
+              span
+                = "200"
 
-          = link_to fa_icon("ellipsis-h"), "test/", class: "bmk-actions-expand"
+            .col-sm-2
+              .bmk-actions
+                .bmk-crud
+                  = link_with_icon("update", edit_bookmark_path(b), classes: "btn-primary btn-bmk")
+                  = link_with_icon("delete", b, classes: "btn-danger btn-bmk")
 
+                = link_to(fa_icon("ellipsis-h"), "#bmk-#{b.id}", data: { toggle: "collapse" }, class: "btn")
 
-/ method_link_presenter(update, edit_bookmark_path(b), {})
+        .collapse.in id="bmk-#{b.id}"
+
+          == render partial: 'bookmarks/bookmark_details', locals: { b: b }

@@ -5,9 +5,19 @@
       = image_tag c.icon.url(:thumb)
 
     .col-sm-6
-      h3 = c.name
+      .row
+        .col-sm-12
+
+          h3
+            = c.name
+
+        - if c.public?
+
+          = c.users.each do |u|
+            = u.name
 
     .col-sm-3
-      p = c.description
+      p
+        = c.description
 
-    span class="#{c.public}" title="#{t('models.collection.elements.public.#{c.public}')}"
+    span class="#{c.public}" title="t('models.bookmark.elements.public.#{c.public}')"

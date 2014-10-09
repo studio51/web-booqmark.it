@@ -39,14 +39,25 @@ en:
       name: "Settings"
     collection:
       name: "Collection"
+
+      attributes:
+        created_at: "Created at"
+        updated_at: "Updated at"
+
       elements:
         public:
           false: "This Collection is private"
-          true: "This Collection is public, anyone can see it!"
+          true: "This Collection is public, anyone can subscribe to it!"
     bookmark:
       name: "Bookmark"
-      elements:
+
+      attributes:
         url: "URL"
+        public: "Public"
+        created_at: "Created at"
+        updated_at: "Updated at"
+
+      elements:
         public:
           false: "This Bookmark is private"
           true: "This Bookmark is public, anyone can see it!"
@@ -54,8 +65,6 @@ en:
       name: "Tag"
     user:
       name: "User"
-
-
 
   methods:
     show:

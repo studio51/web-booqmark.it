@@ -16,8 +16,12 @@ en:
 
     bookmark:
       name: "Bookmark"
-      elements:
+
+      attributes:
         url: "URL"
+        public: "Status"
+
+      elements:
         public:
           false: "This Bookmark is private"
           true: "This Bookmark is public, anyone can see it!"

@@ -19,4 +19,8 @@ module BookmarksHelper
       fa_icon("tags") + @tags
     end
   end
+
+  def time_presenter(time)
+    time_ago_in_words(time) + " ago"
+  end
 end
