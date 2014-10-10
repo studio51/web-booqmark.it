@@ -8,7 +8,7 @@ class CreateCollections < ActiveRecord::Migration
 
       c.boolean :status, default: 0
 
-      b.attachment :icon
+      c.attachment :icon
 
       c.timestamps
     end

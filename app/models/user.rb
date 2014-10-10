@@ -16,8 +16,8 @@ class User < ActiveRecord::Base
 
   # Validations
 
-  validates_presence_of :surname
-  validates_uniqueness_of :surname
+  validates_presence_of :last_name
+  validates_uniqueness_of :last_name
 
   has_settings do |s|
     s.key :authentication, defaults: {

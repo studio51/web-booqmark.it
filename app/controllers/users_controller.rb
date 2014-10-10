@@ -68,7 +68,10 @@ class UsersController < ApplicationController
         :email,
         :password,
         :password_confirmation,
-        profile_attributes: [:firstname, :surname]
+        profile_attributes: [
+          :first_name,
+          :last_name
+        ]
       )
     end
 end

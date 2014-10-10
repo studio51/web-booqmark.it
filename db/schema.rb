@@ -11,20 +11,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141007163415) do
+ActiveRecord::Schema.define(version: 20140917120024) do
 
   create_table "bookmarks", force: true do |t|
     t.integer  "user_id"
     t.string   "name"
     t.string   "url"
     t.text     "description"
+    t.boolean  "public",                default: false
     t.string   "snapshot_file_name"
     t.string   "snapshot_content_type"
     t.integer  "snapshot_file_size"
     t.datetime "snapshot_updated_at"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.boolean  "public",                default: false
   end
 
   create_table "bookmarks_collections", id: false, force: true do |t|
@@ -33,16 +33,16 @@ ActiveRecord::Schema.define(version: 20141007163415) do
   end
 
   create_table "collections", force: true do |t|
-    t.string   "name"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.text     "description"
     t.integer  "owner_id"
-    t.boolean  "public",            default: false
+    t.string   "name"
+    t.text     "description"
+    t.boolean  "status",            default: false
     t.string   "icon_file_name"
     t.string   "icon_content_type"
     t.integer  "icon_file_size"
     t.datetime "icon_updated_at"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "collections_users", id: false, force: true do |t|
