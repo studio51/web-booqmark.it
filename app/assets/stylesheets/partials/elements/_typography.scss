@@ -1,0 +1,12 @@
+body {
+  font-family: 'bold' !important;
+}
+
+.text-light {
+  font-family: 'light' !important;
+}
+
+::placeholder {
+  color: #efefef;
+  font-family: 'light';
+}

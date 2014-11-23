@@ -1,0 +1,23 @@
+- collections.each do |c|
+
+  .row
+    .col-sm-3
+      = image_tag c.icon.url(:thumb)
+
+    .col-sm-6
+      .row
+        .col-sm-12
+
+          h3
+            = c.name
+
+        - if c.public?
+
+          = c.users.each do |u|
+            = u.name
+
+    .col-sm-3
+      p
+        = c.description
+
+    span class="#{c.public}" title="t('models.bookmark.elements.public.#{c.public}')"

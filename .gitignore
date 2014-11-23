@@ -1,0 +1,51 @@
+# Vagrant related files
+
+/.vagrant/
+/Vagrantfile
+/hosts
+
+# Provisioner
+
+playbooks
+/playbooks/*
+/provisioner/*
+provisioner
+/config/unicorn-development.rb
+
+# Temp files/folders
+
+/tmp/cache/*
+/tmp/miniprofiler/*
+/tmp/pids/*
+
+# Logs
+
+/log/*.log
+
+# Bundler config
+
+/.bundle
+
+# Databases
+
+/db/*.sqlite3
+/db/*.sqlite3-journal
+
+# External
+
+config.codekit
+
+# Assets
+
+.sass*
+app/assets/stylesheets/.sass*
+config.codekit
+
+# AWS credentials
+config/aws*
+
+# Configs, for the moment
+config/deploy.rb
+config/secrets.yml
+config/unicorn.rb
+config/deploy

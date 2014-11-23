@@ -1,0 +1,25 @@
+.bookmarks
+
+  - collection.each do |b|
+
+    .row.bookmark-container
+      span.bookmark-reach class="#{b.public}"
+
+      .col-sm-2
+        = b.snapshot
+
+      .col-sm-6
+        h4.bookmark-name
+          = link_to b.name, b.url
+
+        = tags_presenter b.tag_list
+
+      .col-sm-2
+        span.bookmark-status
+          = 200
+
+      .col-sm-2
+        .bookmark-actions
+          = bmk_button('method', 'update', edit_bookmark_path(b), klass: 'xs update')
+          = bmk_button('method', 'destroy', b, klass: 'xs destroy')
+          = bmk_button('method', '', "bookmark-#{b.id}", data: { toggle: 'collapse' })

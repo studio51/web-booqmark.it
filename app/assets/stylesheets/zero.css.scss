@@ -1,0 +1,186 @@
+
+// /* Globals */
+
+// $border-default-color: #dcdcdc;
+// $border-radius-base: 2px;
+
+// $global-padding: 15px;
+
+//   /* Bootstrap */
+
+//     /* Classes */
+
+//     $header-class:  "header";
+//     $navbar-class:  "navbar";
+//     $panel-class:   "panel";
+//     $form-class:    "form";
+//     $alert-class:   "alert";
+//     $button-class:  "btn";
+
+//     /* Variables */
+//     /* #F1F5F8 */
+//     $brand-default: #EFF2F3;
+//     $brand-info: #AC86E8;
+//     $brand-primary: #66B5F3;
+//     $brand-success: #6BC868;
+//     $brand-purple: #AC86E8;
+//     $brand-warning: rgba( 241, 196, 15, 1 );
+//     $brand-danger: #EF7955;
+
+//     $bootstrap-classes:
+//       default $brand-default,
+//       primary $brand-primary,
+//       success $brand-success,
+//       info    $brand-info,
+//       warning $brand-warning,
+//       danger  $brand-danger,
+//       purple  $brand-purple;
+
+//   /* Booqmark.it */
+
+//     /* Classes */
+
+//     $auth-class:      "auth";
+//     $bookmark-class:  "bmk";
+
+// @import "mixins/mixins";
+
+// @import "partials/elements/reset";
+// @import "partials/elements/typography";
+
+// @import "partials/bootstrap_override";
+// @import "bootstrap";
+
+// @import "partials/booqmarkit";
+
+
+// /* line 72, /vagrant/app/assets/stylesheets/application.css.scss */
+// .table-object {
+//   margin: 0;
+//   padding: 15px 0;
+//   border: 1px solid red;
+
+// }
+
+// /* line 76, /vagrant/app/assets/stylesheets/application.css.scss */
+// .table-row {
+//   border: 1px solid red;
+//   background-color: #fff;
+//   margin-bottom: 5px;
+//   box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.3);
+//   position: relative;
+//   padding: 15px;
+// }
+
+// .table-row:last-child {
+//   margin-bottom: 0;
+// }
+
+
+// .bmk-actions-container {
+//   border: 1px solid red;
+//   padding: 0;
+//   display: table;
+
+
+// }
+
+// .bmk-actions-crud {
+//   float: left;
+//   border: 1px solid red;
+// }
+
+// /* line 108, /vagrant/app/assets/stylesheets/application.css.scss */
+// .bmk-actions-expand {
+//   border: 1px solid red;
+//   float: right;
+//   vertical-align: middle;
+//   padding: 11px 0px 5px 10px;
+// }
+
+
+// [class*="bmk-public"] {
+//   position: absolute;
+//   width: 10px;
+//   height: 10px;
+//   top: 10px;
+//   right: 10px;
+//   border-radius: 250px;
+// }
+
+// .bmk-public-false {
+//   background: $brand-success;
+// }
+
+// .bmk-public-true {
+//   background: $brand-danger;
+// }
+// /* line 135, /vagrant/app/assets/stylesheets/application.css.scss */
+// .panel-group {
+//   border: 1px solid red;
+// }
+
+// /* line 140, /vagrant/app/assets/stylesheets/application.css.scss */
+// .panel-group .panel {
+//   border: 1px solid red;
+// }
+
+// /* line 144, /vagrant/app/assets/stylesheets/application.css.scss */
+// .panel-group .panel.panel-default {
+//   background-color: #fff;
+//   border: 1px solid red !important;
+// }
+
+// /* line 150, /vagrant/app/assets/stylesheets/application.css.scss */
+// .panel-group .panel.panel-default .panel-heading {
+//   padding: 15px;
+//   border: none;
+// }
+
+// .panel-heading {
+//   position: relative;
+// }
+
+// .panel-group .panel.panel-default .panel-body {
+//   border-top: 1px solid red !important;
+//   padding: 15px;
+// }
+
+
+// .bmk-description {
+//   font-family: 'light';
+//   font-size: 14px;
+// }
+
+// .bmk-url-info {
+//   font-family: 'light';
+//   font-size: 12px;
+// }
+
+// .bmk-date {
+//   font-family: 'light';
+//   font-size: 12px;
+// }
+
+// .bmk-date-title {
+//   font-family: 'bold';
+//   font-size: 12px;
+// }
+
+
+// [class*="bmk"], [class*="bmk"] {
+//   border: 1px solid red;
+// }
+
+// .bmk-name {
+//   font-size: 24px;
+// }
+
+// .bmk-actions .bmk-crud {
+//   border: 1px solid red;
+//   float: left;
+// }
+
+// .bmk-actions > .btn {
+//   border: 1px solid red !important;
+// }

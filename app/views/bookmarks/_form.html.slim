@@ -1,0 +1,25 @@
+.row
+
+  = simple_form_for @bookmark do |f|
+
+    .col-sm-12
+      = f.input :name, label: false, input_html: { value: params[:name] }
+
+    .col-sm-12
+      = f.input :description, input_html: { value: params[:description] }
+
+    .col-sm-12
+      .row
+        .col-sm-1
+          .btn-group.btn-group-justified
+            = link_to fa_icon(t("models.tag.icon")), "", data: { target: t("models.tag.name").downcase }
+            = link_to fa_icon(t("models.bookmark.elements.icons.url")), "", data: { target: t("models.bookmark.elements.url").downcase }
+
+        .col-sm-11
+          div class=".#{t("models.tag.name").downcase}"
+            = f.input :tag_list, placeholder: t("models.tag.name").pluralize, label: false
+
+          div class=".#{t("models.url.name").downcase}"
+            = f.input :url, label: false, input_html: { value: params[:url] }
+
+    .actions = f.submit 'Save', class: "btn btn-primary btn-md"

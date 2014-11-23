@@ -1,0 +1,45 @@
+en:
+  auth:
+    in:
+      icon: "sign-in"
+    out:
+      icon: "sign-out"
+    new:
+      icon: "plus"
+
+  messages:
+    error:
+      icon: "frown-o"
+    success:
+      icon: "smile-o"
+    info:
+      icon: "lightbulb-o"
+    danger:
+      icon: "frown-o"
+
+  models:
+    dashboard:
+      icon: "dashboard"
+    settings:
+      icon: "cogs"
+    collection:
+      icon: "folder"
+    bookmark:
+      icon: "bookmark"
+      elements:
+        icons:
+          url: "link"
+    tag:
+      icon: "tags"
+    user:
+      icon: "user"
+
+  methods:
+    create:
+      icon: "plus"
+    read:
+      icon: "eye"
+    update:
+      icon: "pencil"
+    delete:
+      icon: "trash-o"

@@ -1,0 +1,22 @@
+en:
+
+  methods:
+    show:
+      name: "Show"
+      name_with_model: "Show %{model}"
+      icon: "eye"
+
+    new:
+      name: "New"
+      name_with_model: "New %{model}"
+      icon: "plus"
+
+    edit:
+      name: "Edit"
+      name_with_model: "Edit %{model}"
+      icon: "pencil"
+
+    destroy:
+      name: "Delete"
+      name_with_model: "Delete %{model}"
+      icon: "trash-o"

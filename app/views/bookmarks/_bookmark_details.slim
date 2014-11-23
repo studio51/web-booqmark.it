@@ -1,0 +1,26 @@
+.panel-body
+  .row
+    .col-sm-8
+      .row
+        .col-sm-12
+          p.bookmark-description
+            = b.description
+
+      .row
+        .col-sm-12
+          p.bookmark-url
+            = b.url
+
+    .col-sm-2
+      p.bookmark-date-locale
+        = t("models.bookmark.attributes.created_at")
+
+      span.bookmark-date
+        = time_presenter(b.created_at)
+
+    .col-sm-2
+      p.bookmark-date-locale
+        = t("models.bookmark.attributes.updated_at")
+
+      span.bookmark-date
+        = time_presenter(b.updated_at)

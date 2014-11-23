@@ -1,0 +1,114 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_self
+ *= require font-awesome
+*/
+
+/* Globals */
+
+$border-default-color: #dcdcdc;
+$border-radius-base: 2px;
+
+$global-padding: 15px;
+
+  /* Bootstrap */
+
+    /* Classes */
+
+    $header-class:  "header";
+    $navbar-class:  "navbar";
+    $panel-class:   "panel";
+    $form-class:    "form";
+    $alert-class:   "alert";
+    $button-class:  "btn";
+
+    /* Variables */
+    /* #F1F5F8 */
+    $brand-default: #EFF2F3;
+    $brand-info: #AC86E8;
+    $brand-primary: #66B5F3;
+    $brand-success: #6BC868;
+    $brand-purple: #AC86E8;
+    $brand-warning: rgba( 241, 196, 15, 1 );
+    $brand-danger: #EF7955;
+
+    $bootstrap-classes:
+      default $brand-default,
+      primary $brand-primary,
+      success $brand-success,
+      info    $brand-info,
+      warning $brand-warning,
+      danger  $brand-danger,
+      purple  $brand-purple;
+
+  /* Booqmark.it */
+
+    /* Classes */
+
+    $auth-class:      "auth";
+    $bookmark-class:  "bmk";
+
+
+@import "bootstrap";
+@import "partials/bootstrap_override";
+
+@import "partials/booqmarkit";
+
+
+.user-menu {
+  border: 1px solid black;
+}
+
+.user-panel {
+  border: 1px solid orange;
+}
+
+.user-profile {
+  border: 1px solid green;
+}
+
+.user-name {
+  margin: 0;
+  padding: 15px 0;
+  border: 1px solid red;
+}
+
+.user-description {
+  border: 1px solid blue;
+}
+
+.user-description:before {
+  content: 'Sometimes i feeld like im alone or some sad shit like that.. lorem ipsum dolores amet';
+}
+
+.user-stats {
+  border: 2px solid green;
+}
+
+.user-menu {
+  border: 2px solid black;
+}
+
+
+.bookmarks .row {
+  border: 1px solid red;
+  padding: 15px;
+}
+
+.bookmark-reach {
+  border: 1px solid red;
+}
+
+body {
+  background-color: #f9f9f9;
+}

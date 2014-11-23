@@ -1,0 +1,35 @@
+.row.sub-header
+  .col-xs-12
+    .container
+      .row
+        .col-xs-12.col-sm-8
+          h3.text-light
+             = t("models.bookmark.name").pluralize
+
+          = link_to fa_icon(t("methods.create.icon")), new_bookmark_path, title: t("methods.create._new", model: t("models.bookmark.name")), class: "btn btn-primary btn-xs"
+
+        .col-xs-12.col-sm-4
+          ul.nav.nav-justified.stats role="tablist"
+            li.stats-collections
+              = link_to ".#{t("models.collection.name").downcase.pluralize}", data: { "tab-url" => collections_path, toggle: "tab", role: "tab" }, class: 'btn' do
+                span
+                  = @collections.count
+
+                p.text-light
+                  = t("models.collection.name").pluralize
+
+            li.active.stats-bookmarks
+              = link_to ".#{t("models.bookmark.name").downcase.pluralize}", data: { "tab-url" => bookmarks_path, toggle: "tab", role: "tab" }, class: 'btn' do
+                span
+                  = @bookmarks.count
+
+                p.text-light
+                  = t("models.bookmark.name").pluralize
+
+            li.stats-tags
+              = link_to ".#{t("models.tag.name").downcase.pluralize}", data: { "tab-url" => tags_path, toggle: "tab", role: "tab" }, class: 'btn' do
+                span
+                  = @tags.count
+
+                p.text-light
+                  = t("models.tag.name").pluralize

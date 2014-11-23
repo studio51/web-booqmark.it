@@ -1,0 +1,67 @@
+en:
+  author:
+    name: "Vlad Radulescu"
+    url: "http://www.creative-studio51.co.uk/"
+    company: "Studio51 © 2014"
+  description: "A simple Bookmarking service by Studio51©"
+
+  app:
+    logo: ""
+    name: "booqmark.it"
+    description: "Have your Bookmarks anywhere"
+
+  auth:
+    in:
+      name: "Sign in"
+    out:
+      name: "Sign out"
+    new:
+      name: "Register"
+    recover:
+      name: "Recover Password"
+
+  messages:
+    error:
+      updated: "There was a problem while updating the %{obj}"
+      created: "There was a problem while creating the %{obj}"
+      deleted: "There was a problem while deleting the %{obj}"
+    success:
+      updated: "%{obj} has been successfully updated"
+      created: "%{obj} has been successfully created"
+      deleted: "%{obj} has been successfully deleted"
+    info:
+      confirm: "This action cannot be undone, are you sure?"
+
+  models:
+    dashboard:
+      name: "Dashboard"
+    settings:
+      name: "Settings"
+    collection:
+      name: "Collection"
+
+      attributes:
+        created_at: "Created at"
+        updated_at: "Updated at"
+
+      elements:
+        public:
+          false: "This Collection is private"
+          true: "This Collection is public, anyone can subscribe to it!"
+    bookmark:
+      name: "Bookmark"
+
+      attributes:
+        url: "URL"
+        public: "Public"
+        created_at: "Created at"
+        updated_at: "Updated at"
+
+      elements:
+        public:
+          false: "This Bookmark is private"
+          true: "This Bookmark is public, anyone can see it!"
+    tag:
+      name: "Tag"
+    user:
+      name: "User"

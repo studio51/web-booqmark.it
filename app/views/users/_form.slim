@@ -1,0 +1,16 @@
+= simple_form_for @user do |u|
+  = u.error_notification
+
+  = u.input :email, as: :email
+
+  = u.simple_fields_for :profile do |p|
+
+    = p.input :first_name
+    = p.input :last_name
+
+    = p.input :description, as: :text
+
+  = u.input :password
+  = u.input :password_confirmation
+
+  = u.submit
