@@ -3,7 +3,7 @@ class CollectionsController < ApplicationController
   # GET /collections
   def index
     # @collections = paginate current_user.collections
-    @collections = Collection.all.paginate(page: params[:page])
+    @collections = Collection.paginate(page: params[:page])
 
   end
 
