@@ -1,0 +1,58 @@
+.user
+  .row.user-panel
+    .col-sm-8
+      .row.user-profile
+        .col-sm-3
+          = @user.avatar
+
+        .col-sm-9
+          .row
+            .col-sm-9
+              h5.user-name
+                = @user.name
+
+            .col-sm-3
+              = link_to fa_icon('plus', text: 'Follow', right: true), '', class: 'btn btn-block btn-xs btn-default'
+
+          .row
+            .col-sm-12
+              p.user-description
+                = @user.description
+
+    .col-sm-4
+      .row.user-stats
+        .col-sm-4
+          h4
+            = @following
+          p
+            = 'Following'
+
+        .col-sm-4
+          h4
+            = @followers
+          p
+            = 'Followers'
+
+        .col-sm-4
+          h4
+            = @bookmarks.count
+          p
+            = 'Bookamrks'
+
+  .row.user-menu
+    .col-sm-3
+      = link_to "My Collections", ''
+
+    .col-sm-3
+      = link_to "My Bookmarks", ''
+
+    .col-sm-3
+      = link_to "My Likes", ''
+
+    .col-sm-3
+      = link_to "My Lists", ''
+
+  .row
+    .col-sm-12
+
+      == render partial: 'bookmarks/bookmarks', locals: { collection: @bookmarks }

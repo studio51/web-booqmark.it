@@ -1,0 +1,32 @@
+# Vagrant related files
+/.vagrant/
+/Vagrantfile
+/hosts
+
+# Provisioner
+/playbooks/*
+/provisioner/*
+/config/unicorn-development.rb
+
+# Temp files/folders
+/tmp/cache/*
+/tmp/miniprofiler/*
+/tmp/pids/*
+/tmp/screens/*
+
+# Logs
+/log/*.log
+
+# Bundler config
+/.bundle
+
+# Databases
+/db/*.sqlite3
+/db/*.sqlite3-journal
+
+# Assets
+.sass*
+app/assets/stylesheets/.sass*
+
+# AWS credentials
+config/aws*

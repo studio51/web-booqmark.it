@@ -1,0 +1,28 @@
+doctype html
+
+html lang="en"
+  head
+    meta charset="utf-8"
+    meta content="IE=edge" http-equiv="X-UA-Compatible"
+
+    meta name="author" content = t("author")
+    meta name="description" content = t("description")
+
+    meta name="viewport" content="width=device-width, initial-scale=1"
+
+    title
+      = t("app.name")
+
+    = stylesheet_link_tag "application", media: "all"
+    = csrf_meta_tags
+
+  body
+
+    = render partial: "shared/header"
+
+    .container
+      = yield
+
+    = render partial: "shared/footer"
+
+  = javascript_include_tag "application"

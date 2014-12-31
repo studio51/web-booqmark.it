@@ -1,0 +1,43 @@
+.row
+  .col-sm-3
+    .row
+      .col-sm-12
+        .main-nav-affix data-spy="affix" data-offset-top="70"
+
+          .row
+            .col-sm-2
+              .booqmarkit-image
+                = image_tag @collection.icon(:thumb), class: 'img-responsive'
+
+            .col-sm-10
+              h1.booqmarkit-url
+                = @collection.name
+
+              = description_presenter(@collection.description)
+
+          .row
+            .col-sm-12
+              h5.presentation
+                = "Collection Stats"
+
+          .row
+            .col-sm-3
+              = @bookmarks.count
+
+            .col-sm-3
+
+
+  .col-sm-9
+    .row
+      .col-sm-12
+        .main-content-affix data-spy="affix" data-offset-top="70"
+          .row
+            .col-sm-9
+              = will_paginate(@bookmarks, inner_window: 1, outer_window: 3)
+
+            .col-sm-3.text-right
+              = link_to "New Bookmark", new_bookmark_path, class: 'btn btn-sm btn-primary'
+
+    .row
+      .col-sm-12
+        == render partial: 'bookmarks/bookmarks', locals: { collection: @bookmarks }

@@ -1,0 +1,14 @@
+= simple_form_for @collection, html: { multipart: true } do |f|
+  = f.error_notification
+
+  .form-inputs
+    = f.file_field :icon
+
+    = f.input :name
+    = f.input :description
+    = f.input :public, as: :boolean, checked_value: true, unchecked_value: false
+
+    = f.association :bookmarks, as: :select
+
+  .form-actions
+    = f.button :submit

@@ -1,0 +1,33 @@
+- collection.each do |c|
+
+  .booqmarkit.index class="public-#{c.public}"
+
+    .row.booqmarkit-content
+      .col-sm-2
+        .booqmarkit-image
+          = image_tag(c.icon(:thumb), class: 'img-responsive')
+
+      .col-sm-10
+        h1.booqmarkit-url
+          = c.name
+
+          .pull-right
+            = link_to fa_icon('folder'), collection_path(c), title: "View Collection", data: { toggle: 'tooltip', placement: 'left' }
+
+        = description_presenter(c.description)
+
+        = bookmarks_presenter(full_layout, c.id, c.bookmarks)
+
+    .row.booqmarkit-actions
+      .col-xs-3
+        .booqmarkit-info
+          = fa_icon(t("models.bookmark.attributes.public.#{c.public}.icon"), title: t("models.bookmark.attributes.public.#{c.public}.name"), data: { toggle: 'tooltip', placement: 'right' }, class: "public-#{c.public}")
+
+      .col-xs-9
+        = booqmarkit_url_helper('method', 'edit', edit_bookmark_path(c.id))
+        = booqmarkit_url_helper('method', 'destroy', c)
+
+.row
+  .col-sm-12
+    p.pagination-info
+      / = fa_icon('info', text: page_entries_info(collection))

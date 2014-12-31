@@ -1,0 +1,30 @@
+$panel-bg: transparent;
+$panel-border-radius: $border-radius-base;
+
+$panel-default-border: none;
+
+$panel-body-padding: 0;
+$panel-footer-padding: $global-padding $panel-body-padding;
+$panel-heading-padding: $global-padding;
+
+.#{$panel-class} {
+  border: none !important;
+  box-shadow: none !important;
+  margin-bottom: 0;
+}
+
+  .#{$panel-class}-heading {
+    border: 1px solid $border-default-color;
+  }
+
+  .#{$panel-class}-default .#{$panel-class}-heading,
+  .#{$panel-class}-default .#{$panel-class}-footer {
+    background: none !important;
+  }
+
+  .#{$panel-class}-default .#{$panel-class}-body {
+  }
+
+  .#{$panel-class}-default .#{$panel-class}-footer {
+    border-top: none;
+  }

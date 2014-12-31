@@ -1,0 +1,89 @@
+en:
+  author:
+    name: "Vlad Radulescu"
+    url: "http://www.creative-studio51.co.uk/"
+    company: "Studio51 © 2014"
+  description: "A simple Bookmarking service by Studio51©"
+
+  will_paginate:
+    page_entries_info:
+      single_page:
+        zero:  "No %{model} found"
+        one:   "Showing 1 %{model}"
+        other: "Showing all %{count} %{model}s"
+      single_page_html:
+        zero:  "No %{model} found"
+        one:   "Showing <b>1</b> %{model}"
+        other: "Showing <b>all %{count}</b> %{model}s"
+
+      multi_page: "%{from} - %{to} out of %{count}"
+      multi_page_html: "<b>%{from} - %{to}</b> out of <b>%{count}</b>"
+
+  app:
+    logo: ""
+    name: "booqmark.it"
+    description: "Have your Bookmarks anywhere"
+
+  auth:
+    in:
+      name: "Sign in"
+    out:
+      name: "Sign out"
+    new:
+      name: "Register"
+    recover:
+      name: "Recover Password"
+
+  messages:
+    error:
+      updated: "There was a problem while updating the %{obj}"
+      created: "There was a problem while creating the %{obj}"
+      deleted: "There was a problem while deleting the %{obj}"
+    success:
+      updated: "%{obj} has been successfully updated"
+      created: "%{obj} has been successfully created"
+      deleted: "%{obj} has been successfully deleted"
+    info:
+      confirm: "This action cannot be undone, are you sure?"
+
+  methods:
+    edit:
+      name: 'Edit'
+      name_with_model: 'Edit %{model}'
+      icon: 'pencil'
+
+    destroy:
+      name: 'Delete'
+      name_with_model: 'Delete %{model}'
+      icon: 'trash-o'
+
+  models:
+    bookmark:
+      name: 'Bookmark'
+      icon: 'bookmark'
+
+      attributes:
+        status:
+          '1':
+            icon: 'exclamation'
+            name: 'Informational'
+          '2':
+            icon: 'check'
+            name: 'Success'
+          '3':
+            icon: 'circle-o-notch'
+            name: 'Redirection'
+          '4':
+            icon: 'close'
+            name: 'Client Error'
+          '5':
+            icon: 'close'
+            name: 'Server Error'
+
+        public:
+          'true':
+            icon: 'eye-slash'
+            name: 'This bookmark is private, only you have access to it.'
+          'false':
+            icon: 'eye'
+            name: 'This bookmark is public, that means anyone can see it and copy it.'

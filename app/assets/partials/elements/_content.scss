@@ -1,0 +1,102 @@
+.#{$bookmark-class}-container {
+  border: 1px solid red;
+}
+
+// .#{$bookmark-class}-container {
+//   padding: 10px 0;
+//   border-bottom: 1px solid #efefef;
+// }
+
+// .#{$bookmark-class}-anchor {
+//   display: block;
+//   padding: 3px 0;
+
+//   h4 {
+//     display: inline-block;
+//     float: left;
+//     padding: 3px 0;
+//   }
+// }
+
+
+// .#{$bookmark-class}-tags {
+//   float: right;
+
+//   i {
+//     background-color: $brand-primary;
+//     border: 1px solid $brand-primary;
+//     border-bottom-right-radius: 0;
+//     border-radius: 2px;
+//     border-top-right-radius: 0;
+//     color: #fff;
+//     padding: 6px 2px 4px 8px;
+//     vertical-align: top;
+//   }
+
+//   a.tag {
+//     background: #fff;
+//     border: 1px solid $brand-primary;
+//     border-left: none;
+//     color: $brand-primary;
+//     display: inline-block;
+//     font-size: 11px;
+//     font-family: "light";
+//     margin-left: -1px;
+//     padding: 5px 8px 4px 15px;
+//     position: relative;
+
+//     &:before,
+//     &:after,
+//     &:nth-child(2):before {
+//       border-bottom: 13px solid transparent;
+//       border-left: 10px solid $brand-primary;
+//       border-right: 10px solid transparent;
+//       border-top: 13px solid transparent;
+//       content: '';
+//       left: 0;
+//       position: absolute;
+//       top: -1px;
+//     }
+
+//     &:nth-child(2):before  {
+//       z-index: 1;
+//       left: -1px;
+//     }
+
+//     &:after {
+//       border-left-color: #fff;
+//       left: -1px;
+//     }
+//   }
+
+//   span {
+//     padding: 8px 10px 7px;
+//   }
+// }
+
+// .#{$bookmark-class}-actions {
+//   float: left;
+
+//   .btn {
+//     padding: 6px 7px 4px;
+//     margin-right: 5px;
+
+//     i {
+//       font-size: 13px;
+//       height: 15px;
+//       width: 15px;
+//     }
+//   }
+// }
+
+// .#{$bookmark-class}-block {
+//   border: 1px solid green;
+//   padding-left: 0 !important
+// }
+
+// .#{$bookmark-class}-expand {
+
+//   padding: 9px 0 3px 20px;
+//   display: block;
+//   float: right;
+// }

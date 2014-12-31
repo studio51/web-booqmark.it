@@ -1,0 +1,36 @@
+.row
+  .col-sm-12
+    = link_to fa_icon('angle-double-left', text: 'Back to Bookmarks'), bookmarks_path, class: 'btn'
+
+.bookmarks.show
+  = image_tag(@bookmark.snapshot, class: 'img-responsive')
+
+  .row
+
+    - if @bookmark.collections.empty? ? 'div class="col-sm-7"' : 'div class="col-sm-12"'
+
+      .col-sm-7
+        .booqmarkit
+          .row.booqmarkit-content
+            .col-sm-12
+              h1.booqmarkit-url
+                = name_presenter(@bookmark.name, @bookmark.url, false)
+
+              = description_presenter(@bookmark.description, false)
+
+              = tags_presenter(@bookmark.id, @bookmark.tag_list, false)
+
+          .row.booqmarkit-actions
+            .col-xs-6
+              .booqmarkit-info
+                = fa_icon(t("models.bookmark.attributes.status.#{@bookmark.status.to_s.first}.icon"), title: t("models.bookmark.attributes.status.#{@bookmark.status.to_s.first}.name"), data: { toggle: 'tooltip', placement: 'right' }, class: "status-#{@bookmark.status.to_s.first}")
+                = fa_icon(t("models.bookmark.attributes.public.#{@bookmark.public}.icon"), title: t("models.bookmark.attributes.public.#{@bookmark.public}.name"), data: { toggle: 'tooltip', placement: 'right' }, class: "public-#{@bookmark.public}")
+
+            .col-xs-6
+              = booqmarkit_url_helper('method', 'edit', edit_bookmark_path(@bookmark.id))
+              = booqmarkit_url_helper('method', 'destroy', @bookmark)
+
+    - unless @bookmark.collections.empty?
+
+      .col-sm-5.booqmarkit-collections
+        == render partial: 'collections/collections', locals: { full_layout: false, collection: @bookmark.collections }

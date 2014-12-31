@@ -1,0 +1,65 @@
+section#intro
+  .container
+    .row
+      .col-sm-12
+
+section#about
+  .container
+    .row
+      .col-sm-12
+
+    .row
+      .col-sm-12
+
+        div role='tabpanel'
+          ul.nav.nav-tabs role='tablist'
+            li.active role='presentation'
+              = link_to 'Latest', '#latest', aria: { controls: 'home' }, data: { toggle: 'tab' }, role: 'tab'
+
+            li.active role='presentation'
+              = link_to 'Trending', '#trending', aria: { controls: 'home' }, data: { toggle: 'tab' }, role: 'tab'
+
+            li.active role='presentation'
+              = link_to 'Foo', '#foo', aria: { controls: 'home' }, data: { toggle: 'tab' }, role: 'tab'
+
+          div role='tabpanel'
+            .tab-content
+              .tab-pane.fade.in.active id="latest" role="tabpanel"
+              .tab-pane.fade id="trending" role="tabpanel"
+              .tab-pane.fade id="foo" role="tabpanel"
+
+section#features
+  .container
+    .row
+      .col-sm-12
+
+section#contact
+  .container
+    .row
+      .col-sm-12
+
+    .row
+      .col-sm-12
+
+
+        = form_tag 'singup', method: 'post', class: 'form-inline', role: 'form'
+
+          .form-group
+            = label_tag :e, 'Email', class: 'sr-only'
+            = text_field_tag :e, class: 'form-control'
+
+          .form-group
+            = label_tag :p, 'Password', class: 'sr-only'
+            = text_field_tag :p, class: 'form-control'
+
+          = submit_tag 'signup'
+
+# Full background image with b.it in the middle surounded by browser icons and
+# arrows with the quote ""
+
+# Second section will contain a small about and 3 sections with top 5 bookmarks
+# recent, trending, used?
+
+# Features section with signup link or beta invite
+
+# Section with contact section and studio51 mnetion

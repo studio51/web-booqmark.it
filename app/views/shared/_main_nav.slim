@@ -1,0 +1,25 @@
+.row
+  .col-sm-12
+    .main-nav-affix data-spy="affix" data-offset-top="70"
+      ul.nav.nav-main
+        li
+          h5.presentation
+            = "Public Activity"
+
+        li
+          = link_to fa_icon('rss', text: 'Feed'), "feed_path"
+
+        li
+          = link_to fa_icon('list', text: 'Lists'), "list_path"
+
+        li.divider
+
+        li
+          h5.presentation
+            = "My Activity"
+
+        li
+          = link_to fa_icon('folder', text: 'Collections'), collections_path
+
+        li
+          = link_to fa_icon('bookmark', text: 'Bookmarks'), bookmarks_path

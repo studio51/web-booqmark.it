@@ -1,0 +1,17 @@
+nav.navbar.navbar-default role="navigation"
+  .container
+    .row
+      .col-xs-2
+        .navbar-header
+          = link_to fa_icon("user"), "#", data: { target: "#navbar-collapse", toggle: "collapse" }, class: "navbar-toggle"
+
+          = link_to image_tag("logo-bold.svg", title: t("app.description"), alt: t("app.name"), class: "img-responsive"), root_path, class: "navbar-brand"
+
+      .col-sm-10
+        #navbar-collapse.navbar-collapse.collapse
+          ul.nav.navbar-nav.navbar-right.navbar-user
+            li
+              = user_presenter(current_user)
+
+            li
+              = current_user.name

@@ -1,0 +1,35 @@
+$input-border: $border-default-color;
+$input-border-radius: $border-radius-base;
+
+//   .chrome & {
+//     padding: $global-padding $global-padding ($global-padding - 2) !important;
+//   }
+// }
+// ::placeholder {
+//   color: $border-default-color;
+// }
+
+
+form {
+
+}
+
+.form-control {
+  box-shadow: none !important;
+  font-family: "light";
+  font-size: 14px;
+
+  &.search {
+    border: none;
+    border-radius: 0;
+    color: #999;
+    padding: $global-padding * 2;       // 30px
+    padding-right: $global-padding * 15; // 225px
+    width: 100%;
+
+    &:focus {
+      color: #000;
+      outline: none;
+    }
+  }
+}
