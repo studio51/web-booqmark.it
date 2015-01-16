@@ -3,30 +3,13 @@ class BookmarksController < ApplicationController
 
   # GET /bookmarks
   def index
-    # @filterrific = Filterrific.new(Bookmark,
-    #   params[:filterrific] || session[:filterrific_bookmarks]
-    # )
+    # bookmarks = current_user.bookmarks.order(created_at: :desc).paginate(page: params[:page], per_page: 10)
+    query = "*"
 
-    # @filterrific.select_options = {
-    #   sorted_by: Bookmark.all,
-    #   with_tags: Tag.all.map { |t| [t.name, t.id] },
-    #   with_collections: Collection.all.map { |c| [c.name, c.id] },
-    # }
-
-    bookmarks = current_user.bookmarks.order(created_at: :desc).paginate(page: params[:page], per_page: 10)
-
-    # session[:filterrific_bookmarks] = @filterrific.to_hash
+    bookmarks = Bookmark.search(query).page(params[:page]).per_page(25).results
 
     respond_with @bookmarks = bookmarks
 
-  rescue ActiveRecord::RecordNotFound
-    redirect_to action: :reset_filterrific, format: :html && return
-  end
-
-  def reset_filterrific
-    session[:filterrific_bookmarks] = nil
-
-    redirect_to bookmarks_path
   end
 
   # GET /bookmarks/:id
@@ -87,6 +70,14 @@ class BookmarksController < ApplicationController
     flash[:notice] = t('messages.bookmarks.info.regenerate')
 
     redirect_to :back
+  end
+
+  def import_bookmarks
+    require 'json'
+
+    @bookmarks = JSON.parse(File.read("#{Rails.root}/bookmarks.json"))
+
+    render "dashboard/import"
   end
 
   private

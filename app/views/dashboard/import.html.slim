@@ -1,0 +1,15 @@
+/ - @bookmarks.each do |b|
+
+  / = b.to_json
+  / pre
+    / = b['children']
+
+
+= @bookmarks["children"].each do |b|
+
+  pre
+
+    = b["children"].each do |c|
+
+      pre
+        = c["title"]

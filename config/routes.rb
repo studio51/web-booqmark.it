@@ -30,6 +30,8 @@ Rails.application.routes.draw do
     end
   end
 
+  get 'import', to: 'bookmarks#import_bookmarks'
+
   resources :tags, only: [:index, :show, :edit], controller: :bookmarks, action: :index
 
   resources :settings

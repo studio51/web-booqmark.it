@@ -15,6 +15,8 @@ gem 'simple_form'
 # gem 'bh'
 # gem 'will_paginate'
 
+gem 'json'
+
 # Assets
 
 # gem 'turbolinks'
@@ -39,13 +41,7 @@ gem 'uglifier', '>= 1.3.0'
 
   # Search and Filtering
 
-  gem 'filterrific'
-  #################
-  #
-  # Filterrific is a Rails Engine plugin that makes it easy to filter, search,
-  # and sort your ActiveRecord lists
-  #
-  # https://github.com/jhund/filterrific
+  gem 'searchkick'
 
   # Bookmarks tags
 
