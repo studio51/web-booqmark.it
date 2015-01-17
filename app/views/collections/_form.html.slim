@@ -1,5 +1,6 @@
 = simple_form_for @collection, remote: true, html: { id: 'photoinfo', multipart: true } do |f|
   = token_tag form_authenticity_token
+  = f.input :owner_id, as: :hidden, input_html: { value: current_user.id }
 
   .row
     .col-sm-8
@@ -16,7 +17,6 @@
 
   .row
     .col-sm-6
-
       .row
         .col-sm-4.collection-form-icon
           .row

@@ -69,13 +69,13 @@ class BookmarksController < ApplicationController
     redirect_to :back
   end
 
-  def import_bookmarks
-    require 'json'
+  # def import_bookmarks
+  #   require 'json'
 
-    @bookmarks = JSON.parse(File.read("#{Rails.root}/bookmarks.json"))
+  #   @bookmarks = JSON.parse(File.read("#{Rails.root}/bookmarks.json"))
 
-    render "dashboard/import"
-  end
+  #   render "dashboard/import"
+  # end
 
   private
 

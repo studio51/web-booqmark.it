@@ -1,13 +1,13 @@
 .row
-  .col-sm-12.col-md-3.col-lg-2
+  .col-sm-2
     == render partial: 'shared/main_nav'
 
-  .col-sm-12.col-md-9.col-lg-10
+  .col-sm-10
 
-    - if @collections.nil?
+    - if @collections.empty?
 
       .alert.alert-info
-        = "No collections"
+        = "You have no collections, why not #{link_to 'add one', new_collection_path }".html_safe
 
     - else
 
