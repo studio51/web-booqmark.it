@@ -1,33 +1,33 @@
-/ - collection.each do |b|
+- collection.each do |b|
 
-/   .booqmarkit.index class="public-#{b.public} status-#{b.status.to_s.first}"
+  .booqmarkit.index class="public-#{b.public} status-#{b.status.to_s.first}"
 
-/     .row.booqmarkit-content
-/       = image_presenter(b, true)
+    .row.booqmarkit-content
+      = image_presenter(b, true)
 
-/       .col-sm-10
-/         h1.booqmarkit-url
-/           = name_presenter(b.name, b.url)
+      .col-sm-10
+        h1.booqmarkit-url
+          = name_presenter(b.name, b.url)
 
-/           .pull-right
-/             = link_to fa_icon('bookmark'), bookmark_path(b), title: "View Bookmark", data: { toggle: 'tooltip', placement: 'left' }
+          .pull-right
+            = link_to fa_icon('bookmark'), bookmark_path(b), title: "View Bookmark", data: { toggle: 'tooltip', placement: 'left' }
 
-/         = description_presenter(b.description)
+        = description_presenter(b.description)
 
-/         = collections_presenter(b.id, b.collections)
-/         = tags_presenter(b.id, b.tag_list)
+        = collections_presenter(b.id, b.collections)
+        = tags_presenter(b.id, b.tag_list)
 
-/     .row.booqmarkit-actions
-/       .col-xs-3
-/         .booqmarkit-info
-/           = fa_icon(t("models.bookmark.attributes.status.#{b.status.to_s.first}.icon"), title: t("models.bookmark.attributes.status.#{b.status.to_s.first}.name"), data: { toggle: 'tooltip', placement: 'right' }, class: "status-#{b.status.to_s.first}")
-/           = fa_icon(t("models.bookmark.attributes.public.#{b.public}.icon"), title: t("models.bookmark.attributes.public.#{b.public}.name"), data: { toggle: 'tooltip', placement: 'right' }, class: "public-#{b.public}")
+    .row.booqmarkit-actions
+      .col-xs-3
+        .booqmarkit-info
+          = fa_icon(t("models.bookmark.attributes.status.#{b.status.to_s.first}.icon"), title: t("models.bookmark.attributes.status.#{b.status.to_s.first}.name"), data: { toggle: 'tooltip', placement: 'right' }, class: "status-#{b.status.to_s.first}")
+          = fa_icon(t("models.bookmark.attributes.public.#{b.public}.icon"), title: t("models.bookmark.attributes.public.#{b.public}.name"), data: { toggle: 'tooltip', placement: 'right' }, class: "public-#{b.public}")
 
-/       .col-xs-9
-/         = booqmarkit_url_helper('method', 'edit', edit_bookmark_path(b.id))
-/         = booqmarkit_url_helper('method', 'destroy', b)
+      .col-xs-9
+        = booqmarkit_url_helper('method', 'edit', edit_bookmark_path(b.id))
+        = booqmarkit_url_helper('method', 'destroy', b)
 
-/ .row
-/   .col-sm-12
-/     p.pagination-info
-/       = fa_icon('info', text: page_entries_info(collection))
+.row
+  .col-sm-12
+    p.pagination-info
+      = fa_icon('info', text: page_entries_info(collection))

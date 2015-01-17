@@ -3,10 +3,7 @@ class BookmarksController < ApplicationController
 
   # GET /bookmarks
   def index
-    # bookmarks = current_user.bookmarks.order(created_at: :desc).paginate(page: params[:page], per_page: 10)
-    query = "*"
-
-    bookmarks = Bookmark.search(query).page(params[:page]).per_page(25).results
+    bookmarks = current_user.bookmarks.order(created_at: :desc).paginate(page: params[:page], per_page: 10)
 
     respond_with @bookmarks = bookmarks
 

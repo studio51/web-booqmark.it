@@ -1,14 +1,59 @@
-= simple_form_for @collection, html: { multipart: true } do |f|
-  = f.error_notification
+= simple_form_for @collection, remote: true, html: { id: 'photoinfo', multipart: true } do |f|
+  = token_tag form_authenticity_token
 
-  .form-inputs
-    = f.file_field :icon
+  .row
+    .col-sm-8
+      h4
+        = @collection.new_record? ? "New Collection" : "Edit <span>#{@collection.name}</span> Collection".html_safe
 
-    = f.input :name
-    = f.input :description
-    = f.input :public, as: :boolean, checked_value: true, unchecked_value: false
+    .col-sm-4
+      .form-group
+        = f.input_field :public, as: :boolean, checked_value: true, unchecked_value: false, data: { labelauty: "Don't make this Collection public|Make this Collection public" }, class: 'labelauty'
 
-    = f.association :bookmarks, as: :select
+  .row
+    .col-sm-12
+      = f.error_notification
 
-  .form-actions
-    = f.button :submit
+  .row
+    .col-sm-6
+
+      .row
+        .col-sm-4.collection-form-icon
+          .row
+            .col-sm-12
+              #image-upload.collection-form-icon__preview class="collection-form-icon__#{@collection.icon?}"
+
+                - if @collection.icon?
+
+                  = image_tag @collection.icon(:original), class: 'collection-form-icon__preview'
+
+                - else
+
+                  = fa_icon('upload', class: 'hide-preview')
+
+                  p.hide-preview
+                    = 'Upload an Icon'
+
+              = f.input_field :icon, id: 'image-upload-input', accept: 'image/png,image/gif,image/jpeg, image/jpg'
+
+          .row
+            .col-sm-12
+              .form-actions
+                = f.button :submit
+
+        .col-sm-8
+          .form-group.collection-form-name
+            = f.input_field :name, class: 'form-control input-lg input-booky'
+            = f.label :name, class: 'label-booky'
+              span.label-booky__content
+                = "Name"
+
+          .form-group.collection-form-description
+            = f.input_field :description, class: 'form-control input-lg input-booky'
+            = f.label :description, class: 'label-booky'
+              span.label-booky__content
+                = "Description"
+
+    .col-sm-6
+      = f.association :bookmarks, as: :select, label: false, input_html: { class: 'magicsuggest' }
+

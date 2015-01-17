@@ -12,7 +12,21 @@
  *
  *= require_self
  *= require font-awesome
+ *= require labelauty
+ *= require magicsuggest
 */
+$grapefruit:  #ED5565, #DA4453; // red
+$bittersweet: #FC6E51, #E9573F; // orange
+$sunflower:   #FFCE54, #FCBB42; // yellow
+$grass:       #A0D468, #8CC152; // green
+$mint:        #48CFAD, #37BC9B; // green
+$aqua:        #4FC1E9, #3BAFDA; // blue
+$bluejeans:   #5D9CEC, #4A89DC; // blue
+$lavender:    #AC92EC, #967ADC; // purple
+$pinkrose:    #EC87C0, #D770AD; // pink
+$lightgray:   #F5F7FA, #E6E9ED; // white/gray
+$mediumgray:  #CCD1D9, #AAB2BD; // gray
+$darkgray:    #656D78, #434A54; // black
 
 $global-spacing: 15px;
 
@@ -342,4 +356,181 @@ body {
   padding-top: 0;
   padding-bottom: 0;
   height: auto;
+}
+
+.form-group {
+  position: relative;
+}
+
+.input-booky {
+/*   padding: 150px; */
+  font-size: 14px;
+  position: absolute;
+/*   top: 4px; */
+/*   left: 4px; */
+  z-index: 100;
+  display: block;
+  border-radius: 0;
+/*   padding: 0 0.55em; */
+background: #fff;
+/*   width: calc(100% - 8px);
+  height: calc(100% - 8px); */
+  color: #7F8994;
+  opacity: 0;
+  -webkit-transform: scale3d(1, 0, 1);
+  transform: scale3d(1, 0, 1);
+  -webkit-transform-origin: 50% 100%;
+  transform-origin: 50% 100%;
+  -webkit-transition: opacity 0.3s, -webkit-transform 0.3s;
+  transition: opacity 0.3s, transform 0.3s;
+  box-shadow: none;
+  border: none;
+}
+
+.label-booky {
+  width: 100%;
+
+  cursor: text;
+  color: #999;
+  padding: 13px 15px;
+  height: 46px;
+  margin: 0 !important;
+
+}
+
+.label-booky::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background: #fff;
+  -webkit-transform-origin: 50% 100%;
+  transform-origin: 50% 100%;
+  -webkit-transition: -webkit-transform 0.3s;
+  transition: transform 0.3s;
+}
+
+.label-booky__content {
+  -webkit-transform-origin: 0% 50%;
+  transform-origin: 0% 50%;
+  -webkit-transition: -webkit-transform 0.3s;
+  transition: transform 0.3s;
+}
+
+.input-booky:focus,
+.input--filled .input-booky {
+    box-shadow: none;
+  opacity: 1;
+  -webkit-transform: scale3d(1, 1, 1);
+  transform: scale3d(1, 1, 1);
+}
+
+.input-booky:focus + .label-booky,
+.input--filled .label-booky {
+  cursor: default;
+  pointer-events: none;
+}
+
+.input-booky:focus + .label-booky::before,
+.input--filled .label-booky::before {
+  // -webkit-transform: scale3d(1, 1.5, 1);
+  // transform: scale3d(1, 1.5, 1);
+}
+.input-booky:focus + .label-booky .label-booky__content,
+.input--filled .label-booky__content {
+  -webkit-transform: translate3d(0, -3.15em, 0) scale3d(0.8, 0.8, 1);
+  transform: translate3d(0, -3.15em, 0) scale3d(0.8, 0.8, 1) translateZ(1px);
+}
+
+.collection-form-icon__preview {
+  border: 3px solid nth($grass, 1);
+  text-align: center;
+  border-radius: 250px;
+  height: 130px;
+  display: inline-block;
+  width: 100%;
+  vertical-align: top;
+  cursor: pointer;
+  padding: 35px 0;
+  z-index: 1;
+}
+
+img.collection-form-icon__preview {
+  padding: 0;
+  z-index: -1;
+  position: relative;
+}
+.collection-form-icon__true {
+  padding: 0 !important;
+  border: 0;
+}
+
+
+.collection-form-icon__preview i {
+  font-size: 24px !important;
+  color: #999;
+}
+.collection-form-icon__preview p {
+  margin: 0;
+  font-size: 12px;
+  margin-top: 10px;
+  color: #999;
+}
+
+
+.collection-form-icon__preview {
+    -webkit-background-size: cover !important;
+  -moz-background-size: cover !important;
+  -o-background-size: cover !important;
+  background-size: cover !important;
+  background-position: center center !important;
+}
+
+.collection-form-description {
+  margin-top: 1em;
+}
+
+
+.ms-sel-item {
+  border: none !important;
+  background: #fff !important;
+  margin: 0 0 1px 0!important;
+  width: 100% !important;
+  padding: 10px !important;
+  border-radius: 0 !important;
+  position: relative;
+}
+
+.ms-sel-ctn.ms-stacked {
+  padding: 0;
+  margin-top: 5px;
+}
+
+.ms-close-btn {
+  position: absolute;
+  right: 10px;
+  top: 8px;
+}
+
+.ms-ctn {
+  border: none;
+  border-radius: 0;
+  padding: 12px 15px !important;
+  box-shadow: none;
+}
+
+.ms-trigger {
+   display: block;
+  padding: 5px 25px;
+}
+
+.ms-trigger-ico {
+  margin-left: -3px !important;
+
+    margin-top: 15px !important;
+ padding: 0;
+ right: 10px;
 }
