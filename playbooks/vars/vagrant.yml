@@ -1,0 +1,17 @@
+---
+application_environment: development
+application_user: vagrant
+
+server_user_dir: "/home/{{ application_user }}"
+
+rails_root_dir: "/{{ application_user}}"
+rails_env: "{{ application_environment }}"
+rails_public_dir: "{{ rails_root_dir }}/public"
+
+database_name: app_db
+database_user: root
+database_pass: password
+database_host: localhost
+database_port: 3306
+
+database_yml_location: config

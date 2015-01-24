@@ -1,0 +1,8 @@
+application_name: booqmarkit
+
+ruby_versions:
+  - 'ruby2.1'
+  - 'ruby2.1-dev'
+
+rails_version:
+  - '4.2.0'
