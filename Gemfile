@@ -12,9 +12,7 @@ gem 'devise'
 gem 'slim-rails'
 gem 'simple_form'
 
-# gem 'bh'
-# gem 'will_paginate'
-
+gem 'json'
 # Assets
 
 # gem 'turbolinks'
@@ -35,41 +33,45 @@ gem 'uglifier', '>= 1.3.0'
   gem 'font-awesome-rails'
   gem 'will_paginate'
 
-# Gems that booqmark.it requires
+## Bookmark.it ##################
+#
+# Gems that make Bookmark.it tick
+#
+#################################
 
-  # Search and Filtering
-
-  gem 'filterrific'
-  #################
+  # Background Jobs
   #
-  # Filterrific is a Rails Engine plugin that makes it easy to filter, search,
-  # and sort your ActiveRecord lists
+  gem 'sidekiq'
+
+  # Searching and Filtering
   #
-  # https://github.com/jhund/filterrific
+  # Searchkick provides a rails interface for elasticsearch
+  # TODO: Replace with elasticsearch-rails, elasticsearch-model and replace
+  # facets with aggregations
+  gem 'searchkick'
 
-  # Bookmarks tags
-
-  gem 'acts-as-taggable-on'
-  #########################
+  # File upload
   #
-  # This plugin was originally based on Acts as Taggable on Steroids
-  # by Jonathan Viney. It has evolved substantially since that point, but all
-  # credit goes to him for the initial tagging functionality that so many people
-  # have used.
+  # Used in Bookmark.it for uploading files, notes, images etc.. Paperclip
+  # provides the magic for uploading the image and resize it whereas aws sends
+  # them to aws s3
   #
-  # https://github.com/mbleigh/acts-as-taggable-on
-
-  # Image hosting
-
-  gem 'aws-sdk'
-
-  # Image upload and processing
-gem 'sidekiq'
-
   gem 'paperclip'
+  gem 'aws-sdk-v1'
 
+  # Image processing
+  #
+  # Used in Bookmark.it for grabbing a screenshot from the url provided by the
+  # user when creating a new Bookmark
+  #
   gem 'imgkit'
   gem 'wkhtmltoimage-binary'
+
+  # Bookmarks tags
+  #
+  # Used for tagging bookmarks
+  #
+  gem 'acts-as-taggable-on'
 
 group :development do
   # gem 'better_errors'

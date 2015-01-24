@@ -7,7 +7,7 @@
           .row
             .col-sm-2
               .booqmarkit-image
-                = image_tag @collection.icon(:thumb), class: 'img-responsive'
+                = image_tag @collection.icon(:original), class: 'img-responsive'
 
             .col-sm-10
               h1.booqmarkit-url
@@ -22,7 +22,7 @@
 
           .row
             .col-sm-3
-              = @bookmarks.count
+              = @collection.bookmarks_count
 
             .col-sm-3
 

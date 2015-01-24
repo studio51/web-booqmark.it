@@ -3,7 +3,7 @@ class CollectionsController < ApplicationController
   # GET /collections
   def index
     # @collections = paginate current_user.collections
-    @collections = Collection.all.paginate(page: params[:page])
+    @collections = Collection.paginate(page: params[:page])
 
   end
 
@@ -16,11 +16,15 @@ class CollectionsController < ApplicationController
   # GET /collections/new
   def new
     @collection = Collection.new
+
+    render template: 'collections/_form'
   end
 
   # GET /collections/:id/edit
   def edit
     collection
+
+    render template: 'collections/_form'
   end
 
   # POST /collections

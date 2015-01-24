@@ -7,8 +7,11 @@ Bundler.require(*Rails.groups)
 
 module Bookmarkit
   class Application < Rails::Application
+    config.active_job.queue_adapter = :sidekiq
+
     config.generators do |g|
       g.template_engine :slim
+
       g.test_framework :rspec,
         controller_specs: true,
         model_specs: true,

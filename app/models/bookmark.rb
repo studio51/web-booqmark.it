@@ -1,5 +1,6 @@
 class Bookmark < ActiveRecord::Base
   acts_as_taggable
+  searchkick
 
   has_attached_file :snapshot,
                     storage: :s3,
@@ -14,7 +15,7 @@ class Bookmark < ActiveRecord::Base
 
   belongs_to :user
 
-  has_and_belongs_to_many :collections
+  has_and_belongs_to_many :collections, counter_cache: true
 
   # Validations
 
@@ -61,5 +62,11 @@ class Bookmark < ActiveRecord::Base
 
   def generate_snapshot
     BookmarkSnapshotJob.perform_later(self.id)
+  end
+
+  # Import
+
+  def import_bookmarks
+
   end
 end

@@ -1,11 +1,8 @@
 # Vagrant related files
 /.vagrant/
-/Vagrantfile
 /hosts
 
 # Provisioner
-/playbooks/*
-/provisioner/*
 /config/unicorn-development.rb
 
 # Temp files/folders

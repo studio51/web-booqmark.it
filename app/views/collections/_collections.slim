@@ -5,7 +5,7 @@
     .row.booqmarkit-content
       .col-sm-2
         .booqmarkit-image
-          = image_tag(c.icon(:thumb), class: 'img-responsive')
+          = image_tag(c.icon(:original), class: 'img-responsive')
 
       .col-sm-10
         h1.booqmarkit-url
@@ -24,7 +24,7 @@
           = fa_icon(t("models.bookmark.attributes.public.#{c.public}.icon"), title: t("models.bookmark.attributes.public.#{c.public}.name"), data: { toggle: 'tooltip', placement: 'right' }, class: "public-#{c.public}")
 
       .col-xs-9
-        = booqmarkit_url_helper('method', 'edit', edit_bookmark_path(c.id))
+        = booqmarkit_url_helper('method', 'edit', edit_collection_path(c.id))
         = booqmarkit_url_helper('method', 'destroy', c)
 
 .row
