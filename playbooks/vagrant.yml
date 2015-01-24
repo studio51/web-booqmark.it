@@ -2,17 +2,17 @@
 - hosts: all
 
   vars_files:
-    - 'vars/global.yml'
-    - 'vars/vagrant.yml'
+    - "vars/global.yml"
+    - "vars/vagrant.yml"
 
   vars:
    apt_packages:
     # - imagemagick
 
-    provisioner_path: '../provisioner/roles'
+    provisioner_path: ../provisioner/roles
 
   roles:
-    - '{{ provisioner_path }}/apt'
+    - "{{ provisioner_path }}/apt"
     # - "{{ provisioner_path }}/mysql"
     # - "{{ provisioner_path }}/ruby"
     # - "{{ provisioner_path }}/nginx"
