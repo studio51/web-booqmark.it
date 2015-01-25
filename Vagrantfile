@@ -12,19 +12,44 @@ Vagrant.configure(2) do |config|
 
   boxes = [
     {
-      :name => 'web',
-      :ip => '10.0.51.1', :host => 1337,
-      :cpu => 2, :ram => '1048', :cap => '80',
-      :nfs => true
+      name: 'app',
+      ip: '10.0.51.1', host: 1337,
+      cpu: 2, ram: '1048', cap: '80',
+      nfs: true
     }
+    #,
+    # {
+    #   name: 'mysql',
+    #   ip: '10.0.51.2', host: 2337,
+    #   cpu: 1, ram: '1048', cap: '50',
+    #   nfs: true
+    # },
+    # {
+    #   name: 'elasticsearch',
+    #   ip: '10.0.51.3', host: 3337,
+    #   cpu: 1, ram: '512', cap: '50',
+    #   nfs: true
+    # },
+    # {
+    #   name: 'redis',
+    #   ip: '10.0.51.4', host: 4337,
+    #   cpu: 1, ram: '256', cap: '50',
+    #   nfs: true
+    # },
+    # {
+    #   name: 'rabbitmq',
+    #   ip: '10.0.51.5', host: 5337,
+    #   cpu: 1, ram: '256', cap: '50',
+    #   nfs: true
+    # }
   ]
 
   boxes.each do |box|
 
     config.vm.define box[:name] do |box_config|
 
-      box_config.vm.box       = APP_NAME + '-' + box[:name]
-      box_config.vm.host_name = APP_NAME
+      box_config.vm.box       = APP_NAME + '.' + box[:name]
+      box_config.vm.host_name = "#{APP_NAME}.app.dev"
 
       ## Network
 
@@ -35,7 +60,7 @@ Vagrant.configure(2) do |config|
 
         ## Default VirtualBox Settings
 
-        vb.name = APP_NAME + ' ' + box[:name].upcase
+        vb.name = APP_NAME + '.' + box[:name]
         vb.gui  = false
 
         ## Resources Settings
@@ -50,10 +75,7 @@ Vagrant.configure(2) do |config|
 
       # NFS | Need for Speed
 
-      if box[:nfs] == true
-
-        box_config.vm.synced_folder './', '/vagrant', type: 'nfs'
-      end
+      box_config.vm.synced_folder './', '/vagrant', type: 'nfs' if box[:nfs]
     end
   end
 
