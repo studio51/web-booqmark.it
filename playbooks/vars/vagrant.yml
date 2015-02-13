@@ -1,17 +1,35 @@
 ---
-application_environment: development
-application_user: vagrant
+# application_environment: development
+# application_user: vagrant
 
-server_user_dir: "/home/{{ application_user }}"
+# server_user_dir: "/home/{{ application_user }}"
 
-rails_root_dir: "/{{ application_user}}"
-rails_env: "{{ application_environment }}"
-rails_public_dir: "{{ rails_root_dir }}/public"
+# rails_root_dir: "/{{ application_user}}"
+# rails_env: "{{ application_environment }}"
+# rails_public_dir: "{{ rails_root_dir }}/public"
 
-database_name: app_db
-database_user: root
-database_pass: password
-database_host: localhost
-database_port: 3306
+# database_name: app_db
+# database_user: root
+# database_pass: password
+# database_host: localhost
+# database_port: 3306
+
+# database_yml_location: config
+
+# apt_reset_source_list: false
+
+app_env: development
+user: vagrant
+user_home: /home/{{ user }}
+rails_dir: /vagrant
+rails_env: "{{ app_env }}"
+app_public: "{{ rails_dir }}/public"
+
+# needed for roles/rails3-config, roles/mysql
+db_name: app_db
+db_user: root
+db_pass: password
+db_host: localhost
+db_port: 3306
 
 database_yml_location: config

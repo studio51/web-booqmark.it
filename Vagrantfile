@@ -13,8 +13,8 @@ Vagrant.configure(2) do |config|
   boxes = [
     {
       name: 'app',
-      ip: '10.0.51.1', host: 1337,
-      cpu: 2, ram: '1048', cap: '80',
+      ip: '10.0.1.51', host: 1337,
+      cpu: 2, ram: '2048', cap: '80',
       nfs: true
     }
     #,

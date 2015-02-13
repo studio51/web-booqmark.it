@@ -1,6 +1,5 @@
 class Bookmark < ActiveRecord::Base
   acts_as_taggable
-  searchkick
 
   has_attached_file :snapshot,
                     storage: :s3,

@@ -7,14 +7,22 @@
 
 ### Tech
 
-Dillinger uses a number of open source projects to work properly:
-Booqmark.it uses a number of open source projects to work properly:
+Read `Gemfile` for more informations about the gems.
+Bookmark.it uses a number of open source projects and gems in order to work properly:
 
 * Rails
-* RabbitMQ
-* Sneaker
-* [Twitter Bootstrap]
-* [jQuery]
+Rails is both the back-end and front-end ( for now )
+* Elasticsearch
+We use ES for filtering and searching Bookmarks
+* RabbitMQ ( planned for v2.0 )
+
+### Features
+
+Bookmark Management System
+Social
+URL Checker
+Collections
+Badges
 
 ### Installation
 
@@ -28,9 +36,7 @@ Coming Soon
 
 Want to contribute? Great!
 
-Booqmark.it uses Vagrant for fast developing, a vagrant image will be made available sson.
-
-Open your favorite Terminal and run these commands.
+Booqmark.it uses Vagrant for fast developing, a vagrant image will be made available soon.
 
 License
 ----

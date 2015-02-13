@@ -6,6 +6,9 @@ gem 'unicorn'
 gem 'mysql2'
 
 gem 'devise'
+gem 'omniauth'
+gem 'omniauth-facebook'
+gem 'omniauth-twitter'
 
 # Helpers
 
@@ -48,7 +51,8 @@ gem 'uglifier', '>= 1.3.0'
   # Searchkick provides a rails interface for elasticsearch
   # TODO: Replace with elasticsearch-rails, elasticsearch-model and replace
   # facets with aggregations
-  gem 'searchkick'
+  gem 'elasticsearch-rails'
+  gem 'elasticsearch-model'
 
   # File upload
   #
@@ -74,8 +78,7 @@ gem 'uglifier', '>= 1.3.0'
   gem 'acts-as-taggable-on'
 
 group :development do
-  # gem 'better_errors'
-  # gem 'spring'
+  gem 'better_errors'
 
   gem 'capistrano-rails'
   gem 'capistrano', '~> 3.2.1'

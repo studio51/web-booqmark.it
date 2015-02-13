@@ -1,4 +1,4 @@
-nav.navbar.navbar-default role="navigation"
+nav.navbar role="navigation"
   .container
     .row
       .col-xs-2
@@ -8,10 +8,56 @@ nav.navbar.navbar-default role="navigation"
           = link_to image_tag("logo-bold.svg", title: t("app.description"), alt: t("app.name"), class: "img-responsive"), root_path, class: "navbar-brand"
 
       .col-sm-10
-        #navbar-collapse.navbar-collapse.collapse
-          ul.nav.navbar-nav.navbar-right.navbar-user
-            li
-              = user_presenter(current_user)
+        .row
+          .col-sm-7
+            .input-group
+              span#search-icon.input-group-addon
+                = fa_icon("search")
+              = text_field_tag :q, params[:q], class: 'search-input input-md form-control', placeholder: 'Search Bookmarks, Collections, Users..', aria: { describedby: "search-icon" }
 
-            li
-              = current_user.name
+          .col-sm-5
+            #navbar-collapse.navbar-collapse.collapse
+              ul.nav.navbar-nav.navbar-right.navbar-user
+                li
+                  = user_presenter(current_user)
+
+                li.dropdown
+                  = link_to current_user.name, user_path(current_user.id)
+                  = link_to fa_icon("angle-down"), '#', class: "dropdown-toggle", data: { toggle: "dropdown" }, role: "button"
+
+                  ul.dropdown-menu role="menu"
+                    li
+                      = link_to fa_icon("cogs", text: "Settings")
+                    li.divider
+                    li
+                      = link_to fa_icon("sign-out", text: "Logout"), destroy_user_session_path, method: :delete
+
+nav.bit-navbar role="navigation"
+  .grid-container
+    .grid
+      .grid-cell.grid-cell-sm-2
+        = link_to image_tag("logo-bold.svg", title: t("app.description"), alt: t("app.name"), class: "img-responsive"), root_path, class: "bit-brand grid-cell-middle"
+
+      .grid-cell.grid-cell-sm-10
+        .grid
+          .grid-cell.grid-cell-sm-8
+            .input-group
+              span#search-icon.input-group-addon
+                = fa_icon("search")
+              = text_field_tag :q, params[:q], class: 'search-input input-md form-control', placeholder: 'Search Bookmarks, Collections, Users..', aria: { describedby: "search-icon" }
+
+          .grid-cell.grid-cell-sm-4
+            ul.bit-navbar-user
+              li
+                = user_presenter(current_user)
+              li
+                = link_to current_user.name, user_path(current_user.id), class: 'user-name'
+              li.dropdown
+                = link_to fa_icon("angle-down"), '#', class: "dropdown-toggle", data: { toggle: "dropdown" }, role: "button"
+
+                ul.dropdown-menu role="menu"
+                  li
+                    = link_to fa_icon("cogs", text: "Settings")
+                  li.divider
+                  li
+                    = link_to fa_icon("sign-out", text: "Logout"), destroy_user_session_path, method: :delete

@@ -4,7 +4,8 @@ Rails.application.routes.draw do
 
   devise_for :users,
     controllers: {
-      registrations: 'registrations'
+      registrations: 'registrations',
+      omniauth_callbacks: 'omniauth_callbacks'
     }
 
   resources :users
@@ -33,6 +34,7 @@ Rails.application.routes.draw do
   get 'import', to: 'bookmarks#import_bookmarks'
 
   resources :tags, only: [:index, :show, :edit], controller: :bookmarks, action: :index
+  match '/users/:id/finish_signup' => 'users#finish_signup', via: [:get, :patch], :as => :finish_signup
 
   resources :settings
 end
