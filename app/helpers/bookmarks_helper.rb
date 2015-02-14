@@ -6,9 +6,9 @@ module BookmarksHelper
         concat(image_tag(b.snapshot(:lg), class: 'img-responsive'))
 
         if regenerate
-          if b.updated_at < Date.today
-            concat(link_to fa_icon('refresh'), regenerate_bookmark_path(b.id), title: "Regenerate bookmark", data: { toggle: 'tooltip' })
-          end
+          # if b.updated_at < Date.today
+          concat(link_to fa_icon('refresh'), regenerate_bookmark_path(b.id), title: "Regenerate bookmark", data: { toggle: 'tooltip' })
+          # end
         end
       end
     end

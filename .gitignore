@@ -4,6 +4,7 @@
 
 # Provisioner
 /config/unicorn-development.rb
+provisioner/*
 
 # Temp files/folders
 /tmp/cache/*

@@ -1,0 +1,21 @@
+.bit-grid {
+  @extend .grid-cell;
+
+  &--navbar {
+    &-brand {
+      @extend .grid-cell-sm-2;
+    }
+
+    &-search__user {
+      @extend .grid-cell-sm-10;
+    }
+
+    &-search {
+      @extend .grid-cell-sm-8
+    }
+
+    &-user {
+      @extend .grid-cell-sm-4;
+    }
+  }
+}

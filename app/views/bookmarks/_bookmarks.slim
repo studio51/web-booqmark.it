@@ -1,9 +1,14 @@
 - collection.each do |b|
 
+  .grid
+    .grid-cell.grid-cell-sm-10
+      = image_presenter(b, true)
+    .grid-cell.grid-cell-sm-2
+
   .booqmarkit.index class="public-#{b.public} status-#{b.status.to_s.first}"
 
     .row.booqmarkit-content
-      = image_presenter(b, true)
+
 
       .col-sm-10
         h1.booqmarkit-url
