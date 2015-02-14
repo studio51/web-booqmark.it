@@ -3,10 +3,10 @@
   = simple_form_for @bookmark do |f|
 
     .col-sm-12
-      = f.input :name, label: false
+      = f.input :name, input_html: { value: params[:name] }, label: false
 
     .col-sm-12
-      = f.input :description
+      = f.input :description, input_html: { value: params[:description] }
 
     .col-sm-12
       .row
@@ -20,6 +20,6 @@
             = f.input :tag_list, placeholder: t("models.tag.name").pluralize, label: false
 
           div class=".#{t("models.url.name").downcase}"
-            = f.input :url, label: false
+            = f.input :url, input_html: { value: params[:url] }, label: false
 
     .actions = f.submit 'Save', class: "btn btn-primary btn-md"

@@ -18,13 +18,7 @@ class CreatePolymorphicTableTags < ActiveRecord::Migration
       t.datetime :created_at
     end
 
-    add_index :taggings, [
-      :tag_id,
-      :taggable_id,
-      :taggable_type,
-      :context,
-      :tagger_id,
-      :tagger_type], unique: true, name: 'taggings_idx'
+    add_index :taggings, [:tag_id, :taggable_id, :taggable_type, :context, :tagger_id, :tagger_type], unique: true, name: 'taggings_idx'
   end
 
   def self.down

@@ -11,13 +11,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150213151353) do
+ActiveRecord::Schema.define(version: 20150214211953) do
 
   create_table "bookmarks", force: :cascade do |t|
     t.integer  "user_id",               limit: 4
     t.string   "name",                  limit: 255
     t.string   "url",                   limit: 255
     t.text     "description",           limit: 65535
+    t.integer  "status",                limit: 4,     default: 200
     t.boolean  "public",                limit: 1,     default: false
     t.string   "snapshot_file_name",    limit: 255
     t.string   "snapshot_content_type", limit: 255
@@ -25,7 +26,6 @@ ActiveRecord::Schema.define(version: 20150213151353) do
     t.datetime "snapshot_updated_at"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "status",                limit: 4,     default: 200
   end
 
   create_table "bookmarks_collections", id: false, force: :cascade do |t|
@@ -33,18 +33,23 @@ ActiveRecord::Schema.define(version: 20150213151353) do
     t.integer "bookmark_id",   limit: 4, null: false
   end
 
+  create_table "bookmarks_users", id: false, force: :cascade do |t|
+    t.integer "bookmark_id", limit: 4, null: false
+    t.integer "user_id",     limit: 4, null: false
+  end
+
   create_table "collections", force: :cascade do |t|
     t.integer  "owner_id",          limit: 4
-    t.string   "name",              limit: 255
+    t.string   "name",              limit: 255,                  null: false
     t.text     "description",       limit: 65535
+    t.boolean  "public",            limit: 1,     default: true
+    t.integer  "bookmarks_count",   limit: 4,     default: 0
     t.string   "icon_file_name",    limit: 255
     t.string   "icon_content_type", limit: 255
     t.integer  "icon_file_size",    limit: 4
     t.datetime "icon_updated_at"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.boolean  "public",            limit: 1,     default: false
-    t.integer  "bookmarks_count",   limit: 4,     default: 0
   end
 
   create_table "collections_users", id: false, force: :cascade do |t|
@@ -73,18 +78,7 @@ ActiveRecord::Schema.define(version: 20150213151353) do
     t.datetime "avatar_updated_at"
   end
 
-  add_index "profiles", ["user_id"], name: "index_profiles_on_user_id", unique: true, using: :btree
-
-  create_table "settings", force: :cascade do |t|
-    t.string   "var",         limit: 255,   null: false
-    t.text     "value",       limit: 65535
-    t.integer  "target_id",   limit: 4,     null: false
-    t.string   "target_type", limit: 255,   null: false
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  add_index "settings", ["target_type", "target_id", "var"], name: "index_settings_on_target_type_and_target_id_and_var", unique: true, using: :btree
+  add_index "profiles", ["user_id", "first_name", "last_name", "avatar_file_name"], name: "profiles_idx", unique: true, using: :btree
 
   create_table "taggings", force: :cascade do |t|
     t.integer  "tag_id",        limit: 4

@@ -7,6 +7,7 @@ class CreateIdentities < ActiveRecord::Migration
 
       t.timestamps null: false
     end
+
     add_foreign_key :identities, :users
   end
 end

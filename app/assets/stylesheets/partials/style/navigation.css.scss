@@ -11,7 +11,7 @@
         background-color: #fff;
         border: none;
         font-size: 18px;
-        padding: 0;
+        padding: 0 $global-spacing 0 0;
       }
 
       input {
@@ -19,7 +19,7 @@
         border-radius: 0;
         box-shadow: none;
         height: 100%;
-        padding: $global-spacing;
+        padding: ( $global-spacing + 1px ) 0;
       }
     }
 
@@ -58,7 +58,7 @@
 
   &-brand {
     img {
-      margin-top: 7px;
+      margin-top: 10px;
     }
   }
 }

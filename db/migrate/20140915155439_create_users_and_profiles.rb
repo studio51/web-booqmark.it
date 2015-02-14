@@ -15,12 +15,6 @@ class CreateUsersAndProfiles < ActiveRecord::Migration
       u.string   :current_sign_in_ip
       u.string   :last_sign_in_ip
 
-      ## Confirmable
-      # u.string   :confirmation_token
-      # u.datetime :confirmed_at
-      # u.datetime :confirmation_sent_at
-      # u.string   :unconfirmed_email # Only if using reconfirmable
-
       u.integer  :failed_attempts, default: 0, null: false
       u.string   :unlock_token
       u.datetime :locked_at
@@ -29,16 +23,19 @@ class CreateUsersAndProfiles < ActiveRecord::Migration
     end
 
     add_index :users, [:email, :reset_password_token, :unlock_token], unique: true
-    # add_index :users, :confirmation_token,   unique: true
 
     create_table :profiles, id: false do |p|
       p.belongs_to :user
 
       p.string :first_name, null: true
       p.string :last_name,  null: true
+
+      p.text   :description
+
+      p.attachment :avatar
     end
 
-    add_index :profiles, :user_id, unique: true
+    add_index :profiles, [:user_id, :first_name, :last_name, :avatar_file_name], unique: true, name: 'profiles_idx'
   end
 
   def self.down

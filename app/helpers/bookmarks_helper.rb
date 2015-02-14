@@ -1,15 +1,15 @@
 module BookmarksHelper
 
   def image_presenter(b, regenerate = false)
-    content_tag(:div, class: "col-sm-2") do
-      content_tag(:div, class: 'booqmarkit-image') do
-        concat(image_tag(b.snapshot(:lg), class: 'img-responsive'))
+    snapshot = b.snapshot.exists?
 
-        if regenerate
-          # if b.updated_at < Date.today
-          concat(link_to fa_icon('refresh'), regenerate_bookmark_path(b.id), title: "Regenerate bookmark", data: { toggle: 'tooltip' })
-          # end
-        end
+    content_tag(:div, class: "bit-bookmark-image bit-bookmark-image-#{snapshot}") do
+      if snapshot
+        concat(image_tag(b.snapshot(:lg)))
+      end
+
+      if regenerate #&& b.updated_at < Date.today
+        concat(link_to fa_icon('refresh'), regenerate_bookmark_path(b.id), title: "Regenerate bookmark", data: { toggle: 'tooltip' })
       end
     end
   end
@@ -35,7 +35,7 @@ module BookmarksHelper
         _description = description
       end
 
-      content_tag(:p, class: 'booqmarkit-description') do
+      content_tag(:p, class: 'bit-bookmark-description') do
         _description
       end
     end
@@ -56,7 +56,7 @@ module BookmarksHelper
         _collections = collections_curator
       end
 
-      content_tag(:div, class: 'booqmarkit-association collections') do
+      content_tag(:div, class: 'bit-bookmark-association collections') do
         fa_icon('folder') + _collections.join.html_safe
       end
     end
@@ -75,7 +75,7 @@ module BookmarksHelper
         _tags = tags
       end
 
-      content_tag(:div, class: 'booqmarkit-association tags') do
+      content_tag(:div, class: 'bit-bookmark-association tags') do
         fa_icon('tags') + tags_curator(_tags)
       end
     end
