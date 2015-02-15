@@ -1,0 +1,15 @@
+
+app_env: production
+user: ubuntu
+user_home: /home/{{ user }}
+rails_dir: "{{ user_home }}/deploy/current"
+rails_env: "{{ app_env }}"
+app_public: "{{ rails_dir }}/public"
+
+db_name: booqmarkit
+db_user: booqmarkit
+db_pass: wasted4life
+db_host: booqmarkit-production.cwhvxfdx6gze.eu-west-1.rds.amazonaws.com
+db_port: 3306
+
+database_yml_location: ../shared/config

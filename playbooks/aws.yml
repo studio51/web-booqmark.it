@@ -3,7 +3,7 @@
 
   vars_files:
     - vars/global.yml
-    - vars/vagrant.yml
+    - vars/aws.yml
 
   vars:
     apt_packages:
@@ -22,9 +22,8 @@
 
   roles:
     - "{{ provisioner_path }}/base"
-    - "{{ provisioner_path }}/mysql"
     - "{{ provisioner_path }}/ruby"
     - "{{ provisioner_path }}/nginx"
     - "{{ provisioner_path }}/nodejs"
+    - "{{ provisioner_path }}/rails-capistranofied-setup"
     - "{{ provisioner_path }}/unicorn-config"
-    - "{{ provisioner_path }}/redis"
