@@ -18,23 +18,18 @@ class Bookmark < ActiveRecord::Base
 
   # Validations
 
-  # validates_presence_of :name, :url
-  # validates_uniqueness_of :url, scope: :user
+  validates_presence_of :name, :url
+  validates_uniqueness_of :url, scope: :user
 
-  #validates :url, url: true
-  # validates :name, length:
-    # { minimum: 3, too_short: '' }
-  # validates_presence_of :description
+  validates :name, length: { minimum: 3, too_short: '' }
+  # validates :url, url: true
+  # validates :description
 
   do_not_validate_attachment_file_type :snapshot
 
   # Callbacks
 
   after_save :generate_snapshot
-
-  # Scopes
-
-  # Methods
 
   # Attributes
 

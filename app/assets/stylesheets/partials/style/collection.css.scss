@@ -1,0 +1,69 @@
+.bit-collection {
+  margin-left: $global-spacing;
+  border-radius: 2px;
+  border: 1px solid $container-background-color;
+
+  &-url {
+    padding: $global-spacing;
+    text-align: center;
+
+    h1 {
+      margin: 0;
+      font-size: 18px;
+    }
+  }
+
+  &-image {
+    z-index: 1;
+    position: relative;
+
+    img {
+      border-radius: 250px;
+      margin: 0 auto;
+    }
+
+    &:after, &:before {
+      content: '';
+      width: 100%;
+      height: 50%;
+      position: absolute;
+      left: 0;
+      z-index: -1;
+    }
+
+    &:after {
+      background-color: $container-background-color;
+      bottom: 0;
+    }
+
+    &:before {
+      background-color: #fff;
+      top: 0;
+    }
+  }
+
+  &-description {
+    padding: 15px;
+    background-color: $container-background-color;
+    text-align: left;
+
+    p {
+      margin: 0;
+    }
+  }
+}
+
+
+.bit-association {
+  padding: 0 15px 15px;
+  text-align: left;
+  background-color: $container-background-color;
+
+  a {
+    margin-right: -5px;
+
+    img {
+      border-radius: 250px;
+    }
+  }
+}

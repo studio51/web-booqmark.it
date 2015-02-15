@@ -2,9 +2,7 @@ class CollectionsController < ApplicationController
 
   # GET /collections
   def index
-    # @collections = paginate current_user.collections
     @collections = Collection.paginate(page: params[:page])
-
   end
 
   # GET /collections/:id
@@ -16,8 +14,6 @@ class CollectionsController < ApplicationController
   # GET /collections/new
   def new
     @collection = Collection.new
-
-    render template: 'collections/_form'
   end
 
   # GET /collections/:id/edit
@@ -73,7 +69,7 @@ class CollectionsController < ApplicationController
 
     def collection_params
       params.require(:collection).permit(
-        :owner_id,
+        :user_id,
         :name,
         :description,
         :public,

@@ -1,33 +1,29 @@
-- collection.each do |c|
+.grid
 
-  .booqmarkit.index class="public-#{c.public}"
+  - collection.each do |c|
 
-    .row.booqmarkit-content
-      .col-sm-2
-        .booqmarkit-image
-          = image_tag(c.icon(:original), class: 'img-responsive')
+    .grid-cell.grid-cell-xs-12.grid-cell-sm-6.grid-cell-md-4.grid-cell-lg-3
+      .bit-collection class="bit-collection-public-#{c.public}"
+        .grid
+          .grid-cell.grid-cell-sm-12
+            .bit-collection-url
+              h1
+                = link_to c.name, collection_path(c)
 
-      .col-sm-10
-        h1.booqmarkit-url
-          = c.name
+        .grid
+          .grid-cell.grid-cell-sm-12
+            = collection_image_presenter(c)
 
-          .pull-right
-            = link_to fa_icon('folder'), collection_path(c), title: "View Collection", data: { toggle: 'tooltip', placement: 'left' }
+        .grid
+          .grid-cell.grid-cell-sm-12
+            .bit-collection-description
+              = description_presenter(c.description)
 
-        = description_presenter(c.description)
+        .bit-collection-actions
+          .grid
+            .grid-cell.grid-cell-sm-8
+              = collection_bookmarks_presenter(full_layout, c.id, c.bookmarks)
 
-        = bookmarks_presenter(full_layout, c.id, c.bookmarks)
-
-    .row.booqmarkit-actions
-      .col-xs-3
-        .booqmarkit-info
-          = fa_icon(t("models.bookmark.attributes.public.#{c.public}.icon"), title: t("models.bookmark.attributes.public.#{c.public}.name"), data: { toggle: 'tooltip', placement: 'right' }, class: "public-#{c.public}")
-
-      .col-xs-9
-        = booqmarkit_url_helper('method', 'edit', edit_collection_path(c.id))
-        = booqmarkit_url_helper('method', 'destroy', c)
-
-.row
-  .col-sm-12
-    p.pagination-info
-      / = fa_icon('info', text: page_entries_info(collection))
+            .grid-cell.grid-cell-sm-4
+              = link_to fa_icon("pencil"), edit_collection_path(c)
+              = link_to fa_icon("trash-o"), collection_path(c), method: :delete, confirm: { message: "Are you sure?"} unless c.public?

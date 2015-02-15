@@ -22,9 +22,16 @@ $global-spacing: 15px;
 $container-background-color: nth($lightgray, 1);
 
 $border-default-size: 1px;
-$border-default-color: nth($mediumgray, 1);
+$border-default-color: nth($lightgray, 1);
 
 @import url(http://fonts.googleapis.com/css?family=Raleway:500,600,700,400,200,300);
+
+h1, h2, h3, h4, h5, h6, p {
+  margin: 0;
+}
+
+$brand-primary: #4FC1E9;
+
 @import "bootstrap";
 
 @import "grid/*";
@@ -47,4 +54,15 @@ body {
 
 a {
   color: nth($bluejeans, 2);
+}
+
+footer {
+  border-top: 1px solid $border-default-color;
+  padding: 15px;
+  margin-top: 15px;
+
+  p {
+    margin: 0;
+    font-size: 12px;
+  }
 }

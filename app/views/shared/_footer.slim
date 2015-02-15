@@ -1,4 +1,41 @@
-/ .row
-/   .col-sm-6.col-sm-offset-3
-/     p
-/       = "Studio51 © 2014"
+footer
+  .grid-container
+    .grid
+
+      .grid-cell.grid-cell-sm-5
+        p
+          = "Project created &amp; maintained by #{link_to 'Studio51 Creative Services', 'http://www.creative-studio51.co.uk'} &copy; 2015".html_safe
+
+      .grid-cell.grid-cell-sm-5
+        ul.bit-nav.bit-nav-footer
+          li
+            = link_to "About", ""
+          li
+            = link_to "F.A.Q", ""
+          li
+            = link_to "Terms &amp; Conditions", ""
+
+      .grid-cell.grid-cell-sm-2
+        button type="button" class="" data-toggle="modal" data-target=".donations-modal"
+          = fa_icon("money", text: "Support Booqmark.it")
+
+.modal.fade.donations-modal role="dialog" aria-labelledby="donationsLabel" aria-hidden="true"
+  .modal-dialog
+    .modal-content
+      .modal-header
+        h4#donationsLabel.modal-title
+          = "Support Booqmark.it"
+
+      .modal-body
+        p
+          = "Thank you for considering supporting Booqmark.it"
+
+        p
+          / Booqmark.it will always be free and wether you decide to support us
+          / or not, we won't restrict anything.
+          / We do however, need help in paying the AWS bills and ensuring continous
+          / development.
+          / All the money we receive from donations cover our AWS bills
+          = "We use the donations we receive from our users to develop new features and pay our Amazon AWS bills"
+
+      .modal-footer

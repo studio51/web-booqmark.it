@@ -1,8 +1,8 @@
-.row
-  .col-sm-2
+.grid
+  .grid-cell.grid-cell-sm-2
     == render partial: 'shared/main_nav'
 
-  .col-sm-10
+  .grid-cell.grid-cell-sm-10
 
     - if @collections.empty?
 
@@ -11,16 +11,11 @@
 
     - else
 
-      .row
-        .col-sm-12
+      .grid
+        .grid-cell.grid-cell-sm-12
           .main-content-affix data-spy="affix" data-offset-top="70"
-            .row
-              .col-sm-9
-                = will_paginate(@collections, inner_window: 1, outer_window: 3)
+            = will_paginate(@collections, inner_window: 1, outer_window: 3)
 
-              .col-sm-3.text-right
-                = link_to "New Collection", new_collection_path, class: 'btn btn-sm btn-primary'
-
-      .row
-        .col-sm-12
+      .grid
+        .grid-cell.grid-cell-sm-12
           == render partial: 'collections', locals: { full_layout: true, collection: @collections }

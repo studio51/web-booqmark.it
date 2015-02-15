@@ -1,6 +1,6 @@
 set :branch, 'develop'
 
-server '54.194.238.70',
+server '54.194.91.228',
   user: 'ubuntu',
   roles: %w{web app},
   ssh_options: {

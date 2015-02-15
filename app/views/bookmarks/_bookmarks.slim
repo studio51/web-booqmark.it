@@ -16,7 +16,7 @@
             = collections_presenter(b.id, b.collections)
             = tags_presenter(b.id, b.tag_list)
 
-          .grid-cell.grid-cell-sm-1.grid-cell-content-center
+          .grid-cell.grid-cell-sm-1
             = link_to fa_icon('bookmark'), bookmark_path(b), title: "View Bookmark", data: { toggle: 'tooltip', placement: 'left' }, class: "bit-bookmark-view"
 
     .grid.hide
@@ -28,8 +28,3 @@
       .grid-cell.grid-cell-sm-2
         = booqmarkit_url_helper('method', 'edit', edit_bookmark_path(b.id))
         = booqmarkit_url_helper('method', 'destroy', b)
-
-  / .row
-  /   .col-sm-12
-  /     p.pagination-info
-  /       = fa_icon('info', text: page_entries_info(collection))

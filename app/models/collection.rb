@@ -8,15 +8,13 @@ class Collection < ActiveRecord::Base
                       lg: ['100x100#', :png]
                     }
 
-  # validates_attachment_content_type :icon,
-  #                                   content_type: /\Aimage\/.*\Z/
-  # do_not_validate_attachment_file_type :icon
+  do_not_validate_attachment_file_type :icon
 
   # Associations
 
-  belongs_to :user, foreign_key: 'user_id'
+  belongs_to :user
 
-  has_and_belongs_to_many :users
+  # has_and_belongs_to_many :users
   has_and_belongs_to_many :bookmarks
 
   # Methods
