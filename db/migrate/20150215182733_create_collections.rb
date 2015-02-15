@@ -1,14 +1,13 @@
 class CreateCollections < ActiveRecord::Migration
   def self.up
     create_table :collections do |c|
-      c.integer :owner_id
+      c.belongs_to :user
 
-      c.string :name, null: false
-      c.text   :description
+      c.string     :name,            null: false
+      c.text       :description
 
-      c.boolean :public, default: true
-
-      c.integer :bookmarks_count, default: 0
+      c.boolean    :public,          default: true
+      c.integer    :bookmarks_count, default: 0
 
       c.attachment :icon
 

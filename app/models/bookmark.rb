@@ -15,6 +15,7 @@ class Bookmark < ActiveRecord::Base
   belongs_to :user
 
   has_and_belongs_to_many :collections, counter_cache: true
+  has_and_belongs_to_many :lists,       counter_cache: true
 
   # Validations
 

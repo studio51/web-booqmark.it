@@ -8,7 +8,7 @@ class Profile < ActiveRecord::Base
                       md: ['64x64#', :png],
                     }
 
-  belongs_to :user, foreign_key: 'user_id'
+  belongs_to :user
 
   do_not_validate_attachment_file_type :avatar
 
