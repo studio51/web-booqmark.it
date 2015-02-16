@@ -7,10 +7,10 @@ nav.bit-navbar role="navigation"
       .bit-grid--navbar-search__user
         .grid
           .bit-grid--navbar-search
-            .input-group
-              span#search-icon.input-group-addon
+            .input-addon
+              span.input-addon-item
                 = fa_icon("search")
-              = text_field_tag :q, params[:q], class: 'search-input input-md form-control', placeholder: 'Search Bookmarks, Collections, Users..', aria: { describedby: "search-icon" }
+              = text_field_tag :q, params[:q], class: 'input input-addon-field', placeholder: 'Search Collections, Bookmarks, Tags and Users..', aria: { describedby: "search-icon" }
 
           .bit-grid--navbar-user
             ul.bit-navbar-user
@@ -33,3 +33,8 @@ nav.bit-navbar role="navigation"
 
                   li
                     = link_to fa_icon("sign-out", text: "Logout"), destroy_user_session_path, method: :delete
+
+.grid
+  .grid-cell.grid-cell-sm-12
+    .grid-container
+      = render partial: "shared/navigation"

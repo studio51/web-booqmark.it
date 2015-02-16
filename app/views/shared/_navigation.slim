@@ -1,0 +1,31 @@
+.grid
+  .grid-cell.grid-cell-sm-1
+    = link_to "Back", :back
+
+  .grid-cell.grid-cell-sm-offset-1.grid-cell-sm-2
+    h5.heading
+      = "Public Activity"
+
+    ul.bit-nav.bit-nav-list.bit-nav-main
+      li
+        = link_to fa_icon("rss", text: "Feed"), feeds_path, class: 'bit-nav-links bit-btn bit-btn-block bit-btn-small bit-btn-danger'
+
+      li
+        = link_to fa_icon("list", text: "Lists"), lists_path, class: 'bit-nav-links bit-btn bit-btn-block bit-btn-small bit-btn-info'
+
+  .grid-cell.grid-cell-sm-offset-1.grid-cell-sm-3
+    h5.heading
+      = "My Activity"
+
+    ul.bit-nav.bit-nav-list.bit-nav-main
+      li
+        = link_to fa_icon("folder", text: "Collections"), collections_path, class: 'bit-nav-links bit-btn bit-btn-block bit-btn-small bit-btn-primary'
+
+        .bit-nav-element-addon
+          = link_to fa_icon("plus"), new_collection_path, class: 'bit-nav-button'
+
+      li
+        = link_to fa_icon("bookmark", text: "Bookmarks"), bookmarks_path, class: 'bit-nav-links bit-btn bit-btn-block bit-btn-small bit-btn-success'
+
+        .bit-nav-element-addon
+          = link_to fa_icon("plus"), new_bookmark_path, class: 'bit-nav-button'

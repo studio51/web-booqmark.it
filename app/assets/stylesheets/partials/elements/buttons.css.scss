@@ -1,0 +1,71 @@
+.bit-btn {
+  border: none;
+  border-radius: 2px;
+  color: #fff;
+
+  &:hover {
+    color: #fff;
+    text-decoration: none;
+  }
+
+  &-block {
+    flex: 1;
+  }
+
+  $bit-classes: "success", "primary", "warning", "danger", "info";
+
+  @each $class in $bit-classes {
+    &-#{ $class } {
+      // background-color: "$brand-#{ $class }";
+
+      &:hover {
+        // background-color: $brand-#{ $class }-hover;
+      }
+    }
+  }
+
+  &-success {
+    background-color: $brand-success;
+
+    &:hover {
+      background-color: $brand-success-hover;
+    }
+  }
+
+  &-primary {
+    background-color: $brand-primary;
+
+    &:hover {
+      background-color: $brand-primary-hover;
+    }
+  }
+
+  &-warning {
+    background-color: $brand-warning;
+
+    &:hover {
+      background-color: $brand-warning-hover;
+    }
+  }
+
+  &-danger {
+    background-color: $brand-danger;
+
+    &:hover {
+      background-color: $brand-danger-hover;
+    }
+  }
+
+  &-info {
+    background-color: $brand-info;
+
+    &:hover {
+      background-color: $brand-info-hover;
+    }
+  }
+
+  &-small {
+    font-size: 12px;
+    padding: 6px 5px 3px;
+  }
+}

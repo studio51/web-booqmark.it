@@ -4,22 +4,19 @@
     margin-bottom: $global-spacing;
     padding: 10px 0;
 
-    .input-group {
+    .input-addon {
       padding: 0 $global-spacing;
+      display: flex;
 
-      span {
-        background-color: #fff;
-        border: none;
-        font-size: 18px;
-        padding: 0 $global-spacing 0 0;
+      &-item {
+        padding: $global-spacing;
+        padding-left: 0;
+        font-size: 16px;
       }
 
-      input {
+      &-field {
         border: none;
-        border-radius: 0;
-        box-shadow: none;
-        height: 100%;
-        padding: ( $global-spacing + 1px ) 0;
+        flex: 1;
       }
     }
 
@@ -58,57 +55,10 @@
 
   &-brand {
     img {
-      margin-top: 10px;
+      margin-top: 9px;
     }
   }
 
-  &-nav {
-    padding: 0;
-    list-style: none;
-
-    li {
-      align-items: center;
-      display: flex;
-
-      .heading {
-        margin: 0 0 $global-spacing 0;
-        font-size: 16px;
-      }
-
-      &.divider {
-        margin: $global-spacing 0;
-      }
-
-      a {
-        &.bit-nav {
-          &-links {
-            font-size: 13px;
-            flex: 6;
-            padding: 10px 10px 5px;
-
-            i {
-              margin-right: 5px;
-            }
-          }
-
-          &-button {
-            flex: 1;
-            border-radius: 250px;
-            padding: 4px 0 3px;
-            background: $brand-primary;
-            text-align: center;
-            color: #fff;
-            font-size: 8px;
-
-            i {
-              text-align: center;
-              margin: 0;
-            }
-          }
-        }
-      }
-    }
-  }
 }
 
 /* Temp */

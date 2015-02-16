@@ -30,23 +30,67 @@ h1, h2, h3, h4, h5, h6, p {
   margin: 0;
 }
 
-$brand-primary: #4FC1E9;
+$brand-success: nth($mint, 1);
+$brand-success-hover: nth($mint, 2);
+$brand-primary: nth($aqua, 1);
+$brand-primary-hover: nth($aqua, 2);
+$brand-warning: nth($grapefruit, 1);
+$brand-warning-hover: nth($grapefruit, 2);
+$brand-danger: nth($bittersweet, 1);
+$brand-danger-hover: nth($bittersweet, 2);
+$brand-info: nth($lavender, 1);
+$brand-info-hover: nth($lavender, 2);
 
 @import "bootstrap";
 
 @import "grid/*";
+@import "elements/*";
 @import "style/*";
 
-html {
-  width: 100%;
-  height: 100%;
-}
+html {}
 
-body {
-  width: 100%;
-  height: 100%;
+.application {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
   font-family: "Raleway";
 }
+
+header {
+
+}
+
+main.content {
+  flex: 1;
+}
+
+footer {
+  border-top: $border-default-size solid $border-default-color;
+  padding: $global-spacing;
+  margin-top: $global-spacing;
+
+  .meta,
+  .bit-nav {
+    font-size: 12px;
+    margin: 0;
+    padding: 5px;
+  }
+
+  .bit-nav {
+    li {
+      margin-right: 15px;
+    }
+  }
+
+  .bit-support-actions {
+    text-align: right;
+
+    button:last-child {
+      margin-left: $global-spacing;
+    }
+  }
+}
+
 [class*="fa"] {
   min-width: 17px;
   text-align: center;
@@ -55,14 +99,40 @@ body {
 a {
   color: nth($bluejeans, 2);
 }
-
-footer {
-  border-top: 1px solid $border-default-color;
-  padding: 15px;
-  margin-top: 15px;
-
-  p {
-    margin: 0;
-    font-size: 12px;
-  }
+.heading {
+  font-size: 10px;
+  display: block;
+  margin: 0;
+  color: #999;
+  margin-bottom: 15px;
 }
+
+.bit-nav-main {
+  padding: 0;
+  margin-bottom: 15px;
+}
+
+.bit-nav-main li {
+  flex: 1;
+  display: flex;
+  margin-right: 15px;position: relative;
+}
+
+.bit-nav-main li a {
+  flex: 1;
+}
+
+.bit-nav-element-addon a {
+
+position: absolute;
+top: 2px;
+right: -12px;
+  background-color: #fff;
+  border-radius: 250px;
+  padding: 0 3px 2px;
+}
+
+.bit-nav-element-addon i {
+  font-size: 10px;
+}
+

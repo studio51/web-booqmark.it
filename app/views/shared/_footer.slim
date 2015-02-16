@@ -1,23 +1,28 @@
-footer
-  .grid-container
-    .grid
+.grid-container
+  .grid
 
-      .grid-cell.grid-cell-sm-5
-        p
-          = "Project created &amp; maintained by #{link_to 'Studio51 Creative Services', 'http://www.creative-studio51.co.uk'} &copy; 2015".html_safe
+    .grid-cell.grid-cell-sm-5
+      p.meta
+        = "Crafted with ♥ &amp; maintained by #{link_to 'Studio51', 'http://www.creative-studio51.co.uk'} &copy; 2015".html_safe
 
-      .grid-cell.grid-cell-sm-5
-        ul.bit-nav.bit-nav-footer
-          li
-            = link_to "About", ""
-          li
-            = link_to "F.A.Q", ""
-          li
-            = link_to "Terms &amp; Conditions", ""
+    .grid-cell.grid-cell-sm-4
+      ul.bit-nav.bit-nav-list
+        li
+          = link_to "About", ""
+        li
+          = link_to "F.A.Q", ""
+        li
+          = link_to "Terms &amp; Conditions".html_safe, ""
+        li
+          = link_to "Get involved", "https://github.com/studio51/app-booqmark.it"
 
-      .grid-cell.grid-cell-sm-2
-        button type="button" class="" data-toggle="modal" data-target=".donations-modal"
+    .grid-cell.grid-cell-sm-3
+      .bit-support-actions
+        button type="button" class="bit-btn bit-btn-small bit-btn-success" data-toggle="modal" data-target=".donations-modal"
           = fa_icon("money", text: "Support Booqmark.it")
+
+        button type="button" class="bit-btn bit-btn-small bit-btn-primary" data-toggle="modal" data-target=".feedback-modal"
+          = fa_icon("bullhorn")
 
 .modal.fade.donations-modal role="dialog" aria-labelledby="donationsLabel" aria-hidden="true"
   .modal-dialog
@@ -37,5 +42,20 @@ footer
           / development.
           / All the money we receive from donations cover our AWS bills
           = "We use the donations we receive from our users to develop new features and pay our Amazon AWS bills"
+
+
+.modal-footer.modal.fade.feedback-modal role="dialog" aria-labelledby="donationsLabel" aria-hidden="true"
+  .modal-dialog
+    .modal-content
+      .modal-header
+        h4#donationsLabel.modal-title
+          = "Feedback &amp; Suggestions".html_safe
+
+      .modal-body
+        p
+          = "Thank you for helping us through the BETA stage. Stay awesome!"
+
+        p
+          = "We're working hard to implement a Feedback system. Until then please email your query to booqmarkit@creative-studio51.co.uk"
 
       .modal-footer

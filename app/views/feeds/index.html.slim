@@ -1,0 +1,33 @@
+.grid
+  .grid-cell.grid-cell-sm-2
+
+  .grid-cell.grid-cell-sm-10
+    .grid
+      .grid-cell.grid-cell-sm-12
+
+        - @bookmarks.each do |b|
+
+          .bit-bookmark
+            .grid
+              .grid-cell.grid-cell-sm-2
+                = image_presenter(b, true)
+
+              .grid-cell.grid-cell-sm-10
+                .grid
+                  .grid-cell.grid-cell-sm-11
+                    h1.bit-bookmark-url
+                      = name_presenter(b.name, b.url)
+
+                    = description_presenter(b.description)
+
+                    = collections_presenter(b.id, b.collections)
+                    = tags_presenter(b.id, b.tag_list)
+
+                  .grid-cell.grid-cell-sm-1
+                    = link_to fa_icon('bookmark'), bookmark_path(b), title: "View Bookmark", data: { toggle: 'tooltip', placement: 'left' }, class: "bit-bookmark-view"
+
+            .grid.hide
+              .grid-cell.grid-cell-sm-10
+                .bit-bookmark-info
+                  = fa_icon(t("models.bookmark.attributes.status.#{b.status.to_s.first}.icon"), title: t("models.bookmark.attributes.status.#{b.status.to_s.first}.name"), data: { toggle: 'tooltip', placement: 'right' }, class: "status-#{b.status.to_s.first}")
+                  = fa_icon(t("models.bookmark.attributes.public.#{b.public}.icon"), title: t("models.bookmark.attributes.public.#{b.public}.name"), data: { toggle: 'tooltip', placement: 'right' }, class: "public-#{b.public}")

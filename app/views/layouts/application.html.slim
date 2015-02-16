@@ -16,13 +16,16 @@ html lang="en"
     = stylesheet_link_tag "application", media: "all"
     = csrf_meta_tags
 
-  body
+  body.application
 
-    = render partial: "shared/header"
+    header
+      = render partial: "shared/header"
 
-    .grid-container
-      = yield
+    main.content
+      .grid-container
+        = yield
 
-    = render partial: "shared/footer"
+    footer
+      = render partial: "shared/footer"
 
   = javascript_include_tag "application"
