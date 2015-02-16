@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150214211953) do
+ActiveRecord::Schema.define(version: 20150215183657) do
 
   create_table "bookmarks", force: :cascade do |t|
     t.integer  "user_id",               limit: 4
@@ -33,13 +33,13 @@ ActiveRecord::Schema.define(version: 20150214211953) do
     t.integer "bookmark_id",   limit: 4, null: false
   end
 
-  create_table "bookmarks_users", id: false, force: :cascade do |t|
+  create_table "bookmarks_lists", id: false, force: :cascade do |t|
+    t.integer "list_id",     limit: 4, null: false
     t.integer "bookmark_id", limit: 4, null: false
-    t.integer "user_id",     limit: 4, null: false
   end
 
   create_table "collections", force: :cascade do |t|
-    t.integer  "owner_id",          limit: 4
+    t.integer  "user_id",           limit: 4
     t.string   "name",              limit: 255,                  null: false
     t.text     "description",       limit: 65535
     t.boolean  "public",            limit: 1,     default: true
@@ -52,20 +52,24 @@ ActiveRecord::Schema.define(version: 20150214211953) do
     t.datetime "updated_at"
   end
 
-  create_table "collections_users", id: false, force: :cascade do |t|
-    t.integer "collection_id", limit: 4, null: false
-    t.integer "user_id",       limit: 4, null: false
+  create_table "lists", force: :cascade do |t|
+    t.integer  "owner_id",          limit: 4,                 null: false
+    t.string   "name",              limit: 255,               null: false
+    t.text     "description",       limit: 65535,             null: false
+    t.integer  "users_count",       limit: 4,     default: 0
+    t.integer  "bookmarks_count",   limit: 4,     default: 0
+    t.string   "icon_file_name",    limit: 255
+    t.string   "icon_content_type", limit: 255
+    t.integer  "icon_file_size",    limit: 4
+    t.datetime "icon_updated_at"
+    t.datetime "created_at",                                  null: false
+    t.datetime "updated_at",                                  null: false
   end
 
-  create_table "identities", force: :cascade do |t|
-    t.integer  "user_id",    limit: 4
-    t.string   "provider",   limit: 255
-    t.string   "uid",        limit: 255
-    t.datetime "created_at",             null: false
-    t.datetime "updated_at",             null: false
+  create_table "lists_users", id: false, force: :cascade do |t|
+    t.integer "list_id", limit: 4, null: false
+    t.integer "user_id", limit: 4, null: false
   end
-
-  add_index "identities", ["user_id"], name: "index_identities_on_user_id", using: :btree
 
   create_table "profiles", id: false, force: :cascade do |t|
     t.integer  "user_id",             limit: 4
@@ -119,5 +123,4 @@ ActiveRecord::Schema.define(version: 20150214211953) do
 
   add_index "users", ["email", "reset_password_token", "unlock_token"], name: "index_users_on_email_and_reset_password_token_and_unlock_token", unique: true, using: :btree
 
-  add_foreign_key "identities", "users"
 end
