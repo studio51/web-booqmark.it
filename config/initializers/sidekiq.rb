@@ -1,7 +1,7 @@
 if Rails.env == 'development'
-  host = '127.0.0.1'
+  host = ENV['REDIS_SERVER_IP_DEVELOPMENT']
 else
-  host = "redis-gogreen#{Rails.env}.nsvmxn.0001.euw1.cache.amazonaws.com"
+  host = ENV['REDIS_SERVER_IP_PRODUCTION']
 end
 
 Sidekiq.configure_server do |config|

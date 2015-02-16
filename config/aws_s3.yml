@@ -1,0 +1,13 @@
+defaults: &defaults
+  access_key_id: ENV['S3_ACCESS_KEY']
+  secret_access_key: ENV['S3_SECRET_KEY']
+  s3_host_name: s3-eu-west-1.amazonaws.com
+  acl: public-read
+
+development:
+  bucket: booqmark.it-d
+  <<: *defaults
+production:
+  bucket: booqmark.it-p
+  <<: *defaults
+

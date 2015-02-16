@@ -3,8 +3,9 @@
 /hosts
 
 # Provisioner
-/config/unicorn-development.rb
+/config/unicorn-*.rb
 provisioner/*
+playbooks/*
 
 # Temp files/folders
 /tmp/cache/*
@@ -26,5 +27,5 @@ provisioner/*
 .sass*
 app/assets/stylesheets/.sass*
 
-# AWS credentials
-config/aws*
+# Credentials and Environmental variables
+.env
