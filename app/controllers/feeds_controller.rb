@@ -2,15 +2,10 @@ class FeedsController < ApplicationController
   respond_to :html, :json
 
   def index
-    collections
-    bookmarks
+    @bookmarks = bookmarks
   end
 
   private
-
-  def collections
-    Collection.where(public: true)
-  end
 
   def bookmarks
     Bookmark.where(public: true)

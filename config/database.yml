@@ -8,6 +8,10 @@ default: &default
   pool: 5
   timeout: 5000
 
+production:
+  <<: *default
+  database: booqmarkit
+
 development:
   <<: *default
   database: app_db

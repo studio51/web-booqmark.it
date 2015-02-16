@@ -1,17 +1,16 @@
 Rails.application.routes.draw do
 
-  root controller: :landings, action: :index
-
-  resources :users
+  root to: 'bookmarks#index'
 
   devise_for :users,
     controllers: {
-      registrations: 'registrations',
-      omniauth_callbacks: 'omniauth_callbacks'
+      registrations: 'registrations'
     }
 
+  resources :users
+
   resources :feeds, only: [:index]
-  resources :lists, only: [:index]
+  resources :lists
 
   resources :collections
   resources :bookmarks do

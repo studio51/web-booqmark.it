@@ -25,7 +25,7 @@ class CollectionsController < ApplicationController
 
   # POST /collections
   def create
-    @collection = Collection.new(collection_params.merge(owner_id: current_user.id))
+    @collection = Collection.new(collection_params)
 
     respond_to do |format|
       if @collection.save
